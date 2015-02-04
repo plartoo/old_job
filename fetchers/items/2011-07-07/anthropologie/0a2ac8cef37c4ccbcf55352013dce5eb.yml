@@ -1,0 +1,38 @@
+--- 
+:dept: :womens
+:dynamic: 
+  :sale_price: 
+  :currency: USD
+  :original_price: "348.00"
+  :notice: 
+:vendor_key: "22228167"
+:description: Commuter Tote
+:extended_description: {}
+
+:clothing_type: 
+  :group: :accessories
+  :bm: 13
+:additional_images: []
+
+:brand_bm: 965
+:vendor_name: anthropologie
+:product_image: 
+  :url: http://www.anthropologie.com/
+  :height: 210
+  :buffer_width: 125
+  :width: 140
+:department_bm: 0
+:related_vendor_keys: []
+
+:category_data: 
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=SHOESBAGS&navAction=middle&navCount=1326&isSortBy=true&pushId=BAGS-BAGS&id=BAGS-LEATHER
+    "@_rails_html_safe": false
+  :name: Leather
+  :path: 
+  - Shoes & Bags
+  - Bags
+  - Leather
+:product_url: http://www.anthropologie.com/anthro/catalog/productdetail.jsp?id=22228167&catId=BAGS-LEATHER&pushId=BAGS-LEATHER&popId=BAGS-BAGS&navAction=middle&navCount=300&color=041&isProduct=true&fromCategoryPage=true&templateType=D
+:clothing_type_bm: 13
+:scc: 

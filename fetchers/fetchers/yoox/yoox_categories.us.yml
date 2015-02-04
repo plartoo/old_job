@@ -1,0 +1,367 @@
+#
+--- 
+:vendor: yoox
+:ignored: []
+
+:active: 
+- :dept: :mens
+  :name: Accessories
+  :category_path:
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/ACCESSORIES/men%27s-sale/searchResult/c/cat_46/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: COATS & JACKETS
+  :category_path:
+  - COATS & JACKETS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/COATS+%26+JACKETS/men's-sale/searchResult/c/cat_41/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: DENIM
+  :category_path:
+  - DENIM
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/DENIM/men's-sale/searchResult/c/cat_42/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: FLEECEWARE
+  :category_path:
+  - FLEECEWARE
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/FLEECEWARE/men's-sale/searchResult/c/cat_43/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: FOOTWEAR
+  :category_path:
+  - FOOTWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/FOOTWEAR/men's-sale/searchResult/c/cat_44/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: FURNISHINGS
+  :category_path:
+  - FURNISHINGS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/FURNISHINGS/men's-sale/searchResult/c/cat_20/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: HANDBAGS
+  :category_path:
+  - HANDBAGS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/HANDBAGS/men's-sale/searchResult/c/cat_45/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: JEWELRY
+  :category_path:
+  - JEWELRY
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/JEWELRY/men's-sale/searchResult/c/cat_50/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: LEATHERWEAR
+  :category_path:
+  - LEATHERWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/LEATHERWEAR/men's-sale/searchResult/c/cat_59/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: LUGGAGE
+  :category_path:
+  - LUGGAGE
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/LUGGAGE/men's-sale/searchResult/c/cat_55/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: MEN'S SUITS
+  :category_path:
+  - MEN'S SUITS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/MEN%27S+SUITS/men's-sale/searchResult/c/cat_49/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: OVERALLS
+  :category_path:
+  - OVERALLS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/OVERALLS/men's-sale/searchResult/c/cat_54/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: PANTS
+  :category_path:
+  - PANTS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/PANTS/men's-sale/searchResult/c/cat_36/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: SHIRTS
+  :category_path:
+  - SHIRTS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SHIRTS/men's-sale/searchResult/c/cat_38/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: SWEATERS
+  :category_path:
+  - SWEATERS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SWEATERS/men's-sale/searchResult/c/cat_39/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: SWIMWEAR
+  :category_path:
+  - SWIMWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SWIMWEAR/men's-sale/searchResult/c/cat_47/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: TOPS & TEES
+  :category_path:
+  - TOPS & TEES
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/TOPS+%26+TEES/men's-sale/searchResult/c/cat_37/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: UNDERWEAR
+  :category_path:
+  - UNDERWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/UNDERWEAR/men's-sale/searchResult/c/cat_48/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: WATCHES
+  :category_path:
+  - WATCHES
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/WATCHES/men's-sale/searchResult/c/cat_28/ipp/40/gender/U/tskay/3FD17CD7/dept/salemen
+    "@_rails_html_safe": false
+
+    #### womens
+- :dept: :womens
+  :name: Accessories
+  :category_path:
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/ACCESSORIES/women%27s-sale/searchResult/c/cat_46/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: COATS & JACKETS
+  :category_path:
+  - COATS & JACKETS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/COATS+%26+JACKETS/women's-sale/searchResult/c/cat_41/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: DENIM
+  :category_path:
+  - DENIM
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/DENIM/women's-sale/searchResult/c/cat_42/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: DRESSES
+  :category_path:
+  - DRESSES
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/DRESSES/women's-sale/searchResult/c/cat_34/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: EYEWEAR
+  :category_path:
+  - EYEWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/EYEWEAR/women's-sale/searchResult/c/cat_95/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: FLEECEWARE
+  :category_path:
+  - FLEECEWARE
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/FLEECEWARE/women's-sale/searchResult/c/cat_43/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: FOOTWEAR
+  :category_path:
+  - FOOTWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/FOOTWEAR/women's-sale/searchResult/c/cat_44/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: FURNISHINGS
+  :category_path:
+  - FURNISHINGS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/FURNISHINGS/women's-sale/searchResult/c/cat_20/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: HANDBAGS
+  :category_path:
+  - HANDBAGS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/HANDBAGS/women's-sale/searchResult/c/cat_45/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: JEWELRY
+  :category_path:
+  - JEWELRY
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/JEWELRY/women's-sale/searchResult/c/cat_50/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: LEATHERWEAR
+  :category_path:
+  - LEATHERWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/LEATHERWEAR/women's-sale/searchResult/c/cat_59/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: LUGGAGE
+  :category_path:
+  - LUGGAGE
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/LUGGAGE/women's-sale/searchResult/c/cat_55/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: OVERALLS
+  :category_path:
+  - OVERALLS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/OVERALLS/women's-sale/searchResult/c/cat_54/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: PANTS
+  :category_path:
+  - PANTS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/PANTS/women's-sale/searchResult/c/cat_36/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: SHIRTS
+  :category_path:
+  - SHIRTS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SHIRTS/women's-sale/searchResult/c/cat_38/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: SKIRTS
+  :category_path:
+  - SKIRTS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SKIRTS/women's-sale/searchResult/c/cat_35/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: SWEATERS
+  :category_path:
+  - SWEATERS
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SWEATERS/women's-sale/searchResult/c/cat_39/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: SWIMWEAR
+  :category_path:
+  - SWIMWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/SWIMWEAR/women's-sale/searchResult/c/cat_47/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: TOPS & TEES
+  :category_path:
+  - TOPS & TEES
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/TOPS+%26+TEES/women's-sale/searchResult/c/cat_37/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: UNDERWEAR
+  :category_path:
+  - UNDERWEAR
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/UNDERWEAR/women's-sale/searchResult/c/cat_48/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: WATCHES
+  :category_path:
+  - WATCHES
+  :ignored: false
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/YOOX/WATCHES/women's-sale/searchResult/c/cat_28/ipp/40/gender/D/tskay/3FD17CD7/dept/salewomen
+    "@_rails_html_safe": false
+

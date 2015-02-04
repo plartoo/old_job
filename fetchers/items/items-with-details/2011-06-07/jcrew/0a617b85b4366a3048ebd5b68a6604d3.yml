@@ -1,0 +1,43 @@
+--- 
+:vendor_name: jcrew
+:department_bm: 0
+:category_data: 
+- :url: !str 
+    str: http://www.jcrew.com/womens_category/shirtstops.jsp
+    "@_rails_html_safe": false
+  :name: shirts & tops
+  :path: 
+  - shirts & tops
+:clothing_type_bm: 8
+:clothing_type: 
+  :bm: 8
+  :group: top
+:dynamic: 
+  :sale_price: 
+  :notice: ""
+  :original_price: "72.00"
+  :currency: USD
+:vendor_key: "37879"
+:description: Boy shirt in washed oxford cloth
+:extended_description: 
+  :full_description: <td class="descmore_text">Cut curvy in all the right places (think a nipped waist, on-seam pockets and a face-framing collar), this beautifully draped coat is as feminine as it gets. In textured double-cloth wool made exclusively for us by Italy's Manifattura di Carmignano mill and prized for its exceptional flexibility and strength. Our designers think it's the perfect choice for this softly shaped silhouette. Italian wool/polyamide. Standing collar. Hidden snap closure. Long sleeves. Front tucks at skirt. Tulip-shaped bottom. Single welt pocket with flap. Fully lined. Hits at midthigh. Import. Dry clean. Catalog/jcrew.com only.</td>
+  :meta_description: "'s sale, AllProducts, Double-cloth salon coat"
+  :meta_keywords: "'s sale, AllProducts, Double-cloth salon coat"
+:product_url: http://www.jcrew.com/AST/Navigation/Sale/AllProducts/PRDOVR~31896/99102152212/ENE~1+2+3+22+4294967294+20~~~20+17~15~~~~~~~/31896.jsp
+:additional_images: 
+  :primary: 
+  :all: []
+
+:scc: 
+- :size_type_bm: 0
+  :color: Unknown
+  :size_bm: 16
+:brand_bm: 428
+:related_vendor_keys: []
+
+:product_image: 
+  :buffer_width: 125
+  :url: http://images.jcrew.com/erez4/erez?src=images/onFigure/37/37879/37879_WA1194_m.tif&tmp=prdAr3
+  :width: "170"
+  :height: "170"
+:dept: :womens

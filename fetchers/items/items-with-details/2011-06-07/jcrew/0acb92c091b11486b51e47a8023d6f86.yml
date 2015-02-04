@@ -1,0 +1,50 @@
+--- 
+:vendor_name: jcrew
+:department_bm: 1
+:category_data: 
+- :url: !str 
+    str: http://www.jcrew.com/search/searchNavigation.jsp?eneQuery=Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%26Nao%3D0%26N%3D20%2B16%26Nu%3DP_productid&NUM_ITEMS=90&PRODUCT%3C%3Eprd_id=845524441809291&FOLDER%3C%3Efolder_id=1408474395181063&bmUID=1307035660922
+    "@_rails_html_safe": false
+  :name: Mens Sale
+  :path: 
+:clothing_type_bm: 16
+:clothing_type: 
+  :bm: 16
+  :group: top
+:dynamic: 
+  :sale_price: "99.99"
+  :notice: ""
+  :original_price: "128.00"
+  :currency: USD
+:vendor_key: "22993"
+:description: Cadet jacket
+:extended_description: 
+  :full_description: <td class="descmore_text">Inspired by a vintage military jacket, our designers added distinctive workwear details like snap fastenings and bellow pockets. In rugged, garment-dyed cotton twill, it's the ultimate in casual cool (consider it your every-day-of-the-week jacket). Corduroy collar. Hidden zip closure. Flap patch pockets. Adjustable button-tabs at cuffs. Partially lined. Import. Machine wash.</td>
+  :meta_description: "'s sale, AllProducts, Cadet jacket"
+  :meta_keywords: "'s sale, AllProducts, Cadet jacket"
+:product_url: http://www.jcrew.com/AST/Navigation/Sale/AllProducts/PRDOVR~22993/99102070658/ENE~1+2+3+22+4294967294+20~0~~20+16~90~~~~~~~/22993.jsp?f=false
+:additional_images: 
+  :primary: http://images.jcrew.com/erez4/erez?src=images/onFigure/22/22993/22993_GR6408_m.tif&tmp=prdDtIm
+  :all: 
+  - http://images.jcrew.com/erez4/erez?src=images/onFigure/22/22993/22993_GR6408_m.tif&tmp=prdDtIm
+  - http://images.jcrew.com/erez4/erez?src=images/onFigure/22/22993/22993_GR6408_s.tif&tmp=prdDtIm
+  - http://images.jcrew.com/erez4/erez?src=images/onFigure/22/22993/22993_GR6408_b.tif&tmp=prdDtIm
+:scc: 
+- :size_type_bm: 1
+  :color: Unknown
+  :size_bm: 0
+- :size_type_bm: 1
+  :color: Unknown
+  :size_bm: 3
+- :size_type_bm: 1
+  :color: Unknown
+  :size_bm: 4
+:brand_bm: 259
+:related_vendor_keys: []
+
+:product_image: 
+  :buffer_width: 125
+  :url: http://images.jcrew.com/erez4/erez?src=images/eiec/22/22993/22993_GR6408.tif&tmp=prdAr3
+  :width: "170"
+  :height: "170"
+:dept: :mens

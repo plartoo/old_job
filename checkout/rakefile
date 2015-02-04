@@ -1,0 +1,498 @@
+$:.unshift File.join(File.dirname(__FILE__), 'lib')
+
+require 'rubygems'
+require 'rake'
+require 'fileutils'
+require 'rake/rdoctask'
+require 'logger'
+
+
+Dir.glob('tasks/*.rake').each { |r| import r }
+
+Rake.application.options.trace = true
+
+desc <<-EOD
+  Goes to the PRODUCT_URL, grabs labels/values of the size/color configs.
+  For example: [["size/color string","value of that selected config"],["Titanium  37.5/7.5 C","1234567890"], ...]
+  Where it would fit this model:
+  <select><option value="1234567890">Titanium  37.5/7.5 C</option></select>
+
+  RETAILER="Saksfifthavenue"    : The class name of the retailer
+  PRODUCT_URL="http://..."
+  I18N_VERSION="us"             : US by default
+EOD
+task :fetch_scc_labels_and_values do
+
+  retailer = ENV['RETAILER']
+  i18n_version = ENV['I18N_VERSION']
+  product_url = ENV['PRODUCT_URL']
+  
+  require File.join(File.dirname(__FILE__),"managers",retailer)
+
+  manager_klass = Class.const_get(retailer)
+  manager = manager_klass.new({:product_url => product_url, :i18n_version => i18n_version, :manager_klass => manager_klass})
+
+  puts manager.get_scc_label_value_pairings.inspect
+end
+
+desc <<-EOD
+  PRODUCT_URL="url"                             : The item's product url
+
+EOD
+task :selenium do
+
+  homepage_url = ENV['HOMEPAGE_URL']
+  product_url = ENV['PRODUCT_URL']
+  scc_string = ENV['SCC_STRING'] # ? ENV['SCC_STRING'].gsub(/\\302\\240/,"\\s") : nil
+  vendor_scc_value = ENV['VENDOR_SCC_VALUE']
+  expected_item_price = ENV['EXPECTED_ITEM_PRICE']
+  expected_vendor_key = ENV['VENDOR_KEY']
+  expected_description = ENV['DESCRIPTION']
+
+  expected_shipping = ENV['EXPECTED_SHIPPING']
+  expected_total_price = ENV['EXPECTED_TOTAL_PRICE']
+  expected_tax = ENV['EXPECTED_TAX']
+
+  user_email_address = ENV['USER_EMAIL_ADDRESS']
+  user_zip_code = ENV['USER_ZIP_CODE']
+  user_address_1 = ENV['USER_ADDRESS_1']
+  user_address_2 = ENV['USER_ADDRESS_2']
+  user_address_3 = ENV['USER_ADDRESS_3']
+  user_city = ENV['USER_CITY']
+  user_first_name = ENV['USER_FIRST_NAME']
+  user_last_name = ENV['USER_LAST_NAME']
+  user_middle_name = ENV['USER_MIDDLE_NAME']
+  user_phone = ENV['USER_PHONE']
+  user_state = ENV['USER_STATE']
+
+  separate_billing_address = ENV['SEPARATE_BILLING_ADDRESS'] == "true"
+
+  user_billing_zip_code = ENV['USER_BILLING_ZIP_CODE']
+  user_billing_address_1 = ENV['USER_BILLING_ADDRESS_1']
+  user_billing_address_2 = ENV['USER_BILLING_ADDRESS_2']
+  user_billing_address_3 = ENV['USER_BILLING_ADDRESS_3']
+  user_billing_city = ENV['USER_BILLING_CITY']
+  user_billing_first_name = ENV['USER_BILLING_FIRST_NAME']
+  user_billing_last_name = ENV['USER_BILLING_LAST_NAME']
+  user_billing_middle_name = ENV['USER_BILLING_MIDDLE_NAME']
+  user_billing_phone = ENV['USER_BILLING_PHONE']
+  user_billing_state = ENV['USER_BILLING_STATE']
+  user_billing_country = ENV['USER_BILLING_COUNTRY']
+
+  credit_card_type = ENV['CC_TYPE']
+  credit_card_num = ENV['CC_NUM']
+  credit_card_holder_name = ENV['CC_HOLDER_NAME']
+  credit_card_month =ENV['CC_MONTH']
+  credit_card_year = ENV['CC_YEAR']
+  credit_card_ccv = ENV['CC_CCV']
+
+  coupon_code = ENV['COUPON_CODE']
+
+
+  retailer = ENV['RETAILER']
+
+  options = {
+    :url => homepage_url,
+
+    :expected_tax => expected_tax,
+    :expected_total_price => expected_total_price,
+    :expected_shipping => expected_shipping,
+    :expected_item_price => expected_item_price,
+    :expected_description => expected_description,
+    :product_url => product_url,
+    :scc_string => scc_string,
+    :vendor_scc_value => vendor_scc_value,
+    :user_email_address => user_email_address,
+    :user_zip_code => user_zip_code,
+    :user_address_1 => user_address_1,
+    :user_address_2 => user_address_2,
+    :user_address_3 => user_address_3,
+    :user_city => user_city,
+    :user_first_name => user_first_name ,
+    :user_last_name => user_last_name,
+    :user_middle_name => user_middle_name,
+    :user_phone => user_phone,
+    :user_state => user_state,
+
+    :separate_billing_address => separate_billing_address,
+
+    :user_billing_zip_code => user_billing_zip_code,
+    :user_billing_address_1 => user_billing_address_1,
+    :user_billing_address_2 => user_billing_address_2,
+    :user_billing_address_3 => user_billing_address_3,
+    :user_billing_city => user_billing_city,
+    :user_billing_first_name => user_billing_first_name ,
+    :user_billing_last_name => user_billing_last_name,
+    :user_billing_middle_name => user_billing_middle_name,
+    :user_billing_phone => user_billing_phone,
+    :user_billing_state => user_billing_state,
+    :user_billing_country => user_billing_country,
+
+    :credit_card_type => credit_card_type,
+    :credit_card_num => credit_card_num,
+    :credit_card_holder_name => credit_card_holder_name,
+    :credit_card_month => credit_card_month,
+    :credit_card_year => credit_card_year,
+    :credit_card_ccv => credit_card_ccv,
+
+    :coupon_code => coupon_code,
+  }
+
+  require File.join(File.dirname(__FILE__),"managers",retailer)
+
+  manager_klass = Class.const_get(retailer)
+  manager = manager_klass.new(options)
+
+  SCREENSHOT_FOLDER = File.join(File.expand_path(File.dirname(__FILE__)),"screenshots")
+  FileUtils::mkdir_p SCREENSHOT_FOLDER
+
+  manager.run
+  
+end
+
+
+desc <<-EOD
+  PRODUCT_URL="url"                             : The item's product url
+
+  SCC_STRING="TITANIUM\302\240\302\240\302\24037/7 C" : The actual string text that shows up for the select element
+  SCC_VALUE="1689949377299738"                  : The product code for the selected size/color config
+  Either SCC_VALUE or SCC_STRING is necessary
+
+  EXPECTED_ITEM_PRICE="150.00"                       :What we expect the price to be
+  ZIP_CODE="90210"            : User zip code
+  EXPECTED_SHIPPING="14.50"
+  EXPECTED_TOTAL_PRICE="204.99:
+  USER_EMAIL_ADDRESS="phyo@xxx.com"
+EOD
+task :checkout do
+  require 'json'
+  require 'mechanize'
+
+  class Mechanize
+    def post(url, query= {}, headers = {})
+      node = {}
+      # Create a fake form
+      class << node
+        def search(*args); []; end
+      end
+      node['method'] = 'POST'
+      node['enctype'] = 'application/x-www-form-urlencoded'
+
+      form = Form.new(node)
+      query.each { |k,v|
+        if v.is_a?(IO)
+          form.enctype = 'multipart/form-data'
+          ul = Form::FileUpload.new(k.to_s,::File.basename(v.path))
+          ul.file_data = v.read
+          form.file_uploads << ul
+        else
+          form.fields << Form::Field.new(k.to_s,v)
+        end
+      }
+      post_form(url, form, headers)
+    end
+  end
+
+  def verify_cookie(agent,options = {})
+    items_in_bag_cookie = agent.cookies.select{|x| x.name == options[:name]}.first
+    if items_in_bag_cookie.nil? || (options[:value_should_not_equal] ? items_in_bag_cookie.value == :value_should_not_equal : false)
+      raise options[:error_message]
+    end
+  end
+  def get(agent,options = {})
+    raise "No URL given" unless options[:url]
+
+    data = agent.get(options[:url], options[:headers])
+
+    format_data data, options[:treat_response_as]
+  end
+  def post(agent,options = {})
+    raise "No URL given" unless options[:url]
+
+    data = agent.post(options[:url], options[:params], options[:headers])
+
+    format_data data, options[:treat_response_as]
+  end
+
+  def format_data(noko_page, treat_as)
+    return noko_page unless treat_as
+
+    case treat_as
+    when :json
+      JSON::parse(noko_page.content)
+    else
+      raise "Invalid way to interpret response data"
+    end
+  end
+
+  product_url = ENV['PRODUCT_URL']
+  scc_string = ENV['SCC_STRING'] ? ENV['SCC_STRING'].gsub(/\\/,'\\') : nil
+  vendor_scc_value = ENV['VENDOR_SCC_VALUE']
+  expected_item_price = ENV['EXPECTED_ITEM_PRICE']
+  expected_vendor_key = ENV['VENDOR_KEY']
+  expected_description = ENV['DESCRIPTION']
+
+  expected_shipping = ENV['EXPECTED_SHIPPING']
+  expected_total_price = ENV['EXPECTED_TOTAL_PRICE']
+  expected_tax = ENV['EXPECTED_TAX']
+
+  user_zip_code = ENV['ZIP_CODE']
+  user_email_address = ENV['USER_EMAIL_ADDRESS']
+  user_address_1 = ENV['USER_ADDRESS_1']
+  user_address_2 = ENV['USER_ADDRESS_2']
+  user_address_3 = ENV['USER_ADDRESS_3']
+  user_city = ENV['USER_CITY']
+  user_first_name = ENV['USER_FIRST_NAME']
+  user_last_name = ENV['USER_LAST_NAME']
+  user_middle_name = ENV['USER_MIDDLE_NAME']
+  user_phone = ENV['USER_PHONE']
+  user_state = ENV['USER_STATE']
+
+  args_to_verify = [
+    {:predicate => product_url.nil?, :error_msg => "No product url given"},
+    {:predicate => (vendor_scc_value.nil? && scc_string.nil?), :error_msg => "SCC selection not provided"},
+    {:predicate => expected_item_price.nil?, :error_msg => "No expected price given"},
+    {:predicate => expected_vendor_key.nil?, :error_msg => "No product vendor_key given"},
+    {:predicate => expected_description.nil?, :error_msg => "No product description given"},
+    {:predicate => expected_shipping.nil?, :error_msg => "No expected shipping price given given"},
+    {:predicate => expected_total_price.nil?, :error_msg => "No expected total price given"},
+    {:predicate => expected_tax.nil?, :error_msg => "No expected_tax given"},
+
+    {:predicate => user_email_address.nil?, :error_msg => "No user email address given"},
+    {:predicate => user_zip_code.nil?, :error_msg => "No user zip_code given"},
+    {:predicate => user_address_1.nil?, :error_msg => "No user address 1 given"},
+    {:predicate => user_address_3.nil?, :error_msg => "No user address 3 given"},
+    {:predicate => user_city.nil?, :error_msg => "No user city given"},
+    {:predicate => user_first_name.nil?, :error_msg => "No user first_name given"},
+    {:predicate => user_last_name.nil?, :error_msg => "No user last_name given"},
+    {:predicate => user_middle_name.nil?, :error_msg => "No user middle name given"},
+    {:predicate => user_phone.nil?, :error_msg => "No user phone given"},
+    {:predicate => user_state.nil?, :error_msg => "No user state given"},
+  ]
+  args_to_verify.each do |data|
+    if data[:predicate]
+      raise data[:error_msg]
+    end
+  end
+
+
+  agent = Mechanize.new
+  agent.user_agent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:2.0.1) Gecko/20100101 Firefox/4.0.1"
+#  agent.log = Logger.new(STDOUT)
+
+  puts "Getting product detail page"
+  prod_page = get(agent, :url => product_url)
+
+  size_options = prod_page.search("select[name='ADD_CART_ITEM_ARRAY<>sku_id'] option")
+  if scc_string
+    size_config_prod_code = size_options.select{|x| x.text.match(/#{scc_string}/)}.first.attr('value') rescue nil
+  elsif vendor_scc_value
+    size_config_prod_code = vendor_scc_value
+  end
+
+  raise "Invalid size config prod code" if size_config_prod_code.nil?
+
+  hidden_form_vals = prod_page.search("form[name='saks_add_to_cart'] input").map{|element|
+    [element.attr('name'),element.attr('value')]
+  }
+  hidden_form_vals << ["ADD_CART_ITEM_ARRAY<>sku_id",size_config_prod_code]
+  hidden_form_vals << ["checkout.x",7]
+  hidden_form_vals << ["checkout.y",8]
+
+  POST_REQUEST_URL = "http://www.saksfifthavenue.com/main/ProductDetail.jsp"
+  
+  post(agent, :url => POST_REQUEST_URL, :params => hidden_form_vals)
+
+  verify_cookie agent, :name => "saksBagNumberOfItems", :value_should_not_equal => "0", :error_message => "Could not add item to shopping bag"
+  
+  VERIFY_SHOPPING_CART_CONTENTS_URL = "https://www.saksfifthavenue.com/checkout/SaksBag.jsp"
+  shopping_cart_ssl_page = get(agent,:url => VERIFY_SHOPPING_CART_CONTENTS_URL)
+  
+  params = [["bmForm","initialize_saks_bag_service"]]
+  headers = {"X-Requested-With" => "XMLHttpRequest","Accept" => "application/json"}
+  
+  shopping_cart_json = post(agent, :url => VERIFY_SHOPPING_CART_CONTENTS_URL, :params => params, :headers => headers, :treat_response_as => :json)
+
+  json_data = JSON::parse(shopping_cart_json.content)
+  to_verify = [
+    {:field => json_data["cartSummary"]["itemsTotal"].match(/([\d\,\.]+)$/), :expected => expected_item_price, :error => "Expected price does not match"},
+    {:field => json_data["cartItems"].first["productDetailUrl"].match(/prd_id=(\d+)/), :expected => expected_vendor_key, :error => "Expected vendor_key does not match."},
+    {:field => json_data["cartItems"].first["shortDescription"], :expected => expected_description, :error => "Expected description does not match"},
+    {:field => json_data["cartItems"].first["UPCId"], :expected => size_config_prod_code, :error => "Expected UPC sku does not match"},
+  ].each do |data|
+    present = data[:field].is_a?(MatchData) ? data[:field][1] : data[:field] rescue nil
+    unless present == data[:expected]
+      raise data[:error]
+    end
+  end
+
+  # verify shipping based on zip code
+  shipping_method_id = json_data["shippingMethods"].first["id"]
+  CHECK_ZIP_CODE_URL = "https://www.saksfifthavenue.com/checkout/checkout.jsp"
+  final_total_json = agent.post(CHECK_ZIP_CODE_URL,
+                                  [["bmForm","update_cart_summary_service"],
+                                   ["selectedMethodId",shipping_method_id],
+                                   ["zipCode", user_zip_code]
+    ],
+                                  {"X-Requested-With" => "XMLHttpRequest",
+                                    "Accept" => "application/json",
+                                  }
+                                )
+
+  final_total_json = JSON.parse(final_total_json.content)
+
+
+  to_verify = [
+    {:field => final_total_json["cartSummary"]["tax"].match(/([\d\,\.]+)$/), :expected => expected_tax, :error => "Expected tax does not match"},
+    {:field => final_total_json["cartSummary"]["shippingCost"].match(/([\d\,\.]+)$/), :expected => expected_shipping, :error => "Expected shipping does not match"},
+    {:field => final_total_json["cartSummary"]["grandTotal"].match(/([\d\,\.]+)$/), :expected => expected_total_price, :error => "Expected total price does not match"},
+  ].each do |data|
+    present = data[:field].is_a?(MatchData) ? data[:field][1] : data[:field] rescue nil
+    unless present == data[:expected]
+      raise data[:error]
+    end
+  end
+
+  agent.get("https://www.saksfifthavenue.com/checkout/checkout.jsp#init1")
+
+  LOGIN_AS_GUEST_URL = "https://www.saksfifthavenue.com/checkout/checkout.jsp#init1"
+  login_as_user_page = agent.post(LOGIN_AS_GUEST_URL,
+                                  [["bmForm","login_as_guest_user"],
+                                   ["LOGIN<>userid",CGI.escape(user_email_address)],
+    ],
+                                  {"X-Requested-With" => "XMLHttpRequest",
+                                    "Accept" => "application/json",
+                                  }
+                                )
+  checkout_page = agent.get("https://www.saksfifthavenue.com/checkout/SaksBag.jsp?failure=true&flcxtpqrz=0")
+#  final_total_json = JSON.parse(login_as_user.content)
+
+  SHIPPING_ADDRESS_PAGE_URL = "https://www.saksfifthavenue.com/checkout/checkout.jsp"
+  shipping_address_page = agent.post(SHIPPING_ADDRESS_PAGE_URL,
+                                  [["bmForm","validate_ship_address_service"],
+                                   ["SHIP_TO_ADDRESS<>address1", user_address_1],
+                                   ["SHIP_TO_ADDRESS<>address2", user_address_2],
+                                   ["SHIP_TO_ADDRESS<>address3", user_address_3],
+                                   ["SHIP_TO_ADDRESS<>city", user_city],
+                                   ["SHIP_TO_ADDRESS<>indGift",	"4"],
+                                   ["SHIP_TO_ADDRESS<>firstName", user_first_name],
+                                   ["SHIP_TO_ADDRESS<>lastName", user_last_name],
+                                   ["SHIP_TO_ADDRESS<>middleName", user_middle_name[0..0]],
+                                   ["SHIP_TO_ADDRESS<>phone", user_phone],
+                                   ["SHIP_TO_ADDRESS<>postal", user_zip_code],
+                                   ["SHIP_TO_ADDRESS<>state_cd", user_state],
+                                   ["SHIP_TO_ADDRESS<>uad_id", ""],
+                                   ["count",	"1"],
+                                   ["setAsBillAddress", "true"],
+                                   ["shiptomult",	"false"],
+                                  ],
+                                  {"X-Requested-With" => "XMLHttpRequest",
+                                    "Accept" => "application/json",
+                                  }
+                                )
+  shipping_address_page_response = JSON.parse(shipping_address_page.content)
+  if shipping_address_page_response["errors"]
+    raise shipping_address_page_response["errors"].map{|x| x["message"]}.join(" ")
+  elsif shipping_address_page_response["verifyLevel"] != "Verified"
+    raise shipping_address_page_response.map{|x| x["message"]}.join(" ")
+  end
+
+  SHIPPING_ADDRESS_PAGE_CONTINUE_URL = "https://www.saksfifthavenue.com/checkout/checkout.jsp"
+  shipping_address_continue_page = agent.post(SHIPPING_ADDRESS_PAGE_CONTINUE_URL,
+                                  [["bmForm","add_address_and_continue_service"],
+                                   ["SHIP_TO_ADDRESS<>address1", user_address_1],
+                                   ["SHIP_TO_ADDRESS<>address2", user_address_2],
+                                   ["SHIP_TO_ADDRESS<>address3", user_address_3],
+                                   ["SHIP_TO_ADDRESS<>city", user_city],
+                                   ["SHIP_TO_ADDRESS<>indGift",	"4"],
+                                   ["SHIP_TO_ADDRESS<>firstName", user_first_name],
+                                   ["SHIP_TO_ADDRESS<>lastName", user_last_name],
+                                   ["SHIP_TO_ADDRESS<>middleName", user_middle_name[0..0]],
+                                   ["SHIP_TO_ADDRESS<>phone", user_phone],
+                                   ["SHIP_TO_ADDRESS<>postal", user_zip_code],
+                                   ["SHIP_TO_ADDRESS<>state_cd", user_state],
+                                   ["SHIP_TO_ADDRESS<>uad_id", ""],
+                                   ["count",	"1"],
+                                   ["setAsBillAddress", "true"],
+                                   ["shiptomult",	"false"],
+                                  ],
+                                  {"X-Requested-With" => "XMLHttpRequest",
+                                    "Accept" => "application/json",
+                                  }
+                                )
+  shipping_address_continue_page_response = JSON.parse(shipping_address_continue_page.content)
+  if shipping_address_continue_page_response["errors"]
+    raise shipping_address_continue_page_response["errors"].map{|x| x["message"]}.join(" ")
+  elsif shipping_address_continue_page_response["verifyLevel"] && shipping_address_continue_page_response["verifyLevel"] != "Verified"
+    raise shipping_address_continue_page_response.map{|x| x["message"]}.join(" ")
+  end
+
+  VERIFY_CREDIT_CARD_CONTINUE_URL = "https://www.saksfifthavenue.com/checkout/checkout.jsp"
+  verify_credit_card_continue = agent.post(VERIFY_CREDIT_CARD_CONTINUE_URL,
+                                  [["bmForm","submit_payment_service"],
+                                    ["ACCOUNT<>accountNumber", ""],
+                                    ["ACCOUNT<>notificationEmail", ""],
+                                    ["CREDIT_CARD<>cardBrand_cd",	"VISA"],
+                                    ["CREDIT_CARD<>cardMonth_cd", 2],
+                                    ["CREDIT_CARD<>cardNum",	"4122323212345698"],
+                                    ["CREDIT_CARD<>cardYear_cd",	"2014"],
+                                    ["CREDIT_CARD<>cardholderName",	"Not American Express"],
+                                    ["USER_ACCOUNT<>ATR_passwordHint"	, ""],
+                                    ["USER_ACCOUNT<>confirmPassword", ""],
+                                    ["USER_ACCOUNT<>password", ""],
+                                    ["card_cvNumber",	"999"],
+                                    ["promoCode",""],
+                                  ],
+                                  {"X-Requested-With" => "XMLHttpRequest",
+                                    "Accept" => "application/json",
+                                  }
+                                )
+
+
+  verify_credit_card_continue_response = JSON.parse(verify_credit_card_continue.content)
+  if verify_credit_card_continue_response["creditCardList"]
+    verify_credit_card_continue_response["creditCardList"].each do |k,v|
+      raise "#{k} is missing" if v.nil?
+    end
+  elsif verify_credit_card_continue_response["errors"]
+    raise verify_credit_card_continue_response["errors"].map{|x| x["message"]}.join(" ")
+  end
+
+  # 
+  SUBMIT_CREDIT_CARD_CONTINUE_URL = "https://www.saksfifthavenue.com/checkout/checkout.jsp"
+  submit_credit_card_continue = agent.post(SUBMIT_CREDIT_CARD_CONTINUE_URL,
+                                  [["bmForm","submit_order_service"],
+#                                    ["ACCOUNT<>accountNumber", ""],
+#                                    ["ACCOUNT<>notificationEmail", ""],
+#                                    ["CREDIT_CARD<>cardBrand_cd",	"VISA"],
+#                                    ["CREDIT_CARD<>cardMonth_cd", 2],
+#                                    ["CREDIT_CARD<>cardNum",	"4122323212345698"],
+#                                    ["CREDIT_CARD<>cardYear_cd",	"2014"],
+#                                    ["CREDIT_CARD<>cardholderName",	"Not American Express"],
+#                                    ["USER_ACCOUNT<>ATR_passwordHint"	, ""],
+#                                    ["USER_ACCOUNT<>confirmPassword", ""],
+#                                    ["USER_ACCOUNT<>password", ""],
+#                                    ["card_cvNumber",	"999"],
+#                                    ["promoCode",""],
+                                  ],
+                                  {"X-Requested-With" => "XMLHttpRequest",
+                                    "Accept" => "application/json",
+                                  }
+                                )
+
+
+  submit_credit_card_continue_response = JSON.parse(submit_credit_card_continue.content)
+  if submit_credit_card_continue_response["creditCardList"]
+    submit_credit_card_continue_response["creditCardList"].each do |k,v|
+      raise "#{k} is missing" if v.nil?
+    end
+  elsif submit_credit_card_continue_response["errors"]
+    raise submit_credit_card_continue_response["errors"].map{|x| x["message"]}.join(" ")
+  end
+
+
+  1
+
+
+
+end

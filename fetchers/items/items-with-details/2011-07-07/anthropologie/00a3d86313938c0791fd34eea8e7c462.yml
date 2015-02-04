@@ -1,0 +1,120 @@
+--- 
+:extended_description: 
+  :meta_keywords: ""
+  :full_description: |-
+    <div id="productDescription"> 
+    			<!-- smilaram Added valueishtml attribute to the valueof tag for the task/issue id:464 -->
+    			Cartonnier's skewed modal shirt forms a gathering of streamlined pleats and perky ruffles.
+    <ul>
+    <li>Modal
+    </li>
+    <li>Machine wash
+    </li>
+    <li>27"L
+    </li>
+    <li>Imported
+    </li>
+    </ul>
+    </div>
+  :meta_description: Dorsal Tee
+:product_image: 
+  :height: "255"
+  :url: http://images.anthropologie.com/is/image/Anthropologie/21109111_049_b?$redesign-product-zoom$
+  :buffer_width: 125
+  :width: "170"
+:description: Dorsal Tee
+:additional_images: 
+  :all: 
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_049_b?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_049_c?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_049_m1?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_008_b?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_008_c?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_008_m1?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_079_b?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_079_c?$redesign-openLarger$
+  - http://images.anthropologie.com/is/image/Anthropologie/21109111_079_m1?$redesign-openLarger$
+  :primary: http://images.anthropologie.com/is/image/Anthropologie/21109111_049_b?$redesign-openLarger$
+:dept: :womens
+:brand_bm: 965
+:related_vendor_keys: 
+- "20708137"
+- "21043211"
+- "21121181"
+- "21109954"
+:vendor_name: anthropologie
+:department_bm: 0
+:vendor_key: "21109111"
+:category_data: 
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=CLOTHES&navAction=middle&navCount=270&isSortBy=true&pushId=CLOTHES-KNITSTEES&id=CLOTHES-KNITSTEES-STRIPE
+    "@_rails_html_safe": false
+  :name: Striped
+  :path: 
+  - Clothes
+  - Knits & Tees
+  - Striped
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=CLOTHES&navAction=middle&navCount=270&isSortBy=true&pushId=CLOTHES-KNITSTEES&id=CLOTHES-KNITSTEES-PLEATS
+    "@_rails_html_safe": false
+  :name: Pleats & Twists
+  :path: 
+  - Clothes
+  - Knits & Tees
+  - Pleats & Twists
+:clothing_type: 
+  :group: top
+  :bm: 19
+:clothing_type_bm: 19
+:scc: 
+- :color: YELLOW
+  :size_bm: 0
+  :size_type_bm: 0
+- :color: YELLOW
+  :size_bm: 1
+  :size_type_bm: 0
+- :color: YELLOW
+  :size_bm: 2
+  :size_type_bm: 0
+- :color: YELLOW
+  :size_bm: 3
+  :size_type_bm: 0
+- :color: YELLOW
+  :size_bm: 4
+  :size_type_bm: 0
+- :color: GREY MOTIF
+  :size_bm: 0
+  :size_type_bm: 0
+- :color: GREY MOTIF
+  :size_bm: 1
+  :size_type_bm: 0
+- :color: GREY MOTIF
+  :size_bm: 2
+  :size_type_bm: 0
+- :color: GREY MOTIF
+  :size_bm: 3
+  :size_type_bm: 0
+- :color: BLUE MOTIF
+  :size_bm: 0
+  :size_type_bm: 0
+- :color: BLUE MOTIF
+  :size_bm: 1
+  :size_type_bm: 0
+- :color: BLUE MOTIF
+  :size_bm: 2
+  :size_type_bm: 0
+- :color: BLUE MOTIF
+  :size_bm: 3
+  :size_type_bm: 0
+- :color: BLUE MOTIF
+  :size_bm: 4
+  :size_type_bm: 0
+- :color: GREY MOTIF
+  :size_bm: 4
+  :size_type_bm: 0
+:dynamic: 
+  :currency: USD
+  :sale_price: 
+  :notice: ""
+  :original_price: "58.00"
+:product_url: http://www.anthropologie.com/anthro/catalog/productdetail.jsp?id=21109111&catId=CLOTHES-KNITSTEES-PLEATS&pushId=CLOTHES-KNITSTEES-PLEATS&popId=CLOTHES-KNITSTEES&navAction=middle&navCount=90&color=049&isProduct=true&fromCategoryPage=true&templateType=D

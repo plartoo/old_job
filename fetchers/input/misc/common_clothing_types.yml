@@ -1,0 +1,127 @@
+--- 
+:SUNGLASSES:
+  :bm: 26
+  :group: :accessories
+:SET: 
+  :bm: 23
+  :group: :top
+:DRESS_SHIRT: 
+  :bm: 7
+  :group: :top
+:DRESS: 
+  :bm: 1
+  :group: :bottom
+:TSHIRT: 
+  :bm: 19
+  :group: :top
+:ACCESSORIES: 
+  :bm: 18
+  :group: :accessories
+:SPORTS_SHIRT_TANK: 
+  :bm: 28
+  :group: 
+:ATHLETIC_SHIRT: 
+  :bm: 21
+  :group: :top
+:SPORTS_PANTS: 
+  :bm: 31
+  :group: 
+:SPORTS_JACKET: 
+  :bm: 33
+  :group: 
+:SPORTS_ACCESSORIES: 
+  :bm: 37
+  :group: 
+:SPORTS_WATCH: 
+  :bm: 36
+  :group: 
+:JEWELRY: 
+  :bm: 9
+  :group: :accessories
+:SWEATER: 
+  :bm: 17
+  :group: :top
+:DRESS_PANTS: 
+  :bm: 2
+  :group: :bottom
+:INTIMATES: 
+  :bm: 12
+  :group: :intimate
+:BODY_SUIT: 
+  :bm: 22
+  :group: :top
+:SPORTS_SHIRT_LONG: 
+  :bm: 26
+  :group: 
+:SPORTS_HAT: 
+  :bm: 35
+  :group: 
+:CASUAL_SHIRT: 
+  :bm: 8
+  :group: :top
+:SPORTS_HRM: 
+  :bm: 38
+  :group: 
+:ATHLETIC_PANTS: 
+  :bm: 20
+  :group: :bottom
+:SPORTCOAT: 
+  :bm: 4
+  :group: :top
+:SLEEPWEAR: 
+  :bm: 11
+  :group: :top
+:BELT: 
+  :bm: 15
+  :group: :bottom
+:TIE: 
+  :bm: 25
+  :group: :accessories
+:SHORTS: 
+  :bm: 24
+  :group: :bottom
+:SKIRT: 
+  :bm: 0
+  :group: :bottom
+:SPORTS_SHIRT_SHORT: 
+  :bm: 27
+  :group: 
+:SPORTS_BRA: 
+  :bm: 30
+  :group: 
+:SPORTS_SHOE: 
+  :bm: 40
+  :group: 
+:CASUAL_PANTS: 
+  :bm: 3
+  :group: :bottom
+:JEANS: 
+  :bm: 6
+  :group: :bottom
+:SWIMWEAR: 
+  :bm: 14
+  :group: :top
+:BAG: 
+  :bm: 13
+  :group: :accessories
+:SPORTS_VEST: 
+  :bm: 34
+  :group: 
+:OUTERWEAR: 
+  :bm: 16
+  :group: :top
+:SHOES: 
+  :bm: 10
+  :group: :shoe
+:SPORTS_SHIRT_SLEEVELESS: 
+  :bm: 29
+  :group: 
+:SPORTS_SOCKS: 
+  :bm: 39
+  :group: 
+:SPORTS_SHORTS: 
+  :bm: 32
+  :group: 
+:SUIT: 
+  :bm: 5
+  :group: :top

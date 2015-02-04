@@ -1,0 +1,796 @@
+= Fetchers
+
+== Development Process
+
+You start writing a fetcher by running <tt>generate:fetcher</tt> rake
+task. For example
+
+  rake generate:fetcher VENDOR_PATH=nine_west VENDOR_MODULE=NineWest
+
+This creates the directory <tt>fetchers/nine_west</tt> and the file
+<tt>fetchers/nine_west/nine_west.rb</tt>.
+
+The development process is iterative. First define categories (see
+below) and run
+
+  rake test:categories VENDOR_PATH=nine_west VENDOR_MODULE=NineWest
+
+to test it.
+
+When you are satisfied with the results, run
+
+  rake generate:categories VENDOR_PATH=nine_west VENDOR_MODULE=NineWest
+
+to generate the file
+<tt>fetchers/nine_west/nine_west_categories.yml</tt>. If you defined
+the <tt>DEPT</tt> parameter in the rake task, all of the categories
+will be set with that department. Otherwise, you must go through and
+define a department for each category.
+
+Once categories are done, define <tt>items</tt> in the fetcher and
+then run
+
+  rake test:items VENDOR_PATH=nine_west VENDOR_MODULE=NineWest
+
+to test. By default, this will scrape items off of the first active
+category in the categories yaml file. You can define various
+environment variables when running the above rake task if you want to
+scrape a specific category or limit the number of items that are
+output.
+
+Once items are done (there is nothing to be generated), define size
+color configuration scraping. There are two ways to test this. Either
+run
+
+  rake test:sccs VENDOR_PATH=nine_west VENDOR_MODULE=NineWest URL=$url CLOTHING_TYPE=$clothing_type DEPT=$dept
+
+or run
+
+  rake test:fetch VENDOR_PATH=nine_west VENDOR_MODULE=NineWest
+
+You will notice that one of these is substantially shorter than the
+other. <tt>test:sccs</tt> requires you to specify the item you want to
+scrape for and is thus more suited to targeted
+debugging. <tt>test:fetch</tt> will simply go through the entire fetch
+process--with various optional limiters--including scc scraping, and
+give you results at the end.
+
+
+== Basic Structure
+
+A fetcher has three components: categories, items, and size colors
+configurations (sccs). A fetcher definiton looks like this:
+
+ class Splendid < Fetcher
+
+   categories :main_url => 'http://www.splendid.com' do
+     ancestor do
+       is "ul"
+       with :class => "main-nav"
+     end
+
+     categories do
+       ancestor do
+	 is "ul"
+	 with :class => "sidenav-static"
+       end
+
+       only /sale/i
+
+       categories :embed_for => /girl|jr|youth|toddler|baby/i do
+	 ancestor do
+	   is "ul"
+	   with :class => "submenu"
+	 end
+
+	 only /sale/i
+       end
+     end
+   end
+
+   items :main_url => 'http://www.splendid.com', :brand => 'Splendid' do
+     item_block do
+       is "td"
+       ancestor do
+	 is "ul"
+	 with :class => "product-list"
+       end
+     end
+
+     vendor_key /\/(\d+)\.html/
+
+     description do
+       is "a"
+       with :id => /ThumbnailNameHL/
+     end
+
+     product_url do
+       is "a"
+     end
+
+     product_image do
+       is "img"
+       with :id => /ThumbnailImage/
+
+       width 128
+       height 165
+     end
+
+     original_price do
+       is "strike"
+     end
+
+     sale_price do
+       is "div"
+       with :class => "price-list-sale"
+
+       ancestor do
+	 is "a"
+	 with :id => /SalePrice/
+       end
+     end
+
+     pagination do
+       transformer do |url|
+	 cat_id = /(\d+)\.html/.match(url)[1] rescue nil
+	 "http://www.splendid.com/store/productslist.aspx?categoryid=#{cat_id}&Page=0"
+       end
+     end
+   end
+
+   sccs SCCFromJavaScriptScraper do
+     pattern /addProduct.*?Prd\(.*?,"(.*?)",.*?,"(.*?)".*?"1"\)/
+
+     mappings :size => 1, :color => 2
+   end
+
+ end
+
+== Condition Sets
+
+Anything that specifies an element of html can be defined by a
+ConditionSet.
+
+  sale_price do
+    is "div"
+    with :class => "price-list-sale"
+
+    ancestor do
+      is "a"
+      with :id => /SalePrice/
+    end
+  end
+
+A ConditionSet requires you to define the type of HTML element,
+e.g. "div" as above. You can make the definition more and more
+specific by applying conditions. A condition takes the form
+  
+  with :class => "price-list-sale"
+
+as above. This requires a matching node to have a class attribute
+equal to the string "price-list-sale." You can also supply a regular
+expression
+
+  with :class => /price(s)?/
+
+which requires a matching node to have a class attribute that matches
+the regular expression. Multiple conditions can be a single call to
+with
+
+  with :class => "price-list-sale", :style => /color:/
+
+or multiple calls
+
+  with :class => "price-list-sale"
+  with :style => /color:/
+
+ConditionSets can also be increasingly specified by defining
+ancestors. The above definition of sale_price matches a div with class
+"price-list-sale" that is the descendant of an anchor with id that
+matches the regular expression /SalePrice/. Calls to ancestor are
+arbitrarily embeddable, so
+
+  sale_price do
+    is "div"
+    ancestor do
+      is "a"
+      ancestor do
+        is "td"
+	ancestor do
+	  ...
+	end
+      end
+    end
+  end
+
+is valid.
+
+Most condition set definitions can be overriden with a specific
+selector (xpath or css).
+
+  sale_price :selector => 'div.price-list-sale'
+
+== Categories
+
+A category definition is actually a condition set. 
+
+   categories :main_url => 'http://www.splendid.com' do
+     ancestor do
+       is "ul"
+       with :class => "main-nav"
+     end
+
+     categories do
+       ancestor do
+         is "ul"
+         with :class => "sidenav-static"
+       end
+
+       only /sale/i
+
+       categories :embed_for => /girl|jr|youth|toddler|baby/i do
+         ancestor do
+           is "ul"
+           with :class => "submenu"
+         end
+
+         only /sale/i
+       end
+     end
+   end
+
+If you do not specify the type of HTML element, then it assumes an
+implied
+
+  is "a"
+
+The <tt>categories</tt> method also takes an options hash. At the very
+least, <tt>:main_url</tt> must be defined, but it also takes
+<tt>:start_url</tt> and <tt>from_detail_page</tt>. The former takes a
+complete url of a page to get categories from if not the main url, and
+the latter should be set to true if some parts of the item need to be
+scraped from the detail page.
+
+A Category is defined by a url, a department, a clothing type, and a
+name. The name is taken from the string content of the HTML element
+that the url is taken from.
+
+If you only want to grab certain categories, but they all have the
+same HTML structure, then you can choose to ignore categories based on
+their names. You can either specify which categories not to take
+
+  ignore /all|paper/i
+
+or which categories to take
+
+  only /tops|pants/
+
+== Items
+
+The basic idea behind item scraping is the item block. You define some
+HTML element that contains an entire element. This might be a
+<tt>div</tt> with a specific class or a <tt>td</tt> in some table, but
+the block must contain one and only one item.
+
+The call to <tt>items</tt> looks like this
+
+  items :main_url => 'http://www.example.com' do
+    item_block do
+      ...
+    end
+
+    vendor_key /(.*)/
+
+    description do
+      ...
+    end
+
+    product_url do
+      ...
+    end
+
+    product_image do
+      ...
+    end
+
+    original_price do
+      ...
+    end
+
+    sale_price do
+      ...
+    end
+
+    paginator do
+      ...
+    end
+  end
+
+The method takes an options hash much like <tt>categories</tt> and you
+define each attribute of the item as ConditionSets.
+
+The exception to this is <tt>product_image</tt> which is a special
+kind of ConditionSet called an ImageConditionSet. You must define
+dimensions. You can either define a hard dimension ("the width is this
+number")
+
+  product_image do
+    is "img"
+    
+    width 140
+    height 140
+  end
+
+or a soft dimension ("if you do not find a width attribute in the HTML
+tag, then the width is this")
+
+  product_image do
+    is "img"
+
+    default_width 140
+    default_height 140
+  end
+
+You can also scale the image by specifying either a dimension to
+proportionally scale down to
+
+  product_image do
+    is "img"
+    
+    default_width 170
+    default_height 231
+
+    scale_to_width 145
+  end
+
+or specify a percentage of the original image size to take
+
+  product_image do
+    is "img"
+    
+    default_width 170
+    default_height 231
+
+    scale "80%"
+  end 
+
+The <tt>vendor_key</tt> is a regular expression that is matched
+against the item's url. The first group is taken to be the item's
+unique vendor key. It is necessary that this number be unique as the
+framework keeps items in a hash of <tt>vendor_key => item</tt> to
+ensure uniqueness.
+
+=== Custom Scraping
+
+Sometimes the ConditionSet model doesn't quite work out. In this case,
+you can fall back into straight ruby. Any item element,
+i.e. product_url, product_image, etc., can have _custom added to the
+end of the method name. The method will then be given whatever element
+you defined in <tt>item_block</tt>
+
+  product_url_custom do |item_div|
+    item_div.search('a')
+  end
+
+The yielded element is a <tt>Nokogiri::XML::Node</tt> and the expected
+turn value is a <tt>Nokogiri::XML::Node</tt>.
+
+If, instead, you want to directly determine the value you can add an
+argument to the method's option hash.
+
+  description_custom :direct_value => true do |item_div|
+    item_div.search('img')["alt"]
+  end
+
+The expected return value in this case is whatever value the item
+attribute should be. Note that in the case of product_image, you would
+need to manually create an ItemImage object.
+
+=== Detail Page Scraping
+
+Sometimes certain pieces of data are only available on the detail page
+of an item. In this case you need to both tell the item scraper that
+it will need to scrape things from the detail page and which
+attributes need to be taken from the detail page. The former is done
+in <tt>items</tt> options hash.
+
+  items :main_url => 'http://example.com', :from_detail_page => true
+    ...
+  do
+
+The latter is done in the attribute's options hash.
+
+  original_price :from_detail_page => true do
+    ...
+  end
+
+The item attribute method is still a condition set, but it is a
+condition set matching against the entire detail page, so you may need
+to be more specific with your conditions.
+
+=== Navigation Overriding
+
+Sometimes, for example with crazy Flash stuff, the category url isn't
+enough. You need to do some work to find the items. You can override
+the page that the item scraper scrapes off of by calling
+<tt>navigate</tt>.
+
+    navigate do |agent|
+      content = agent.page.content.gsub(/\\(r|n|t)?/, '').delete("\n\r\t").sub(/^.*?\/script>/, '').sub(/>',.*$/, '')
+      WWW::Mechanize::Page.new(nil, {'content-type', 'text/html'}, content)
+    end
+
+The method takes the ParseAgent after it has navigated to the category
+url and the return value should be a WWW::Mechanize::Page as shown above.
+
+=== Pagination
+
+Pagination is accomplished by defining a paginator.
+
+  items :main_url => 'http://example.com' do
+    ...
+
+    pagination do
+      ...
+    end
+  end
+
+The simplest form of pagination is when you can tack on some option to
+the end of the HTML string, e.g. "someurl.html?viewall=true". This
+case is handled like so
+
+  pagination do
+    view_all_append "?viewall=true"
+  end
+
+which just tacks the string on the end of the category url.
+
+Another common pattern is one in which the url defines the starting
+point of the items, i.e. there are N items on a page, and starting
+with M shows you items M through M+N. The url might look something
+like
+
+  someurl?N=160&offset=320
+
+In this case what we want to do is start the "offset" parameter at 0
+and increment in steps of 160. This is handled like so
+
+  pagination do
+    url_pattern /(.*N=160&offset=)\d+(.*)/
+    increment_start 0
+    increment_step 160
+  end
+
+<tt>url_pattern</tt> takes a regular expression that reverse matches
+the number you want to increment, i.e. everything to the left of the
+number is the first group, and everything to the right is the second
+group. The default values for <tt>increment_start</tt> and
+<tt>increment_step</tt> are 0 and 1, respectively.
+
+The final and least likely case is one in which you have to paginate
+by finding links on the category page. For example, there might be
+numbered links "1 2 3 4" which point to the respective pages. This is
+handled like so
+
+  pagination do
+    select do
+      ...
+    end
+  end
+
+where <tt>select</tt> is a ConditionSet matching the paginated links.
+
+There are also some meta ways to transform urls that work on every
+pattern. You can pre-process a url before it ever gets processed
+through any pattern like so
+
+  pagination do
+    preprocess do |url|
+      url
+    end
+    
+    ...
+  end
+
+Before it does anything else, the paginator will yield the category
+url to preprocess which must return a valid url.
+
+If, rather, you want to alter the url after it has gone through some
+pattern, you can define a url transformer
+
+  pagination do
+    ...
+
+    url_transformer do |url|
+      url
+    end
+  end
+
+Which will do some pagination processing, and then before the url goes
+back to the item scraper it will be yielded to the
+<tt>url_transformer</tt>.
+
+== Size Color Configurations
+
+There are several templates for size color configuration (scc)
+scraping.
+
+=== Line by Line Javascript
+
+One of the simplest cases is when the size color configurations are
+all in JavaScript with each scc being contained in a specific
+line. Something like this:
+
+    <SCRIPT LANGUAGE="JavaScript">
+      //allSliceColorIdArray
+      var colorNameArray = ["clotted cream","geranium","navy"];
+      
+      itemMap = new Array();
+      
+      
+      itemMap[0] = { sku: 5574274,sDesc: "L",sId: "139054",cDesc: "clotted cream",cId: "1075196",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      
+      itemMap[1] = { sku: 5574286,sDesc: "L",sId: "139054",cDesc: "geranium",cId: "1075241",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      
+      itemMap[2] = { sku: 5574287,sDesc: "M",sId: "139055",cDesc: "geranium",cId: "1075241",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      
+      itemMap[3] = { sku: 5574288,sDesc: "S",sId: "139056",cDesc: "geranium",cId: "1075241",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      
+      itemMap[4] = { sku: 5574289,sDesc: "XS",sId: "140601",cDesc: "geranium",cId: "1075241",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      
+      itemMap[5] = { sku: 5574282,sDesc: "L",sId: "139054",cDesc: "navy",cId: "1061715",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      
+      itemMap[6] = { sku: 5574284,sDesc: "S",sId: "139056",cDesc: "navy",cId: "1061715",avail: "IN_STOCK",availMsg:"",price: "$169.00"};
+      </script>
+
+There is a built in scraper for this kind of situation. It would look
+something like this:
+
+    sccs SCCFromJavaScriptScraper do
+      pattern /.*itemMap\[\d\] = \{.*,sDesc: "(.+)",.*,cDesc: "(.+)",.*,avail: "IN_STOCK".*/
+      mappings :size => 1, :color => 2
+    end
+
+=== Ajax
+
+This is a fairly infrequent case, but also an incredibly obnoxious
+one, so there is a built in plugin for dealing with it.
+
+It requires three things: <tt>parameters</tt>, a <tt>url</tt> and
+something to <tt>process</tt> the results. For example,
+
+  sccs SCCFromAjaxScraper do
+    url "http://www.lordandtaylor.com/sharedPages//cfLib/ajaxCalls.cfm?null.getSizesByColorItem"
+    
+    parameters "ajax" => "true",
+      "c0-id" => "",
+      "c0-methodName" => "getSizesByColorItem",
+      "c0-param2" => "string:eng",
+      "c0-param3" => "string:in",
+      "c0-scriptName" => "null",
+      "callCount" => "1",
+      "clientAuthenticationKey" => "",
+      "xml" => "true" do
+
+      param "c0-param0", :from_item do |item|
+        "string:" + item.vendor_key
+      end
+
+      param "c0-param1", :from_page do |page|
+        if page.is_a?(WWW::Mechanize::Page)
+          page = page.parser
+        end
+
+        scripts = page.search('script')
+        color_codes = nil
+        if scripts
+          scripts.each do |script|
+            if script.content =~ /colorIDs/
+              match_data = /colorIDs=new Array\((.*?)\);/.match(script.content)
+              if match_data
+                color_codes = match_data[1].scan(/\d+_\d+/).map {|cc| "string:" + cc}
+              end
+            end
+          end
+        end
+        color_codes
+      end
+    end
+
+    process do |content|
+      content = content.content
+      content.delete!("\n\r\t")
+      sccs = content.scan(/COLOR_DESC:'(.*?)'.*?INSTOCK:'(.*?)'.*?SIZE_DESC:'(.*?)'/)
+      sccs = sccs.select {|scc| scc[1] == "true"}
+      sccs.map {|scc| [scc[2].delete("-"), scc[0]]}
+    end
+
+  end
+
+The <tt>url</tt> is just the url that parameters get POSTed to in the
+AJAX call. <tt>process</tt> defines a method that takes the response
+from the <tt>url</tt> and processes it into something that the
+framework understands.
+
+<tt>parameters</tt> is where the complexity comes in. It takes a hash
+and a block. The hash defines any static parameters and the block
+allows you to define any dynamic parameters. Dynamic parameters are
+defined by a call to the <tt>param</tt> method.
+
+  param "c0-param1", :from_page do |page|
+    ...
+  end
+
+"c0-param1" is the name of the parameter, <tt>:from_page</tt> defines
+where the parameter is coming from. If it needs to be scraped off of
+the detail page use :from_page and the page will be yielded to the
+block. If it is to be taken from the item, use <tt>:from_item</tt> and
+the item will be yielded to the block.
+
+The block should process whatever it needs to process and return
+either a single value if there is only value, or an array of values if
+there are multiple. The system automatically handles permuting every
+combination of parameters.
+
+The expected return value of process is an array of arrays, like
+
+  [[size, color], [size, color], [size, color], ...]
+
+
+=== HTML
+
+Occasionally a website will keep size color configurations in pure
+HTML with no fancy JavaScript switching. This generally happens when
+either the size or color is specified by the item itself, e.g. the
+color is in the description.
+
+The scraper for this works under the assumption that either the size
+or the color is determined from something already known, e.g. the
+color is in the item description or there is no size. You define what
+this determined value is and then you define a ConditionSet for the
+other attribute, the set determining the HTML element that contains a
+single attribute.
+
+  sccs SCCFromHTMLScraper do
+    size :empty_means_all => true do
+      is "option"
+      ancestor do
+        is "select"
+        with :class => "TahomaFields"
+      end
+    end
+
+    color :from_item => true do |item|
+      color = item.notice
+      item.notice = nil
+      color
+    end
+
+  end
+
+The above takes the color as the pre-determined value and takes it
+form the item. The size is then taken from every <tt>option</tt>
+descending from <tt>select[class="TahomaFields"]</tt>.
+
+== Custom
+
+Very frequently you will encounter sites that deviate from these
+templates enough and uniquely enough that you are going to just want
+to fall back to Ruby and to the processing yourself.
+
+  sccs SCCCustomScraper do
+    give_me do
+      ...
+    end
+
+    process do |element|
+      ...
+    end
+  end
+
+You define two things. In <tt>give_me</tt> you define a condition set
+that determines what HTML elements to yield to the block defined in
+<tt>process</tt>.
+
+There are two ways this can work on a high level. Either each yielded
+element from <tt>give_me</tt> represents a single scc, which is the
+assumed state, or all sccs for an item are contained in the yielded
+element, in which case the above would become
+
+  sccs SCCCustomScraper do
+    give_me do
+      ...
+    end
+    
+    all_at_once
+
+    process do |element|
+      ...
+    end
+  end
+
+In the former case the return value of process is expected to be an
+array of the form
+
+  [size, color]
+
+and in the latter case the return value is expected to be an array of
+arrays
+
+  [[size, color], [size, color], [size, color], ...]
+
+=== Univeral Options
+
+All SCCScraper's have common methods you can call to provide some
+universal functionality.
+
+==== Extractors
+
+Sometimes a size string will come in a form like "Large" and
+unfortunately the internal system can only map the string "L" to the
+size Large. In this case, we want to extract part of the size string
+by a regular expression, this is done with a call to the
+<tt>extractors</tt> method.
+
+  sccs SCCCustomScraper do
+    ...
+
+    extractors /([A-Z]+)\w*/, /Size (.*)/
+  end
+
+The above example defines two regular expressions to use as
+extractors. When the fetcher gets a size string, say "Size 4" for a
+dress. It will try and find a matching bitmask for the string "Size 4"
+and when that fails, it will try to extract a new string out of it. It
+will try and extract using the order the regular expressions are
+presented. In this case it will use the first regular expression to
+extract the capital "S" in "Size 4" and match that as the size
+Small. You will note that this is incorrect. The order of the
+expressions is important and you generally want to order them in
+decreasing specificity. So the above should be
+
+  sccs SCCCustomScraper do
+    ...
+
+    extractors /Size (.*)/, /([A-Z]+)\w*/
+  end
+
+==== Matchers
+
+If the simple extraction does not work, then you can define a
+SizeMatcher by calling <tt>matchers</tt>.
+
+  sccs SCCCustomScraper do
+    ...
+
+    matchers "foo" => "bar" do
+      give_me do
+        ...
+      end
+
+      process do |given|
+      end
+    end
+  end
+
+The hash argument of matchers defines a direct relationship. In this
+case, any time the size string "foo" is encountered, it will
+automatically be replaced by the size string "bar" before it tries to
+map to a size bitmask.
+
+The block argument defines dynamic mappings based on something on the
+detail page. <tt>give_me</tt> is a ConditionSet that gets a node and
+yields it to the <tt>process</tt>. The <tt>process</tt> then returns a
+hash that gets merged into any existing static hash.
+
+==== Generating brands
+Brands are stored statically in the config files, so when we add brands to the
+Java, we will also need to add them here.  You will need to run the following
+command in your trunk directoy.  CHange
+
+rake generate:brands JAVA_PATH=<path_to_java_salemail_project> JAVA_BIN=<folder where classfiles are stored relative to salemail project> BRAND_PATH=config
+
+An example of this is:
+rake generate:brands JAVA_PATH=c:\dev\projects\salemail\workspace\Salemail\ JAVA_BIN=classes BRAND_PATH=config
+
+Enjoy!

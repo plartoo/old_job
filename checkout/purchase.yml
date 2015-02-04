@@ -1,0 +1,83 @@
+--- 
+www.saksfifthavenue.com: 
+  /: 
+    Cart: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: Wed, 15 Aug 2012 19:12:19 GMT
+      max_age: 
+      name: Cart
+      path: /
+      port: 
+      secure: false
+      value: "2253998925457060"
+      version: 0
+    JSESSIONID: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: JSESSIONID
+      path: /
+      port: 
+      secure: false
+      value: 1WX0TKBS7GqhHPs592gDkJwKWt9gQ2G8bQhRgQDFh798qb0Dgs1L!-1303732507
+      version: 0
+    saksBagNumberOfItems: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: Wed, 15 Aug 2012 19:12:19 GMT
+      max_age: 
+      name: saksBagNumberOfItems
+      path: /
+      port: 
+      secure: false
+      value: "1"
+      version: 0
+    TS54c0f7: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: TS54c0f7
+      path: /
+      port: 
+      secure: false
+      value: 3be36f0dfc9df4839b100fd4feec19fdae120644a88206734e4ac0925562781092d68541286023f27f68b25f60ac0ec569cd363a866d39d0a28dfd26de6b0004822b1418
+      version: 0
+saksfifthavenue.com: 
+  /: 
+    TLTHID: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: TLTHID
+      path: /
+      port: 
+      secure: false
+      value: A9977A4AC83B10C8039BACF587D5BE9D
+      version: 0
+    TLTSID: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: TLTSID
+      path: /
+      port: 
+      secure: false
+      value: A9489FA6C83B10C80017E4A9510AE434
+      version: 0

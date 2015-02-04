@@ -1,0 +1,1773 @@
+#
+--- 
+
+:vendor: yoox
+
+:ignored:
+- :category_path:
+  - FURNISHINGS
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/FURNISHINGS/spring-summer/searchResult/c/cat_20/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: FURNISHINGS
+- :category_path:
+  - GIFT IDEAS & OCCASIONS
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/GIFT+IDEAS+%26+OCCASIONS/spring-summer/searchResult/c/cat_51/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: GIFT IDEAS & OCCASIONS
+- :category_path:
+  - HOME ACCESSORIES
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/HOME+ACCESSORIES/spring-summer/searchResult/c/cat_21/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: HOME ACCESSORIES
+- :category_path:
+  - LIGHTING
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/LIGHTING/spring-summer/searchResult/c/cat_22/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: LIGHTING
+- :category_path:
+  - PHOTOGRAPHY
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/PHOTOGRAPHY/spring-summer/searchResult/c/cat_24/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: PHOTOGRAPHY
+- :category_path:
+  - TEXTILE
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/TEXTILE/spring-summer/searchResult/c/cat_96/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: TEXTILE
+- :category_path:
+  - GIFT IDEAS & OCCASIONS
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/GIFT+IDEAS+%26+OCCASIONS/spring-summer/searchResult/c/cat_51/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+    "@_rails_html_safe": false
+  :name: GIFT IDEAS & OCCASIONS
+- :category_path:
+  - HOME ACCESSORIES
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/HOME+ACCESSORIES/spring-summer/searchResult/c/cat_21/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+    "@_rails_html_safe": false
+  :name: HOME ACCESSORIES
+- :category_path:
+  - GIFT IDEAS & OCCASIONS
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/GIFT+IDEAS+%26+OCCASIONS/spring-summer/searchResult/c/cat_51/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+    "@_rails_html_safe": false
+  :name: GIFT IDEAS & OCCASIONS
+- :category_path:
+  - TEXTILE
+  :dept: :girls
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/TEXTILE/spring-summer/searchResult/c/cat_96/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+    "@_rails_html_safe": false
+  :name: TEXTILE
+- :category_path:
+  - FURNISHINGS
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/FURNISHINGS/spring-summer/searchResult/c/cat_20/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: FURNISHINGS
+- :category_path:
+  - GIFT IDEAS & OCCASIONS
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/GIFT+IDEAS+%26+OCCASIONS/spring-summer/searchResult/c/cat_51/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: GIFT IDEAS & OCCASIONS
+- :category_path:
+  - HOME ACCESSORIES
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/HOME+ACCESSORIES/spring-summer/searchResult/c/cat_21/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: HOME ACCESSORIES
+- :category_path:
+  - LIGHTING
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/LIGHTING/spring-summer/searchResult/c/cat_22/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: LIGHTING
+- :category_path:
+  - PHOTOGRAPHY
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/PHOTOGRAPHY/spring-summer/searchResult/c/cat_24/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: PHOTOGRAPHY
+- :category_path:
+  - TEXTILE
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/TEXTILE/spring-summer/searchResult/c/cat_96/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+    "@_rails_html_safe": false
+  :name: TEXTILE
+- :category_path:
+  - GIFT IDEAS & OCCASIONS
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/GIFT+IDEAS+%26+OCCASIONS/spring-summer/searchResult/c/cat_51/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+    "@_rails_html_safe": false
+  :name: GIFT IDEAS & OCCASIONS
+- :category_path:
+  - HOME ACCESSORIES
+  :dept: :boys
+  :ignored: 0
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/kidswear/YOOX/HOME+ACCESSORIES/spring-summer/searchResult/c/cat_21/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+    "@_rails_html_safe": false
+  :name: HOME ACCESSORIES
+
+
+:active: 
+- :dept: :mens
+  :clothing_type: 
+  :url: !str
+    str: http://www1.yoox.com/searchresult.asp?tskay=B84CE7A2&dept=promotionsmen&gender=U&toll=A&ipp=200&pg=1&sort=0&ene_m=&ene_mm=
+    "@_rails_html_safe": false
+  :name: Men's Promotion
+  :ignored: false
+- :dept: :womens
+  :clothing_type:
+  :url: !str
+    str: http://www1.yoox.com/searchresult.asp?tskay=B84CE7A2&dept=promotionswomen&gender=D&toll=A&ipp=200&pg=1&sort=0&ene_m=&ene_mm=
+    "@_rails_html_safe": false
+  :name: Women's Promotion
+  :ignored: false
+
+#  #### mens promo stuff
+#- :dept: :mens
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/ACCESSORIES/men's-promotions/autumn-winter/searchResult/c/cat_46/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#  :ignored: false
+#
+#
+#- :dept: :mens
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/BAGS/men's-promotions/autumn-winter/searchResult/c/cat_45/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :SPORTCOAT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/BLAZERS/men's-promotions/autumn-winter/searchResult/c/art_93/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: BLAZERS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/COATS/men's-promotions/autumn-winter/searchResult/c/art_88/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: COATS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DOWN+JACKETS/men's-promotions/autumn-winter/searchResult/c/art_92/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: DOWN JACKETS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FULL%2DLENGTH+JACKETS/men's-promotions/autumn-winter/searchResult/c/art_403/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: FULL-LENGTH JACKETS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/JACKETS/men's-promotions/autumn-winter/searchResult/c/art_91/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: JACKETS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/MID%2DLENGTH+JACKETS/men's-promotions/autumn-winter/searchResult/c/art_90/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: MID-LENGTH JACKETS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/RAINCOATS/men's-promotions/autumn-winter/searchResult/c/art_437/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: RAINCOATS
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+BERMUDAS/men's-promotions/autumn-winter/searchResult/c/art_3417/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: DENIM BERMUDAS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :JEANS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+CAPRIS/men's-promotions/autumn-winter/searchResult/c/art_3418/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: DENIM CAPRIS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+OUTERWEAR/men's-promotions/autumn-winter/searchResult/c/art_414/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: DENIM OUTERWEAR
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+SHIRTS/men's-promotions/autumn-winter/searchResult/c/art_94/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: DENIM SHIRTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :JEANS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/JEANS/men's-promotions/autumn-winter/searchResult/c/art_96/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: JEANS
+#  :ignored: false
+#
+#
+#- :dept: :mens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/HOODED+SWEATSHIRTS/men's-promotions/autumn-winter/searchResult/c/art_395/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: HOODED SWEATSHIRTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SWEAT+SHORTS/men's-promotions/autumn-winter/searchResult/c/art_412/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SWEAT SHORTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :ATHLETIC_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SWEATPANTS/men's-promotions/autumn-winter/searchResult/c/art_415/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SWEATPANTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SWEATSHIRTS/men's-promotions/autumn-winter/searchResult/c/art_103/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SWEATSHIRTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/ZIP+SWEATSHIRTS/men's-promotions/autumn-winter/searchResult/c/art_396/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: ZIP SWEATSHIRTS
+#  :ignored: false
+#
+#
+#- :dept: :mens
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FOOTWEAR/men's-promotions/autumn-winter/searchResult/c/cat_44/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/KNITWEAR/men's-promotions/autumn-winter/searchResult/c/cat_39/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LEATHER+OUTERWEAR/men's-promotions/autumn-winter/searchResult/c/art_393/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: LEATHER OUTERWEAR
+#  :ignored: false
+#
+#
+#- :dept: :mens
+#  :clothing_type: :SUIT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/MEN%27S+SUITS/men's-promotions/autumn-winter/searchResult/c/cat_49/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: MEN'S SUITS
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHIRTS/men's-promotions/autumn-winter/searchResult/c/cat_38/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :TSHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LONG+SLEEVE+T%2DSHIRTS/men's-promotions/autumn-winter/searchResult/c/art_339/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: LONG SLEEVE T-SHIRTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/POLO+SHIRTS/men's-promotions/autumn-winter/searchResult/c/art_78/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: POLO SHIRTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :TSHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHORT+SLEEVE+T%2DSHIRTS/men's-promotions/autumn-winter/searchResult/c/art_338/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SHORT SLEEVE T-SHIRTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :TSHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SLEEVELESS+T%2DSHIRTS/men's-promotions/autumn-winter/searchResult/c/art_340/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SLEEVELESS T-SHIRTS
+#  :ignored: false
+#
+#- :dept: :mens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/3%2F4%2DLENGTH+TROUSERS/men's-promotions/autumn-winter/searchResult/c/art_177/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: 3/4-LENGTH TROUSERS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/BERMUDA+SHORTS/men's-promotions/autumn-winter/searchResult/c/art_71/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: BERMUDA SHORTS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/CASUAL+TROUSERS/men's-promotions/autumn-winter/searchResult/c/art_358/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: CASUAL TROUSERS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :DRESS_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FORMAL+TROUSERS/men's-promotions/autumn-winter/searchResult/c/art_68/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: FORMAL TROUSERS
+#  :ignored: false
+#- :dept: :mens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHORTS/men's-promotions/autumn-winter/searchResult/c/art_70/ipp/200/gender/U/toll/A/tskay/B84CE7A2/dept/promotionsmen
+#    "@_rails_html_safe": false
+#  :name: SHORTS
+#  :ignored: false
+#
+#  ### WOMENS categories
+#- :dept: :womens
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/ACCESSORIES/women's-promotions/autumn-winter/searchResult/c/cat_46/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/BAGS/women's-promotions/autumn-winter/searchResult/c/cat_45/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SPORTCOAT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/BLAZERS/women's-promotions/autumn-winter/searchResult/c/art_93/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: BLAZERS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/CLOAKS/women's-promotions/autumn-winter/searchResult/c/art_203/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: CLOAKS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/COATS/women's-promotions/autumn-winter/searchResult/c/art_88/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: COATS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DOWN+JACKETS/women's-promotions/autumn-winter/searchResult/c/art_92/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DOWN JACKETS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FAUX+FURS/women's-promotions/autumn-winter/searchResult/c/art_205/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: FAUX FURS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FULL%2DLENGTH+JACKETS/women's-promotions/autumn-winter/searchResult/c/art_403/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: FULL-LENGTH JACKETS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/JACKETS/women's-promotions/autumn-winter/searchResult/c/art_91/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: JACKETS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/MID%2DLENGTH+JACKETS/women's-promotions/autumn-winter/searchResult/c/art_90/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: MID-LENGTH JACKETS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/RAINCOATS/women's-promotions/autumn-winter/searchResult/c/art_437/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: RAINCOATS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/OUTFITS/women's-promotions/autumn-winter/searchResult/c/art_148/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: OUTFITS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SUIT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/WOMEN%27S+SUITS/women's-promotions/autumn-winter/searchResult/c/art_72/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: WOMEN'S SUITS
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+BERMUDAS/women's-promotions/autumn-winter/searchResult/c/art_3417/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM BERMUDAS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :JEANS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+CAPRIS/women's-promotions/autumn-winter/searchResult/c/art_3418/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM CAPRIS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+DUNGAREES/women's-promotions/autumn-winter/searchResult/c/art_231/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM DUNGAREES
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+OUTERWEAR/women's-promotions/autumn-winter/searchResult/c/art_414/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM OUTERWEAR
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+SHIRTS/women's-promotions/autumn-winter/searchResult/c/art_94/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM SHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+SHORTS/women's-promotions/autumn-winter/searchResult/c/art_3419/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM SHORTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DENIM+SKIRTS/women's-promotions/autumn-winter/searchResult/c/art_95/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DENIM SKIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :JEANS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/JEANS/women's-promotions/autumn-winter/searchResult/c/art_96/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: JEANS
+#  :ignored: false
+#
+#
+#- :dept: :womens
+#  :clothing_type: :DRESS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/DRESSES/women's-promotions/autumn-winter/searchResult/c/cat_34/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: DRESSES
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHORT+DUNGAREES/women's-promotions/autumn-winter/searchResult/c/art_312/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SHORT DUNGAREES
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/TROUSER+DUNGAREES/women's-promotions/autumn-winter/searchResult/c/art_311/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: TROUSER DUNGAREES
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FLEECE+OUTFITS/women's-promotions/autumn-winter/searchResult/c/art_416/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: FLEECE OUTFITS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/HOODED+SWEATSHIRTS/women's-promotions/autumn-winter/searchResult/c/art_395/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: HOODED SWEATSHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SWEAT+SHORTS/women's-promotions/autumn-winter/searchResult/c/art_412/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SWEAT SHORTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :ATHLETIC_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SWEATPANTS/women's-promotions/autumn-winter/searchResult/c/art_415/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SWEATPANTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SWEATSHIRTS/women's-promotions/autumn-winter/searchResult/c/art_103/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SWEATSHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/ZIP+SWEATSHIRTS/women's-promotions/autumn-winter/searchResult/c/art_396/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: ZIP SWEATSHIRTS
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FOOTWEAR/women's-promotions/autumn-winter/searchResult/c/cat_44/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/KNITWEAR/women's-promotions/autumn-winter/searchResult/c/cat_39/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LEATHER+OUTERWEAR/women's-promotions/autumn-winter/searchResult/c/art_393/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: LEATHER OUTERWEAR
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LEATHER+SKIRTS/women's-promotions/autumn-winter/searchResult/c/art_392/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: LEATHER SKIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LEATHER+TROUSERS/women's-promotions/autumn-winter/searchResult/c/art_391/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: LEATHER TROUSERS
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHIRTS/women's-promotions/autumn-winter/searchResult/c/cat_38/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SKIRTS/women's-promotions/autumn-winter/searchResult/c/cat_35/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SKIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :TSHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LONG+SLEEVE+T%2DSHIRTS/women's-promotions/autumn-winter/searchResult/c/art_339/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: LONG SLEEVE T-SHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/POLO+SHIRTS/women's-promotions/autumn-winter/searchResult/c/art_78/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: POLO SHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :TSHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHORT+SLEEVE+T%2DSHIRTS/women's-promotions/autumn-winter/searchResult/c/art_338/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SHORT SLEEVE T-SHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SLEEVELESS+T%2DSHIRTS/women's-promotions/autumn-winter/searchResult/c/art_340/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SLEEVELESS T-SHIRTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/TOPS/women's-promotions/autumn-winter/searchResult/c/art_79/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: TOPS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/TUBE+TOPS/women's-promotions/autumn-winter/searchResult/c/art_3422/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: TUBE TOPS
+#  :ignored: false
+#
+#- :dept: :womens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/3%2F4%2DLENGTH+TROUSERS/women's-promotions/autumn-winter/searchResult/c/art_177/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: 3/4-LENGTH TROUSERS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/BERMUDA+SHORTS/women's-promotions/autumn-winter/searchResult/c/art_71/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: BERMUDA SHORTS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/CASUAL+TROUSERS/women's-promotions/autumn-winter/searchResult/c/art_358/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: CASUAL TROUSERS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :DRESS_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/FORMAL+TROUSERS/women's-promotions/autumn-winter/searchResult/c/art_68/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: FORMAL TROUSERS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/LEGGINGS/women's-promotions/autumn-winter/searchResult/c/art_720/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: LEGGINGS
+#  :ignored: false
+#- :dept: :womens
+#  :clothing_type: :SHORTS
+#  :url: !str
+#    str: http://www1.yoox.com/YOOX/SHORTS/women's-promotions/autumn-winter/searchResult/c/art_70/ipp/200/gender/D/toll/A/tskay/B84CE7A2/dept/promotionswomen
+#    "@_rails_html_safe": false
+#  :name: SHORTS
+#  :ignored: false
+#
+#  #### KIDS categories
+#- :category_path:
+#  - ACCESSORIES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/ACCESSORIES/spring-summer/searchResult/c/cat_46/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#- :category_path:
+#  - BAGS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/BAGS/spring-summer/searchResult/c/cat_45/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#- :category_path:
+#  - COATS & JACKETS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COATS+%26+JACKETS/spring-summer/searchResult/c/cat_41/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: COATS & JACKETS
+#- :category_path:
+#  - COMBINED LOOK
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COMBINED+LOOK/spring-summer/searchResult/c/cat_40/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: COMBINED LOOK
+#- :category_path:
+#  - DENIM
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DENIM/spring-summer/searchResult/c/cat_42/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: DENIM
+#- :category_path:
+#  - DRESSES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :DRESS
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DRESSES/spring-summer/searchResult/c/cat_34/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: DRESSES
+#- :category_path:
+#  - DUNGAREES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DUNGAREES/spring-summer/searchResult/c/cat_54/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: DUNGAREES
+#- :category_path:
+#  - FLEECEWARE
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FLEECEWARE/spring-summer/searchResult/c/cat_43/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: FLEECEWARE
+#- :category_path:
+#  - FOOTWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FOOTWEAR/spring-summer/searchResult/c/cat_44/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#- :category_path:
+#  - JEWELLERY
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :JEWELRY
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/JEWELLERY/spring-summer/searchResult/c/cat_50/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: JEWELLERY
+#- :category_path:
+#  - KNITWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/KNITWEAR/spring-summer/searchResult/c/cat_39/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#- :category_path:
+#  - LEATHERWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LEATHERWEAR/spring-summer/searchResult/c/cat_59/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: LEATHERWEAR
+#- :category_path:
+#  - LUGGAGE
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LUGGAGE/spring-summer/searchResult/c/cat_55/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: LUGGAGE
+#
+#- :category_path:
+#  - SHIRTS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SHIRTS/spring-summer/searchResult/c/cat_38/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#- :category_path:
+#  - SKIRTS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SKIRTS/spring-summer/searchResult/c/cat_35/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: SKIRTS
+#- :category_path:
+#  - SWIMWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SWIMWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SWIMWEAR/spring-summer/searchResult/c/cat_47/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: SWIMWEAR
+#- :category_path:
+#  - TOPWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TOPWEAR/spring-summer/searchResult/c/cat_37/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: TOPWEAR
+#- :category_path:
+#  - TROUSERS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TROUSERS/spring-summer/searchResult/c/cat_36/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: TROUSERS
+#- :category_path:
+#  - UNDERWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/UNDERWEAR/spring-summer/searchResult/c/cat_48/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: UNDERWEAR
+#
+#  ## girls kids 3-8 years
+#- :category_path:
+#  - ACCESSORIES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/ACCESSORIES/spring-summer/searchResult/c/cat_46/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#- :category_path:
+#  - BAGS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/BAGS/spring-summer/searchResult/c/cat_45/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#- :category_path:
+#  - COATS & JACKETS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COATS+%26+JACKETS/spring-summer/searchResult/c/cat_41/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: COATS & JACKETS
+#- :category_path:
+#  - COMBINED LOOK
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COMBINED+LOOK/spring-summer/searchResult/c/cat_40/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: COMBINED LOOK
+#- :category_path:
+#  - DENIM
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DENIM/spring-summer/searchResult/c/cat_42/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: DENIM
+#- :category_path:
+#  - DRESSES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :DRESS
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DRESSES/spring-summer/searchResult/c/cat_34/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: DRESSES
+#- :category_path:
+#  - DUNGAREES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DUNGAREES/spring-summer/searchResult/c/cat_54/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: DUNGAREES
+#- :category_path:
+#  - FLEECEWARE
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FLEECEWARE/spring-summer/searchResult/c/cat_43/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: FLEECEWARE
+#- :category_path:
+#  - FOOTWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FOOTWEAR/spring-summer/searchResult/c/cat_44/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#- :category_path:
+#  - JEWELLERY
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :JEWELRY
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/JEWELLERY/spring-summer/searchResult/c/cat_50/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: JEWELLERY
+#- :category_path:
+#  - KNITWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/KNITWEAR/spring-summer/searchResult/c/cat_39/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#- :category_path:
+#  - LEATHERWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LEATHERWEAR/spring-summer/searchResult/c/cat_59/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: LEATHERWEAR
+#- :category_path:
+#  - SHIRTS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SHIRTS/spring-summer/searchResult/c/cat_38/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#- :category_path:
+#  - SKIRTS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SKIRTS/spring-summer/searchResult/c/cat_35/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: SKIRTS
+#- :category_path:
+#  - SWIMWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SWIMWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SWIMWEAR/spring-summer/searchResult/c/cat_47/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: SWIMWEAR
+#- :category_path:
+#  - TOPWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TOPWEAR/spring-summer/searchResult/c/cat_37/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: TOPWEAR
+#- :category_path:
+#  - TROUSERS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TROUSERS/spring-summer/searchResult/c/cat_36/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: TROUSERS
+#- :category_path:
+#  - UNDERWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/UNDERWEAR/spring-summer/searchResult/c/cat_48/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: UNDERWEAR
+#- :category_path:
+#  - WATCHES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :JEWELRY
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/WATCHES/spring-summer/searchResult/c/cat_28/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: WATCHES
+#
+#  ### girls junior
+#- :category_path:
+#  - ACCESSORIES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/ACCESSORIES/spring-summer/searchResult/c/cat_46/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#- :category_path:
+#  - BAGS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/BAGS/spring-summer/searchResult/c/cat_45/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#- :category_path:
+#  - COATS & JACKETS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COATS+%26+JACKETS/spring-summer/searchResult/c/cat_41/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: COATS & JACKETS
+#- :category_path:
+#  - COMBINED LOOK
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COMBINED+LOOK/spring-summer/searchResult/c/cat_40/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: COMBINED LOOK
+#- :category_path:
+#  - DENIM
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DENIM/spring-summer/searchResult/c/cat_42/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: DENIM
+#- :category_path:
+#  - DRESSES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :DRESS
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DRESSES/spring-summer/searchResult/c/cat_34/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: DRESSES
+#- :category_path:
+#  - DUNGAREES
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DUNGAREES/spring-summer/searchResult/c/cat_54/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: DUNGAREES
+#- :category_path:
+#  - FLEECEWARE
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FLEECEWARE/spring-summer/searchResult/c/cat_43/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: FLEECEWARE
+#- :category_path:
+#  - FOOTWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FOOTWEAR/spring-summer/searchResult/c/cat_44/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#- :category_path:
+#  - JEWELLERY
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :JEWELRY
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/JEWELLERY/spring-summer/searchResult/c/cat_50/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: JEWELLERY
+#- :category_path:
+#  - KNITWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/KNITWEAR/spring-summer/searchResult/c/cat_39/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#- :category_path:
+#  - LEATHERWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LEATHERWEAR/spring-summer/searchResult/c/cat_59/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: LEATHERWEAR
+#- :category_path:
+#  - SHIRTS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SHIRTS/spring-summer/searchResult/c/cat_38/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#- :category_path:
+#  - SKIRTS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SKIRTS/spring-summer/searchResult/c/cat_35/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: SKIRTS
+#- :category_path:
+#  - SWIMWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :SWIMWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SWIMWEAR/spring-summer/searchResult/c/cat_47/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: SWIMWEAR
+#- :category_path:
+#  - TOPWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TOPWEAR/spring-summer/searchResult/c/cat_37/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: TOPWEAR
+#- :category_path:
+#  - TROUSERS
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type: :CASUAL_PANTS
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TROUSERS/spring-summer/searchResult/c/cat_36/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: TROUSERS
+#- :category_path:
+#  - UNDERWEAR
+#  :dept: :girls
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/UNDERWEAR/spring-summer/searchResult/c/cat_48/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: UNDERWEAR
+#
+#  #### boys
+#- :category_path:
+#  - ACCESSORIES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/searchResult/ipp/200/genderKids/U/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#- :category_path:
+#  - BAGS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/BAGS/spring-summer/searchResult/c/cat_45/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#- :category_path:
+#  - COATS & JACKETS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COATS+%26+JACKETS/spring-summer/searchResult/c/cat_41/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: COATS & JACKETS
+#- :category_path:
+#  - COMBINED LOOK
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COMBINED+LOOK/spring-summer/searchResult/c/cat_40/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: COMBINED LOOK
+#- :category_path:
+#  - DENIM
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DENIM/spring-summer/searchResult/c/cat_42/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: DENIM
+#- :category_path:
+#  - DRESSES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :DRESS
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DRESSES/spring-summer/searchResult/c/cat_34/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: DRESSES
+#- :category_path:
+#  - DUNGAREES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DUNGAREES/spring-summer/searchResult/c/cat_54/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: DUNGAREES
+#- :category_path:
+#  - FLEECEWARE
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FLEECEWARE/spring-summer/searchResult/c/cat_43/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: FLEECEWARE
+#- :category_path:
+#  - FOOTWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FOOTWEAR/spring-summer/searchResult/c/cat_44/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#- :category_path:
+#  - KNITWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/KNITWEAR/spring-summer/searchResult/c/cat_39/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#- :category_path:
+#  - LEATHERWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LEATHERWEAR/spring-summer/searchResult/c/cat_59/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: LEATHERWEAR
+#- :category_path:
+#  - LUGGAGE
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LUGGAGE/spring-summer/searchResult/c/cat_55/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: LUGGAGE
+#- :category_path:
+#  - SHIRTS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SHIRTS/spring-summer/searchResult/c/cat_38/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#- :category_path:
+#  - SKIRTS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SKIRTS/spring-summer/searchResult/c/cat_35/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: SKIRTS
+#- :category_path:
+#  - SWIMWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SWIMWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SWIMWEAR/spring-summer/searchResult/c/cat_47/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: SWIMWEAR
+#- :category_path:
+#  - TOPWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TOPWEAR/spring-summer/searchResult/c/cat_37/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: TOPWEAR
+#- :category_path:
+#  - TROUSERS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TROUSERS/spring-summer/searchResult/c/cat_36/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: TROUSERS
+#- :category_path:
+#  - UNDERWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/UNDERWEAR/spring-summer/searchResult/c/cat_48/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/baby
+#    "@_rails_html_safe": false
+#  :name: UNDERWEAR
+#
+#  ### boys
+#- :category_path:
+#  - ACCESSORIES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/ACCESSORIES/spring-summer/searchResult/c/cat_46/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#- :category_path:
+#  - BAGS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :BAG
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/BAGS/spring-summer/searchResult/c/cat_45/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: BAGS
+#- :category_path:
+#  - COATS & JACKETS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COATS+%26+JACKETS/spring-summer/searchResult/c/cat_41/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: COATS & JACKETS
+#- :category_path:
+#  - COMBINED LOOK
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COMBINED+LOOK/spring-summer/searchResult/c/cat_40/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: COMBINED LOOK
+#- :category_path:
+#  - DENIM
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DENIM/spring-summer/searchResult/c/cat_42/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: DENIM
+#- :category_path:
+#  - DRESSES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :DRESS
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DRESSES/spring-summer/searchResult/c/cat_34/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: DRESSES
+#- :category_path:
+#  - DUNGAREES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DUNGAREES/spring-summer/searchResult/c/cat_54/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: DUNGAREES
+#- :category_path:
+#  - FLEECEWARE
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FLEECEWARE/spring-summer/searchResult/c/cat_43/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: FLEECEWARE
+#- :category_path:
+#  - FOOTWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FOOTWEAR/spring-summer/searchResult/c/cat_44/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#- :category_path:
+#  - JEWELLERY
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :JEWELRY
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/JEWELLERY/spring-summer/searchResult/c/cat_50/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: JEWELLERY
+#- :category_path:
+#  - KNITWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/KNITWEAR/spring-summer/searchResult/c/cat_39/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#- :category_path:
+#  - LEATHERWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LEATHERWEAR/spring-summer/searchResult/c/cat_59/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: LEATHERWEAR
+#- :category_path:
+#  - SHIRTS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SHIRTS/spring-summer/searchResult/c/cat_38/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#- :category_path:
+#  - SKIRTS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SKIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SKIRTS/spring-summer/searchResult/c/cat_35/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: SKIRTS
+#- :category_path:
+#  - SWIMWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SWIMWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SWIMWEAR/spring-summer/searchResult/c/cat_47/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: SWIMWEAR
+#- :category_path:
+#  - TOPWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TOPWEAR/spring-summer/searchResult/c/cat_37/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: TOPWEAR
+#- :category_path:
+#  - TROUSERS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TROUSERS/spring-summer/searchResult/c/cat_36/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: TROUSERS
+#- :category_path:
+#  - UNDERWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/UNDERWEAR/spring-summer/searchResult/c/cat_48/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: UNDERWEAR
+#- :category_path:
+#  - WATCHES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :JEWELRY
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/WATCHES/spring-summer/searchResult/c/cat_28/ipp/200/genderKids/D/toll/P/tskay/B84CE7A2/dept/kid
+#    "@_rails_html_safe": false
+#  :name: WATCHES
+#
+#  ## boys junior 9-14
+#- :category_path:
+#  - ACCESSORIES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/ACCESSORIES/spring-summer/searchResult/c/cat_46/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: ACCESSORIES
+#- :category_path:
+#  - COATS & JACKETS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :OUTERWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COATS+%26+JACKETS/spring-summer/searchResult/c/cat_41/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: COATS & JACKETS
+#- :category_path:
+#  - COMBINED LOOK
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/COMBINED+LOOK/spring-summer/searchResult/c/cat_40/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: COMBINED LOOK
+#- :category_path:
+#  - DENIM
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DENIM/spring-summer/searchResult/c/cat_42/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: DENIM
+#- :category_path:
+#  - DUNGAREES
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/DUNGAREES/spring-summer/searchResult/c/cat_54/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: DUNGAREES
+#- :category_path:
+#  - FLEECEWARE
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FLEECEWARE/spring-summer/searchResult/c/cat_43/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: FLEECEWARE
+#- :category_path:
+#  - FOOTWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SHOES
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/FOOTWEAR/spring-summer/searchResult/c/cat_44/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: FOOTWEAR
+#- :category_path:
+#  - KNITWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SWEATER
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/KNITWEAR/spring-summer/searchResult/c/cat_39/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: KNITWEAR
+#- :category_path:
+#  - LEATHERWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/LEATHERWEAR/spring-summer/searchResult/c/cat_59/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: LEATHERWEAR
+#- :category_path:
+#  - MEN'S SUITS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SUIT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/MEN%27S+SUITS/spring-summer/searchResult/c/cat_49/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: MEN'S SUITS
+#- :category_path:
+#  - SHIRTS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :CASUAL_SHIRT
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SHIRTS/spring-summer/searchResult/c/cat_38/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: SHIRTS
+#- :category_path:
+#  - SWIMWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type: :SWIMWEAR
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/SWIMWEAR/spring-summer/searchResult/c/cat_47/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: SWIMWEAR
+#- :category_path:
+#  - TOPWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TOPWEAR/spring-summer/searchResult/c/cat_37/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: TOPWEAR
+#- :category_path:
+#  - TROUSERS
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/TROUSERS/spring-summer/searchResult/c/cat_36/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: TROUSERS
+#- :category_path:
+#  - UNDERWEAR
+#  :dept: :boys
+#  :ignored: false
+#  :clothing_type:
+#  :url: !str
+#    str: http://www1.yoox.com/kidswear/YOOX/UNDERWEAR/spring-summer/searchResult/c/cat_48/ipp/200/genderKids/U/toll/P/tskay/B84CE7A2/dept/junior
+#    "@_rails_html_safe": false
+#  :name: UNDERWEAR
+

@@ -1,0 +1,58 @@
+--- 
+:extended_description: {}
+
+:product_image: 
+  :height: 254
+  :url: http://g.nordstromimage.com/imagegallery/store/product/Medium/5/_6384905.jpg
+  :buffer_width: 125
+  :width: 165
+:description: BCBGMAXAZRIA Stripe Long Sleeve Top
+:additional_images: []
+
+:dept: :womens
+:brand_bm: 54
+:related_vendor_keys: []
+
+:vendor_name: nordstrom
+:department_bm: 0
+:vendor_key: "3156556"
+:category_data: 
+- :url: !str 
+    str: http://shop.nordstrom.com/c/womens-sweaters?origin=accordion
+    "@_rails_html_safe": false
+  :name: Sweaters
+  :path: 
+- :url: !str 
+    str: http://shop.nordstrom.com/c/sale-womens-clothing?origin=topnav
+    "@_rails_html_safe": false
+  :name: Women's Apparel
+  :path: 
+:clothing_type: 
+  :group: top
+  :bm: 8
+:clothing_type_bm: 8
+:scc: 
+- :color: Dark Ash Blue And White Stripe
+  :size_bm: 0
+  :size_type_bm: 0
+- :color: Dark Ash Blue And White Stripe
+  :size_bm: 1
+  :size_type_bm: 0
+- :color: Black And White Stripe
+  :size_bm: 2
+  :size_type_bm: 0
+- :color: Dark Ash Blue And White Stripe
+  :size_bm: 2
+  :size_type_bm: 0
+- :color: Black And White Stripe
+  :size_bm: 3
+  :size_type_bm: 0
+- :color: Dark Ash Blue And White Stripe
+  :size_bm: 3
+  :size_type_bm: 0
+:dynamic: 
+  :currency: USD
+  :sale_price: "61.90"
+  :notice: ""
+  :original_price: "158.00"
+:product_url: http://shop.nordstrom.com/s/bcbgmaxazria-stripe-long-sleeve-top/3156556?origin=category

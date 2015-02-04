@@ -1,0 +1,76 @@
+require 'rake'
+require 'rake/testtask'
+require 'sqlite3'
+require File.dirname(__FILE__) + "/../lib/data/clothing_type"
+require File.dirname(__FILE__) + "/../lib/data/department"
+require File.dirname(__FILE__) + "/../lib/data/size"
+
+namespace :test do
+  
+  desc "Runs all unit tests"
+  Rake::TestTask.new("units") do |t|
+    t.pattern = '*_test.rb'
+    t.verbose = true
+    # t.warning = true
+  end
+
+  desc "generate regression size mapping test data"
+  task :generate_size_mapping_regression_data do
+    sizes = []
+    Dir.entries(File.dirname(__FILE__) + "/../config/us/sizes").select{|f| f.match(/size/)}.each do |file|
+      if file.match(/mappings/)
+        YAML.load_file(File.dirname(__FILE__) + "/../config/us/sizes/#{file}").each do |size|
+          sizes << size[0]
+        end
+      else
+        YAML.load_file(File.dirname(__FILE__) + "/../config/us/sizes/#{file}").each_value do |size|
+          if size.size == 3
+            sizes << size[0]
+            sizes << size[1]
+          else
+            sizes << size[0]
+          end
+        end
+      end
+    end
+
+    sizes += Size::SIZE_MAPPINGS.keys
+
+    regression = []
+
+    Department.all.each do |dept|
+      ClothingType.all.each do |ct|
+        sizes.each do |value|
+          output = nil
+          begin
+            item = Item.new
+            item.dept = dept
+            item.clothing_type = ClothingType[ct]
+            output = Size.get_size(value, item)
+          rescue Exception => e
+            if e.class == Size::InvalidSizeException
+              output = :exception
+            end
+          end
+           if output && (output == :exception || output[:bm] && output[:type_bm])
+             regression << {:input => [value, ClothingType[ct], dept], :output => output}
+           end
+        end
+      end
+    end
+    
+    puts "writing size_mapping_regression.db (#{regression.size} items)"
+    db = SQLite3::Database.new(File.dirname(__FILE__) + "/fixtures/size_mapping_regression.db")
+    db.execute("drop table if exists regressions")
+    db.execute("create table regressions(input_value varchar(30), input_ct_group varchar(20), input_ct_bm int, input_dept varchar(20), output_type varchar(20), output_bm int, output_type_bm int)")
+    regression.each do |r|
+      if r[:output] == :exception
+        db.execute("insert into regressions values (?, ?, ?, ?, ?, ?, ?)", r[:input][0], r[:input][1][:group], r[:input][1][:bm], r[:input][2], "exception", nil, nil)
+      else
+        db.execute("insert into regressions values (?, ?, ?, ?, ?, ?, ?)", r[:input][0], r[:input][1][:group], r[:input][1][:bm], r[:input][2], "result", r[:output][:bm], r[:output][:type_bm])
+      end
+    end
+    
+  end
+  
+end

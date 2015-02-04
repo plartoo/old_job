@@ -1,0 +1,23 @@
+- name: subscribe
+  host: imap.gmail.com
+  port: 993
+  use_ssl: true
+  username: postfix@xxxx.com
+  password: 630SSiittmm
+  folders:
+    - name: INBOX
+    - name: "[Gmail]/Spam"
+      skip_support: true
+  message_count_error_threshold: 500000
+- name: unsubscribe
+  host: imap.gmail.com
+  port: 993
+  use_ssl: true
+  username: foobar2@xxxx.com
+  password: u8Co9ar
+  folders:
+    - name: INBOX
+      skip_support: true
+    - name: "[Gmail]/Spam"
+      skip_support: true
+  message_count_error_threshold: 5000

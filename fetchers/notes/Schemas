@@ -1,0 +1,107 @@
+mysql> describe apparel_sale_items;
++---------------------+--------------+------+-----+---------+----------------+
+| Field               | Type         | Null | Key | Default | Extra          |
++---------------------+--------------+------+-----+---------+----------------+
+| id                  | int(11)      | NO   | PRI | NULL    | auto_increment |
+| sale_date           | date         | NO   | MUL | NULL    |                |
+| apparel_item_id     | int(11)      | NO   | MUL | NULL    |                |
+| original_price      | decimal(8,2) | YES  |     | NULL    |                |
+| sale_price          | decimal(8,2) | YES  |     | NULL    |                |
+| original_price_text | varchar(255) | YES  |     | NULL    |                |
+| sale_price_text     | varchar(255) | YES  |     | NULL    |                |
+| notice              | varchar(255) | YES  |     | NULL    |                |
+| currency            | char(3)      | YES  |     | USD     |                |
++---------------------+--------------+------+-----+---------+----------------+
+
+
+mysql> describe apparel_sale_item_clicks;
++----------------------------+-----------+------+-----+-------------------+-----------------------------+
+| Field                      | Type      | Null | Key | Default           | Extra                       |
++----------------------------+-----------+------+-----+-------------------+-----------------------------+
+| id                         | int(11)   | NO   | PRI | NULL              | auto_increment              |
+| user_id                    | int(11)   | NO   | MUL | NULL              |                             |
+| apparel_sale_item_id       | int(11)   | NO   |     | NULL              |                             |
+| apparel_email_item_list_id | int(11)   | YES  |     | NULL              |                             |
+| clicked_item_source_id     | int(11)   | YES  |     | NULL              |                             |
+| clicked_at                 | timestamp | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| search_query_log_id        | int(11)   | YES  |     | NULL              |                             |
++----------------------------+-----------+------+-----+-------------------+-----------------------------+
+
+mysql> describe apparel_sale_item_size_colors;
++----------------------+---------+------+-----+---------+----------------+
+| Field                | Type    | Null | Key | Default | Extra          |
++----------------------+---------+------+-----+---------+----------------+
+| id                   | int(11) | NO   | PRI | NULL    | auto_increment |
+| apparel_sale_item_id | int(11) | NO   | MUL | NULL    |                |
+| size_color_id        | int(11) | NO   |     | NULL    |                |
++----------------------+---------+------+-----+---------+----------------+
+
+mysql> describe clicked_items;
++------------------------+-------------+------+-----+---------+-------+
+| Field                  | Type        | Null | Key | Default | Extra |
++------------------------+-------------+------+-----+---------+-------+
+| user_id                | int(11)     | NO   | MUL | 0       |       |
+| vendor                 | varchar(40) | YES  |     | NULL    |       |
+| item_id                | varchar(40) | YES  |     | NULL    |       |
+| clothing_type          | varchar(40) | YES  |     | NULL    |       |
+| department             | varchar(40) | YES  |     | NULL    |       |
+| date_clicked           | datetime    | YES  |     | NULL    |       |
+| brand                  | varchar(80) | YES  |     | NULL    |       |
+| date_email_sent        | datetime    | YES  | MUL | NULL    |       |
+| clicked_item_source_id | int(11)     | YES  |     | NULL    |       |
++------------------------+-------------+------+-----+---------+-------+
+
+mysql> describe brand_lists;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(255) | NO   | MUL | NULL    |                |
+| display_name  | varchar(255) | NO   |     | NULL    |                |
+| department_id | int(11)      | NO   |     | NULL    |                |
+| created_at    | datetime     | YES  |     | NULL    |                |
+| updated_at    | datetime     | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+
+mysql> describe brand_lists_brands;
++---------------+---------+------+-----+---------+-------+
+| Field         | Type    | Null | Key | Default | Extra |
++---------------+---------+------+-----+---------+-------+
+| brand_list_id | int(11) | NO   | PRI | NULL    |       |
+| brand_id      | int(11) | NO   | PRI | NULL    |       |
++---------------+---------+------+-----+---------+-------+
+
+mysql> describe brands;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(255) | NO   |     | NULL    |                |
+| bitmask_id    | int(11)      | NO   | MUL | NULL    |                |
+| department_id | int(11)      | NO   |     | NULL    |                |
+| parent_id     | int(11)      | YES  |     | NULL    |                |
+| created_at    | datetime     | YES  |     | NULL    |                |
+| display_name  | varchar(255) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+
+mysql> describe vendors;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id            | int(11)       | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(255)  | NO   |     | NULL    |                |
+| feed_path     | varchar(255)  | NO   | UNI | NULL    |                |
+| logo_url      | varchar(255)  | YES  |     | NULL    |                |
+| webname       | varchar(255)  | NO   |     | NULL    |                |
+| shipping_info | varchar(1000) | NO   |     | NULL    |                |
+| is_visible    | tinyint(1)    | NO   |     | 0       |                |
+| is_active     | tinyint(1)    | NO   |     | 0       |                |
+| bitmask_id    | int(11)       | NO   |     | NULL    |                |
+| position      | int(11)       | NO   |     | 0       |                |
+| created_at    | datetime      | YES  |     | NULL    |                |
+| display_name  | varchar(255)  | NO   |     | NULL    |                |
+| fetch_limit   | int(11)       | YES  |     | 50      |                |
++---------------+---------------+------+-----+---------+----------------+
+
+
+

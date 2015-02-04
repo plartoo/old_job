@@ -1,0 +1,742 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>TORY BURCH</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+    <meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1">
+    <meta name="vs_defaultClientScript" content="JavaScript">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+
+    <link rel="stylesheet" type="text/css" href="/general.css">
+
+    <script type="text/javascript" src="/general.js"></script>
+
+    <script type="text/javascript" src="/fonts.js"></script>
+    <script>
+			
+//** object constructors ******************************
+var arrAllColors = new Array();
+function objSize(strSize, strSKUID, intQuantity){
+	this.SIZE = strSize;
+	this.QUANTITY = intQuantity;
+	this.OID = strSKUID;
+	return this;
+}
+
+function objColor(strColorCode,strStyleID,strColorName,strColorImage,intPrice,intListPrice){
+	this.COLORCODE = strColorCode;			// assign style color
+	this.STYLEID = strStyleID;
+	this.COLORNAME = strColorName;
+	this.IMAGE = strColorImage;
+	this.PRICE = intPrice;
+	this.LPRICE = intListPrice;
+	
+	this.SIZES = new Array();		// create an array of sizes
+	this.AddSize = fcnAddSize;
+	
+	arrAllColors[arrAllColors.length] = this;   // add this style to array of styles
+	return this;
+}
+		
+function fcnAddSize(strSize, strSKUID, intQuantity){
+	this.SIZES[this.SIZES.length] = new objSize(strSize, strSKUID, intQuantity);
+}
+// ***********************************************************
+
+// Object Manipulators ***************************************
+
+function fcnChangeColor(strColorCode){
+	fcnClearSizes();
+	fcnLoadSizes(strColorCode);
+	document.frmMain.selColor.selectedIndex=strColorCode;
+
+	//Change the highlight on the swatch, disabled if the product is a gift card
+	
+	    for (i=0; i<arrAllColors.length; i++) 
+	    document.getElementById('swatch_' + i).style.backgroundColor='#cccccc'; //reset all the colors
+	    document.getElementById('swatch_' + strColorCode).style.backgroundColor='#f17d00'
+	
+
+}
+
+function fcnClearSizes(){
+	for (var i = 1; i < document.frmMain.selSize.length; i++){	
+		document.frmMain.selSize.options[i] = new Option("", "");
+	}
+	document.frmMain.selSize.options.length = 0;
+}
+		
+function fcnLoadColors() {
+	var j = 1;
+
+	if (arrAllColors.length > 0) {
+		for (var i = 0; i < arrAllColors.length; i++){
+			var objSelColor = eval(arrAllColors[i]);
+			document.frmMain.selColor.options[i] = new Option(objSelColor.COLORNAME, i);
+			j++;
+		}
+		document.frmMain.selColor.selectedIndex=1;
+	}
+}
+
+// go through the list of sizes and add it to the drop down
+function fcnLoadSizes(intColorIndex){
+
+	var objSelectedColor = eval(arrAllColors[intColorIndex]);
+			
+	//convert string prices to numeric for Sale calculations
+	var strListPrice = objSelectedColor.LPRICE.substr(1);
+	var strPrice = objSelectedColor.PRICE.substr(1); 
+	
+	//Change Hidden Fields
+	document.frmMain.selColor.value = objSelectedColor.COLORCODE;
+	//document.frmMain.txtStyle.value = objSelectedColor.STYLEID;
+	//document.frmMain.txtColorObjectID.value = intColorIndex;
+	
+	if (arrAllColors.length > 0) document.images["imgLargeImage"].src  = objSelectedColor.IMAGE;
+	
+	var i = 0;
+	if (objSelectedColor.SIZES.length == 0)
+	{
+		haveSizes = false;
+		
+ 	} else { 
+		haveSizes = true;
+		for (var j = 0; j < objSelectedColor.SIZES.length; j++){
+			if (objSelectedColor.SIZES[j].QUANTITY <= 0) {
+				document.frmMain.selSize.options[i] = new Option(objSelectedColor.SIZES[j].SIZE + ' - Out Of Stock', objSelectedColor.SIZES[j].OID);
+			} else {
+				document.frmMain.selSize.options[i] = new Option(objSelectedColor.SIZES[j].SIZE, objSelectedColor.SIZES[j].OID);
+			}
+			i++;
+		}
+		//If there is only 1 size, preselect it
+		if (objSelectedColor.SIZES.length == 1) {
+			document.frmMain.selSize.selectedIndex = 0;
+		}
+	}
+	//Call size change to update the selected sku
+	fcnChangeSize(document.frmMain.selSize[document.frmMain.selSize.selectedIndex].value);
+}
+
+// Change the inventory message
+function fcnChangeSize(strStyleID){
+
+	//Change the styleID
+	document.frmMain.txtSKUID.value = strStyleID;
+	//alert(strStyleID);
+}
+function fcnTellAFriend(){
+	document.location='/catalog_tellafriend.aspx?oid=64532&cname=Tunics&link=catalog_detail.aspx%3fcid%3d519%26id%3d64532';
+	return;
+}	
+function fcnOpenZoom(strOID) {
+	var strLink = "/catalog_zoom.aspx?OID=" + strOID + "&cname=Tunics";
+	window.open(strLink, 'productZoom', 'scrollbars=yes,width=535,height=726,top=10,left=100');
+}
+function fcnPreload() {
+var img1 = new Image(); img1.src = 'http://images.toryburchprivatesale.com/images/products/1_64532_AV_493.jpg';
+var img3 = new Image(); img3.src = 'http://images.toryburchprivatesale.com/images/products/1_64532_AV_493a.jpg';
+var img5 = new Image(); img5.src = 'http://images.toryburchprivatesale.com/images/products/1_64532_AV_493b.jpg';
+
+}
+
+var objStyle_0 = new objColor('493','64532','Navy Lace','http://images.toryburchprivatesale.com/images/products/1_64532_AV_493.jpg','118.5000','395.0000');
+objStyle_0.AddSize('0','64533',3,'395.00','118.50');
+objStyle_0.AddSize('2','64534',2,'395.00','118.50');
+objStyle_0.AddSize('4','64535',5,'395.00','118.50');
+objStyle_0.AddSize('6','64536',8,'395.00','118.50');
+objStyle_0.AddSize('8','64537',10,'395.00','118.50');
+objStyle_0.AddSize('10','64538',12,'395.00','118.50');
+objStyle_0.AddSize('12','64539',16,'395.00','118.50');
+objStyle_0.AddSize('14','64540',3,'395.00','118.50');
+
+
+    </script>
+
+</head>
+<body onload='fcnChangeColor(0);;setTimeout("fcnPreload()",1000);'>
+    <table id="main" border="0" cellpadding="0" cellspacing="0" width="1154">
+
+        <tr align="left">
+            <td valign="top" id="nav">
+<table cellpadding="0" cellspacing="0" border="0" id="nav_table">
+<tr valign="top">
+  <td>
+    <a href="http://www.toryburchprivatesale.com/index.aspx"><img src="/images/logo.gif" alt="Tory Burch" width="185" height="114" alt="Tory Burch"></a><br>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+  <td id="navigation">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr><td style="background-image: url(images/sep.gif)"><img src="/images/trans.gif" alt="" width="1" height="1"></td></tr>
+
+    <tr><td class="nav_text"><img alt="Shop" width="82" height="9" src="/images/lnav_shop_off.gif" id="lnavShipHdr" alt="Shop"></td></tr>
+    <tr><td style="background-image: url(images/sep.gif)"><img src="/images/trans.gif" alt="" width="1" height="1"></td></tr>
+    <tr>
+      <td>
+        <table cellpadding="0" cellspacing="0" border="0" id="nav_switch" class="sub_nav_text">
+        <tr>
+          <td id="sub_navigation">
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=519" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Tunics');"> <img alt="Tunics" height="7" src="/images/categories/1_519_NAV_IMAGE_ON.gif" onmouseover="this.src='/images/categories/1_519_NAV_IMAGE_ON.gif'" onmouseout="this.src='/images/categories/1_519_NAV_IMAGE_ON.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=492" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Tops');"><img alt="Tops" height="7" src="/images/categories/1_492_NAVOFF.gif" onmouseover="this.src='/images/categories/1_492_NAVON.gif'" onmouseout="this.src='/images/categories/1_492_NAVOFF.gif'"></a><br>
+
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=468" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Sweaters');"><img alt="Sweaters" height="7" src="/images/categories/1_468_NAVOFF.gif" onmouseover="this.src='/images/categories/1_468_NAVON.gif'" onmouseout="this.src='/images/categories/1_468_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=469" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','T-Shirts');"><img alt="T-Shirts" height="7" src="/images/categories/1_469_NAVOFF.gif" onmouseover="this.src='/images/categories/1_469_NAVON.gif'" onmouseout="this.src='/images/categories/1_469_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=474" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Skirts/Dresses');"><img alt="Skirts/Dresses" height="7" src="/images/categories/1_474_NAVOFF.gif" onmouseover="this.src='/images/categories/1_474_NAVON.gif'" onmouseout="this.src='/images/categories/1_474_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=470" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Pants/Shorts');"><img alt="Pants/Shorts" height="7" src="/images/categories/1_470_NAVOFF.gif" onmouseover="this.src='/images/categories/1_470_NAVON.gif'" onmouseout="this.src='/images/categories/1_470_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=501" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Jackets');"><img alt="Jackets" height="7" src="/images/categories/1_501_NAVOFF.gif" onmouseover="this.src='/images/categories/1_501_NAVON.gif'" onmouseout="this.src='/images/categories/1_501_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=472" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Outerwear');"><img alt="Outerwear" height="7" src="/images/categories/1_472_NAVOFF.gif" onmouseover="this.src='/images/categories/1_472_NAVON.gif'" onmouseout="this.src='/images/categories/1_472_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=558" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Swim');"><img alt="Swim" height="7" src="/images/categories/1_558_NAV_IMAGE_OFF.gif" onmouseover="this.src='/images/categories/1_558_NAV_IMAGE_ON.gif'" onmouseout="this.src='/images/categories/1_558_NAV_IMAGE_OFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=467" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Shoes');"><img alt="Shoes" height="7" src="/images/categories/1_467_NAVOFF.gif" onmouseover="this.src='/images/categories/1_467_NAVON.gif'" onmouseout="this.src='/images/categories/1_467_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=471" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Handbags');"><img alt="Handbags" height="7" src="/images/categories/1_471_NAVOFF.gif" onmouseover="this.src='/images/categories/1_471_NAVON.gif'" onmouseout="this.src='/images/categories/1_471_NAVOFF.gif'"></a><br>
+<a href="http://www.toryburchprivatesale.com/catalog.aspx?cid=476" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='SHOP: Left Nav'; s.tl(this,'o','Other Accessories');"><img alt="Other Accessories" height="7" src="/images/categories/1_476_NAVOFF.gif" onmouseover="this.src='/images/categories/1_476_NAVON.gif'" onmouseout="this.src='/images/categories/1_476_NAVOFF.gif'"></a><br>
+</td>
+</tr>
+<tr><td style="background-image: url(images/sep.gif)"><img src="/images/trans.gif" alt="" width="155" height="1" style="margin: 0px"></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+
+  <td class="sub_nav_text" style="text-transform: none">
+  <form action="http://www.toryburchprivatesale.com/email_signup.aspx" name="updates" id="updates" method="post">
+  <img src="/images/lnav_joinList_title.gif" width="102" height="10"><br>
+  <table cellpadding="0" cellspacing="0" border="0">
+  <tr valign="middle">
+    <td><input type="text" name="txtEmail" value="enter email" class="genfield2" style="width: 105px; margin: 3px 5px 0px 0px" onfocus="if (this.defaultValue==this.value) this.value=''"></td>
+    <td><input type="image" src="/images/btn_ok.gif" alt="OK" style="margin-top: 3px"></td>
+  </tr>
+  </table>
+
+  </form>
+</td>
+</tr>
+<tr><td style="background-image: url(images/sep.gif)"><img src="/images/trans.gif" alt="" width="1" height="1"></td></tr>
+<tr>
+  <td class="sub_nav_text" style="padding-top: 15px">
+    <a href="http://www.toryburchprivatesale.com/faq.aspx"><img alt="FAQ" width="28" height="8" src="/images/lnav_faqs_off.gif" onmouseover="this.src='images/lnav_faqs_on.gif'" onmouseout="this.src='/images/lnav_faqs_off.gif'"></a><br>
+    <a href="http://www.toryburchprivatesale.com/help_returns.aspx"><img alt="Returns" width="51" height="7" src="/images/lnav_returns_off.gif" onmouseover="this.src='images/lnav_returns_on.gif'" onmouseout="this.src='/images/lnav_returns_off.gif'"></a><br>
+    <a href="http://www.toryburchprivatesale.com/help_shipping.aspx"><img alt="Shipping" width="52" height="7" src="/images/lnav_shipping_off.gif" onmouseover="this.src='images/lnav_shipping_on.gif'" onmouseout="this.src='/images/lnav_shipping_off.gif'"></a><br>
+    <a href="http://www.toryburchprivatesale.com/privacy.aspx"><img alt="Privacy Policy" width="84" height="7" src="/images/lnav_privacy_off.gif" onmouseover="this.src='images/lnav_privacy_on.gif'" onmouseout="this.src='/images/lnav_privacy_off.gif'"></a><br>
+  </td>
+
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+
+            <td align="left" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="634">
+                    <tr>
+                        <td>
+
+                            <img height="36" src="/images/spacer.gif" width="634"></td>
+                    </tr>
+                    <tr>
+                        <td height="13">
+                            <div align="left" style="position: relative; left: 16px; width: 520px">
+                                <img id="imgCatHeader" src="http://images.toryburchprivatesale.com/images/categories/1_519_PREVIEW_IMAGE.gif" alt="Tunics" border="0" /></div>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <img height="24" src="/images/spacer.gif" width="634"></td>
+                    </tr>
+                    <tr>
+                        <!-- Subnavigation-->
+                        <td valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" width="634">
+                                <tr>
+                                    <td colspan="2">
+
+                                        <img height="1" src="/images/sep_dotted.gif" width="634"></td>
+                                </tr>
+                                <tr height="28" valign="middle">
+                                    <td>
+                                        <div align="left" class="mpnav" style="position: relative; left: 17px;">
+                                            <a id="lnkContinue" href="http://www.toryburchprivatesale.com/catalog_listing.aspx?cid=519">Back to Tunics</a></div>
+                                    </td>
+                                    <td id="tdPrevNext">
+
+                                        <div align="right" class="mpnav" style="position: relative; right: 17px;">
+                                            [
+                                            Previous
+                                            |
+                                            <a href="http://www.toryburchprivatesale.com/catalog_detail.aspx?cid=519&id=65148">Next</a>
+                                            ]</div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+
+                                        <img height="1" src="/images/sep_dotted.gif" width="634"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img height="20" src="/images/spacer.gif" width="634"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <form name="frmMain" method="post" action="catalog_detail.aspx?cid=519&amp;id=64532" id="frmMain">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE5MTYxNDkzMDgPZBYEAgQPDxYEHgtOYXZpZ2F0ZVVybAVAaHR0cDovL3d3dy50b3J5YnVyY2hwcml2YXRlc2FsZS5jb20vY2F0YWxvZ19saXN0aW5nLmFzcHg/Y2lkPTUxOR4EVGV4dAUOQmFjayB0byBUdW5pY3NkZAIGD2QWEAIFDw8WAh8ABR5qYXZhc2NyaXB0OmZjbk9wZW5ab29tKDY0NTMyKTtkFgJmDw8WAh4ISW1hZ2VVcmwFRWh0dHA6Ly9pbWFnZXMudG9yeWJ1cmNocHJpdmF0ZXNhbGUuY29tL2ltYWdlcy9wcm9kdWN0cy8xXzY0NTMyX0ZTLmpwZ2RkAgcPDxYCHwAFHmphdmFzY3JpcHQ6ZmNuT3Blblpvb20oNjQ1MzIpO2RkAgkPFgIeB1Zpc2libGVnZAIcDxYCHwNoZAIeDxYCHwFlZAIkDw8WAh8DaGRkAiYPZBYCZg9kFghmDw8WAh8CBRwvaW1hZ2VzL3NoZF9hdmFpbF9jb2xvcnMuZ2lmZGQCAQ8QZA8WAWYWARAFCU5hdnkgTGFjZQUBMGdkZAICDw8WAh8CBRQvaW1hZ2VzL3NoZF9zaXplLmdpZmRkAgQPEA8WBh4NRGF0YVRleHRGaWVsZAUFQUxJQVMeDkRhdGFWYWx1ZUZpZWxkBQVBTElBUx4LXyFEYXRhQm91bmRnZBAVAgJNZQVPdGhlchUCAk1lBU90aGVyFCsDAmdnZGQCKg8WAh8DaGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFBmJ0bkFkZMf5CJVI39wya8SysW86s6mjaCSi" />
+
+                                <input name="txtSKUID" type="hidden" id="txtSKUID" />
+                                <input name="txtCartLineID" type="hidden" id="txtCartLineID" />
+                                <table border="0" cellpadding="0" cellspacing="0" width="634">
+                                    <tr>
+                                        <td bgcolor="#FFFFFF" width="16">
+
+                                        </td>
+                                        <!-- SP Page -->
+                                        <td width="602">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="602">
+                                                <tr valign="top">
+                                                    <!-- large image and alt view -->
+                                                    <td bgcolor="#FFFFFF" height="517" width="301">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="301">
+                                                            <tr>
+
+                                                                <!-- Large Image -->
+                                                                <td>
+                                                                    <a id="lnkZoom" href="javascript:fcnOpenZoom(64532);"><img id="imgLargeImage" src="http://images.toryburchprivatesale.com/images/products/1_64532_FS.jpg" border="0" style="height:301px;width:301px;" /></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="1" src="/images/spacer.gif" width="301"></td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td>
+                                                                    <div class="mpnav" style="position: relative; vertical-align: middle; text-align: center">
+                                                                        <a id="lnkZoom2" href="javascript:fcnOpenZoom(64532);">
+                                                                        click to enlarge</a></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+
+                                                                    <img height="19" src="/images/spacer.gif" width="301"></td>
+                                                            </tr>
+                                                            <tr id="trAltViewsHeader">
+	<td>
+                                                                    <img height="7" alt="Alternate Views" src="/images/shd_altviews.gif" width="79"></td>
+</tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="9" src="/images/spacer.gif" width="301"></td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <!-- Start Thumbnails -->
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                            
+                                                                                    <td><table id="alt_border_out0" bgcolor="#c1c1c1" border="0" cellpadding="1" cellspacing="1"
+                                                                                            height="73" onmouseout="this.style.backgroundColor='#c1c1c1'" onmouseover="this.style.backgroundColor='#ec6b00'"
+                                                                                            width="73">
+                                                                                            <tr height="69">
+                                                                                                <td id="border_in" bgcolor="#FFFFFF" width="69">
+
+                                                                                                    <a onmouseover="document.images.imgLargeImage.src='http://images.toryburchprivatesale.com/images/products/1_64532_AV_493.jpg'">
+                                                                                                        <img id="thumb" border="0" height="69" src="http://images.toryburchprivatesale.com/images/products/1_64532_SW_493.jpg"
+                                                                                                            width="69"></a></td>
+                                                                                            </tr>
+                                                                                        </table></td>
+                                                                                    <td width="3"></td>
+                                                                                    
+                                                                                
+                                                                                    <td><table id="alt_border_out0" bgcolor="#c1c1c1" border="0" cellpadding="1" cellspacing="1"
+                                                                                            height="73" onmouseout="this.style.backgroundColor='#c1c1c1'" onmouseover="this.style.backgroundColor='#ec6b00'"
+                                                                                            width="73">
+                                                                                            <tr height="69">
+                                                                                                <td id="border_in" bgcolor="#FFFFFF" width="69">
+                                                                                                    <a onmouseover="document.images.imgLargeImage.src='http://images.toryburchprivatesale.com/images/products/1_64532_AV_493a.jpg'">
+
+                                                                                                        <img id="thumb" border="0" height="69" src="http://images.toryburchprivatesale.com/images/products/1_64532_SW_493a.jpg"
+                                                                                                            width="69"></a></td>
+                                                                                            </tr>
+                                                                                        </table></td>
+                                                                                    <td width="3"></td>
+                                                                                    
+                                                                                
+                                                                                    <td><table id="alt_border_out0" bgcolor="#c1c1c1" border="0" cellpadding="1" cellspacing="1"
+                                                                                            height="73" onmouseout="this.style.backgroundColor='#c1c1c1'" onmouseover="this.style.backgroundColor='#ec6b00'"
+                                                                                            width="73">
+                                                                                            <tr height="69">
+                                                                                                <td id="border_in" bgcolor="#FFFFFF" width="69">
+                                                                                                    <a onmouseover="document.images.imgLargeImage.src='http://images.toryburchprivatesale.com/images/products/1_64532_AV_493b.jpg'">
+                                                                                                        <img id="thumb" border="0" height="69" src="http://images.toryburchprivatesale.com/images/products/1_64532_SW_493b.jpg"
+                                                                                                            width="69"></a></td>
+
+                                                                                            </tr>
+                                                                                        </table></td>
+                                                                                    <td width="3"></td>
+                                                                                    
+                                                                                
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <img height="9" src="/images/spacer.gif" width="1" /></td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                            
+                                                                </td>
+                                                                <!-- End Thumbnails -->
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="9" src="/images/spacer.gif" width="301"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+
+                                                    <td bgcolor="#FFFFFF">
+                                                        <img height="100" src="/images/spacer.gif" width="16"></td>
+                                                    <!-- product data and comerce functionality -->
+                                                    <td width="285">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="285">
+                                                            <tr>
+                                                                <td>
+                                                                    <img id="imgTitle" src="/images/trans.gif" alt="Embroidered Stephanie Tunic" border="0" /></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="16" src="/images/spacer.gif" width="285"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="spdesc">
+                                                                    <span id="lblDescription">An easy building block for your spring wardrobe, our Stephanie tunic looks distinctive with Bermuda shorts and lends a bohemian flare to tailored trousers. Cotton tunic with embroidered lace pattern throughout. Contrast solid trim at split neckline, cuffs and bottom hem. Vents at cuffs and sides.</span></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="19" src="/images/spacer.gif" width="285"></td>
+                                                            </tr>
+                                                            <tr id="trPrice">
+	<td class="spprice">
+                                                                    Price:
+                                                                    <span id="lblPrice"><s>$395.00</s>&nbsp;<font color="#990000">$118.50</font></span></td>
+
+</tr>
+
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="20" src="/images/spacer.gif" width="285"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="spdesc">
+                                                                    <span style="color: red"><b>PRIVATE SALE. ALL SALES FINAL.</b></span><br>
+
+                                                                    <br>
+                                                                </td>
+                                                            </tr>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            <!-- Swatch Table Start -->
+                                                            
+                                                            <tr>
+                                                                <td>
+                                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="276">
+                                                                        <tr align="left" bgcolor="#FFFFFF" height="29">
+                                                                             <td onclick="fcnChangeColor(0);">
+
+<table width="142" height="25" border="0" cellpadding="0" cellspacing="0"><tr><td>
+	<table id="swatch_0" bgcolor="#cccccc" border="0" cellpadding="1" cellspacing="1" height="29">
+	<tr height="25">
+		<td id="Td8" bgcolor="#FFFFFF" width="25"><a href="#"><img id="swatch" border="0" height="25" alt="Navy Lace" src="http://images.toryburchprivatesale.com/images/products/1_64532_CT_493.gif" width="25"></a></td>
+	</tr>
+ </table>
+</td>
+<td><img height="29" src="/images/spacer.gif" width="10"></td>
+<td align="left" class="spswatch" valign="middle" width="103">Navy Lace</td></tr></table></td>
+
+                                                                        </tr>
+
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            
+                                                            <!-- Swatch Table End -->
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="16" src="/images/spacer.gif" width="285"></td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="285">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="javascript:fcnTellAFriend();">
+                                                                                    <img alt="Email to a Friend" height="7" src="/images/btn_email_friend.gif" width="110"></a></td>
+                                                                            <td>
+                                                                                <img height="7" src="/images/spacer.gif" width="32"></td>
+                                                                            <td>
+
+                                                                                </td>
+                                                                            <td>
+                                                                                <img height="7" src="/images/spacer.gif" width="43"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+
+                                                                    <img height="15" src="/images/spacer.gif" width="285"></td>
+                                                            </tr>
+                                                            
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="1" src="/images/SP_commerce_dotted.gif" width="285"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="14" src="/images/spacer.gif" width="285"></td>
+
+                                                            </tr>
+                                                            <!-- Commerce Table Start -->
+                                                            <tr id="trChooser" style="font-size: 90%">
+	<td valign="top">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="285">
+                                                                        <tr valign="top">
+                                                                            <!-- select color -->
+                                                                            <td>
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="177">
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <img id="imgColor" alt="Select Color:" src="/images/shd_avail_colors.gif" border="0" style="height:7px;width:69px;" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <img height="7" src="/images/spacer.gif" width="177"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+
+                                                                                        <td>
+                                                                                            <select name="selColor" id="selColor" class="spui" onchange="fcnChangeColor(this[this.selectedIndex].value);" style="width:162px;width: 162px;">
+		<option value="0">Navy Lace</option>
+
+	</select>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+
+                                                                            <!-- select size -->
+                                                                            <td>
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="86">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                           <img id="imgSize" alt="Size:" src="/images/shd_size.gif" border="0" style="height:7px;width:22px;" /></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+
+                                                                                            <img height="7" src="/images/spacer.gif" width="86"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td class="spsizechart">
+                                                                                            <select id="selSize" class="spui" name="selSize" onchange="fcnChangeSize(this[this.selectedIndex].value);"
+                                                                                                style="width: 70px">
+                                                                                            </select>
+                                                                                            <br>
+                                                                                            <a href="javascript: more('/size_chart.html', 'sizechart', 720, 550, 'no')">Size Chart</a></td>
+
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                            <!-- quantity -->
+                                                                            <td>
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="22">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <img alt="Quantity:" height="7" src="/images/shd_qty.gif" width="20"></td>
+
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <img height="7" src="/images/spacer.gif" width="22"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <input name="txtQuantity" type="text" value="1" maxlength="3" id="txtQuantity" class="genfield2" style="width:20px;width: 20px" />
+                                                                                        </td>
+
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <!-- ship to -->
+                                                                            <td>
+                                                                                <table border="0" cellpadding="0" cellspacing="0" width="177">
+                                                                                    <tr>
+
+                                                                                        <td>
+                                                                                            <img alt="Ship To:" src="/images/shd_shipto.gif"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <img height="7" src="/images/spacer.gif" width="177"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+
+                                                                                            <select name="selShipTo" id="selShipTo" class="spui" style="width:70px;">
+		<option value="Me">Me</option>
+		<option value="Other">Other</option>
+
+	</select>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                            </td>
+                                                                            <td>
+                                                                            </td>
+                                                                            <td>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+</tr>
+
+                                                            <!-- Commerce Table End -->
+                                                            <tr>
+                                                                <td>
+                                                                    <img height="16" src="/images/spacer.gif" width="285"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div align="right">
+
+                                                                        <input type="image" name="btnAdd" id="btnAdd" src="/images/btn_buynow2.gif" alt="Buy Now" border="0" />
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- upsell area -->
+                                                
+                                            </table>
+
+                                        </td>
+                                        <td bgcolor="#FFFFFF" width="16">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+            <!-- Page Content End -->
+            <td bgcolor="#f17d00" valign="top" width="11">
+                <img height="800" src="/images/spacer.gif" width="11"></td>
+            <td valign="top" id="right_side">
+<table cellpadding="0" cellspacing="0" border="0" class="sub_nav_text">
+<tr>
+  <td class="sub_nav_text_right" style="padding: 0px 7px 0px 5px;">
+    <table cellpadding="0" cellspacing="0" border="0">
+    <tr><td colspan="2"><a href="http://www.toryburchprivatesale.com/contact.aspx"><img alt="Contact Us" width="67" height="15" src="/images/rnav_contact_off.gif" onmouseover="this.src='/images/rnav_contact_on.gif'" onmouseout="this.src='/images/rnav_contact_off.gif'" style="margin: 0px"></a><br></td></tr>
+
+      <tr valign="middle"><td colspan="2"><table cellpadding="0" cellspacing="0" border="0"><tr><td><a href="http://www.toryburchprivatesale.com/checkout_basket.aspx"><img alt="Shopping Bag" width="78" height="15" src="/images/rnav_shoppingBag_off.gif" onmouseover="this.src='/images/rnav_shoppingBag_on.gif'" onmouseout="this.src='/images/rnav_shoppingBag_off.gif'" style="margin: 0px;"><img src="/images/trans.gif" border="0" alt="" width="5" height="1" style="margin: 0px"><img src="/images/icon_tote.gif" width="18" height="15" border="0" alt="Shopping Bag" style="margin: 0px"></a></td>
+      <td align="left">&nbsp;</td>
+    </tr></table></td></tr>
+    </table>
+  <br><br></td>
+</tr><tr>
+  <td class="sub_nav_text_right" style="text-transform: none; padding: 0px 7px 15px 5px;">
+    <img src="/images/rnav_search_title.gif" alt="Search:" width="37" height="9" style="margin-bottom: 0px"><br>
+    <table cellpadding="0" cellspacing="0" border="0">
+
+    <tr valign="middle"><form action="http://www.toryburchprivatesale.com/search.aspx" method="post">
+      <td><input type="text" name="search" id="search" value="enter keyword" class="genfield2" style="width: 104px; margin-top: 3px; margin-right: 5px" onfocus="if (this.defaultValue==this.value) this.value = ''"></td>
+      <td><input type="image" src="/images/btn_go.gif" alt="GO" style="margin-top: 3px"></td>
+    </form></tr>
+    </table>
+  </td>
+</tr>
+<tr><td style="background-image: url(images/sep_white.gif)"><img src="/images/trans.gif" alt="" width="1" height="1" style="margin: 0px"></td></tr>
+<tr>
+  <td class="sub_nav_text_right" style="text-transform: none; padding: 15px 7px 3px 5px;">
+
+    <table cellpadding="0" cellspacing="0" border="0" style="width: 140px">
+    <tr><td style="padding-bottom: 5px"><a href="http://www.toryburch.com/toryburch/browse/subCategory.jsp?icCategory=cat40012&icSort=" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='Right Nav: Flex Ads'; s.tl(this,'o','www.toryburch.com ');"><img src="http://images.toryburchprivatesale.com/images/c9/1_27.jpg" alt="www.toryburch.com " class="stroke_gray"></a></td></tr>
+    </table>
+  </td>
+</tr>
+<tr><td class="sub_nav_text_right" style="padding: 0px 7px 15px 5px;"><img src="/images/arrw_white.gif" alt="" width="6" height="5" style="margin-bottom: 1px">&nbsp;<a href="http://www.toryburch.com/toryburch/browse/subCategory.jsp?icCategory=cat40012&icSort=" onClick="var s=s_gi('toryburchprivatesalejuly'); s.linkTrackVars='prop1,prop2'; s.linkTrackEvents='None'; s.prop1='Right Nav: Flex Ads'; s.tl(this,'o','www.toryburch.com ');">www.toryburch.com </a></td></tr>
+<tr><td style="background-image: url(/images/sep_white.gif)"><img src="/images/trans.gif" alt="" width="1" height="1" style="margin: 0px"></td></tr>
+<tr><td class="sub_nav_text_right" style="padding: 15px 7px 15px 5px;"><img src="/images/rnav_copyright.gif" alt="&copy;2005 Tory Burch LLC&trade;, All Rights reserved" width="108" height="14" style="margin: 0px"></td></tr>
+</table>
+</td>
+
+        </tr>
+
+    </table>
+		<!-- Google Analytics -->
+        <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+
+        <script type="text/javascript">
+        try{
+            var pageTracker = _gat._getTracker("UA-446313-2");
+            pageTracker._setLocalRemoteServerMode();
+            pageTracker._trackPageview();
+        } catch(err) {}
+        </script>
+
+        <!-- SiteCatalyst code version: H.15.1.
+        Copyright 1997-2008 Omniture, Inc. More info available at
+        http://www.omniture.com -->
+        <script language="JavaScript" type="text/javascript" src="/s_code.js"></script>
+
+        <script language="JavaScript" type="text/javascript"><!--
+        /* You may give each page an identifying name, server, and channel on
+        the next lines. */
+        s.pageName="SHOP: Embroidered Stephanie Tunic"
+        s.channel="Tunics"
+        s.prop1 = "Embroidered Stephanie Tunic"
+s.hier = "Tunics"
+/* E-commerce Variables */
+s.events = "prodView,event3"
+s.products = ";12091102 - Embroidered Stephanie Tunic"
+
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+        <script language="JavaScript" type="text/javascript"><!--
+        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+        //--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+        src="http://style.toryburch.com/b/ss/toryburch/1/H.15.1--NS/0"
+        height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+        <!-- End SiteCatalyst code version: H.15.1. -->	
+</body>
+</html>

@@ -1,0 +1,11 @@
+source "http://rubygems.org"
+
+gem "json"
+gem "mechanize", "1.0.0"
+gem "activerecord", "2.3.5"
+gem "sinatra"
+gem "nokogiri", "1.4.4"
+
+group :development do
+  gem 'ruby-debug', "!= 0.10.4"
+end

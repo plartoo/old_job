@@ -1,0 +1,73 @@
+The following is a readme to get set up for the fetchers project.
+
+git://xx.xx.x.xx/fetchers.git
+
+Written by Phyo Thiha [Start date: 2010-08-24]
+
+If you are editing the file, please consider the audience.  Clarity and specificity are important.
+If you are reading this for the first time, read it over and then act. It'll be good to know where things will fit together.
+
+Table of Contents
+
+[] Branch notes
+
+[] Gems
+[] Getting started on Windows
+[] Getting started on Linux
+[] Miscellaneous operations
+
+
+Let's begin
+
+[] Branch notes
+
+    master_20110503 - was the previous "master" branch as of May 3, 2011, where we switched to the newer "consolidated"
+        branch.  The new consolidated branch (and turned into the master branch as of this date) has the combined
+        singlethread/multithread frameworks combined.
+    master_20110527 - was the previously consolidated framework. On 2011/05/02, we switched to a new framework that reduced
+        reliance on class variables.  The very initial ruby framework had a lot of data stored in Fetcher class variables.
+        This method of storing data was prohibiting us from running multiple fetchers in the same process, since the
+        individual fetcher's definition data was colliding.  The new version now keeps the data on the individual fetcher
+        class (Victoriassecret or Yoox, rather than Fetcher), so that Yoox fetchers won't collide with VS fetchers.
+
+[] Gems
+    Gems are library plugins for Ruby. Read up on them http://rubygems.org/.  You'll be glad you did.
+    You'll need to have a good number of these gems installed to get your system up and running.  See the Windows/Linux sections to get more pertinent information.
+
+[] Getting started on Windows
+
+    You'll need InstantRails to run the basic SQL and Rails applications that your code may run on when loading up the SITM or certain webapp projects.  This is currently available at http://rubyforge.org/projects/instantrails/ (version 2.0 currently).
+    Hopefully by the time you read this we'll have an InstantRails zip that already has all necessary gems installed, although there is a good chance you'll need to tweak some stuff.
+    unzip the file into your c: drive. => C:\InstantRails...
+    When you load a web server like 'ruby script/server', you'll first need to run the InstantRails.exe inside that folder. It won't "actively" do much, as in you won't interact with it at all, but it does need to be running.
+
+    The field named "path"...
+    In order to run commands from the console (cmd), you'll need to add certain paths to your system's PATH environment variable.
+    In the System Properties (right click "My Computer" -> Properties -> Advanced System Settings -> Environment Variables) scroll down in the "System Variables" portion. Select "Path" and click "Edit".
+    Any exe or bat that is located in a folder that is listed in this line will be callable directly from the console, without specifying a path.
+    You'll want to add a path to the \ruby\bin folder inside your InstantRails folder.  For me, this was "C:\InstantRails-2.0-win\ruby\bin". Add this at the end of the Path line, making sure to separate it from the previous entries with a semicolon.
+    
+[] Miscellaneous operations
+
+    - Deploying local branch to staging:
+        $ cap staging-uk deploy [BRANCH=origin/<branch_name>]
+
+    - Importing on staging:
+        >> log in as user "deploy"; go to SITM base directory </usr/local/sitm/current>
+        $ rake yaml_clothing_items:import FEED="/usr/local/salemail/yaml_feeds/" VENDOR=mango I18N_VERSION=us RAILS_ENV=staging DATE=100813
+
+    - Indexing on staging:
+        >> log in as user "deploy"; go to SITM base directory </usr/local/sitm/current>
+        $ rake salespot:index RAILS_ENV=staging I18N_VERSION=us RUN_SPHINX=y
+
+    - Running "screen" on staging:
+        $ screen -S <task_name_you_want_to_give>
+        $ (do what you like)
+        $ ctrl+a, d (to detach)
+        >> to resume screen session
+        $ screen -r <task_name_you_gave>
+
+    - SITM database access on staging
+        >> log in as user "deploy"; go to SITM base directory </usr/local/sitm/current>
+        $ script/dbconsole
+        $ password: salemail

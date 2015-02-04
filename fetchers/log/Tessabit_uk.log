@@ -1,0 +1,27 @@
+[2011-08-23 11:09:08.149] [INFO] Beginning SinglethreadFramework run
+[2011-08-23 11:09:08.149] [INFO] Starting at Tue Aug 23 11:09:08 -0700 2011 for 2011-08-23
+[2011-08-23 11:09:08.150] [INFO] Fetching tessabit
+[2011-08-23 11:09:08.159] [INFO] loaded 0 coupon(s)
+[2011-08-23 11:09:10.095] [INFO] 
+item_scraper.rb: Scraping category: test
+[2011-08-23 11:09:10.095] [INFO] item_scraper.rb: url-> http://shop.tessabit.com/shopping/sale/men/suits/items.aspx?pagedep0=1
+[2011-08-23 11:09:11.005] [INFO] VALID ITEM COUNT(Current page)::::0
+[2011-08-23 11:09:11.005] [INFO] VALID ITEM COUNT(Current category: test)::::0
+[2011-08-23 11:09:11.005] [INFO] INVALID ITEM COUNT(Current category: test)::::0
+[2011-08-23 11:09:11.005] [INFO] TOTAL VALID ITEM COUNT(For current fetcher)::::0
+[2011-08-23 11:09:11.005] [INFO] TOTAL ITEM COUNT(For current fetcher)::::0
+[2011-08-23 11:09:11.005] [INFO] fetched 0 items from 'test' on page 1
+[2011-08-23 11:09:11.005] [INFO] fetched 0 items in total
+[2011-08-23 11:09:11.006] [INFO] SUMMARY of sccs scraping::
+Number of items with successful SCCS scraping: 0 (0 duplicates) out of 0 valid items.
+
+[2011-08-23 11:09:11.006] [INFO] wrote 0 items to file
+
+
+[2011-08-23 11:09:11.006] [INFO] 
+
+Total time taken::
+
+Total of item and scc scraping: 2.87169098854065
+
+

@@ -1,0 +1,153 @@
+#Category clothing_type overrides item clothing type
+--- 
+:active:
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: Tops
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Tops&catId=cat210001
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :CASUAL_SHIRT
+  :ignored: false
+  :name: Dresses and Skirts
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Dresses+%26+Skirts&catId=cat210002
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: Pants
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Pants&catId=cat210003
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :JEANS
+  :ignored: false
+  :name: Denim
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Denim&catId=cat210023
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :OUTERWEAR
+  :ignored: false
+  :name: Jackets and Coats
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Jackets&catId=cat210004
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: Jewelry and Accessories
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Jewelry+Accessories&catId=cat210005
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :SHOES
+  :ignored: false
+  :name: Shoes
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/browse/shelf.jsp?cat=Shoes&catId=cat210019
+    "@_rails_html_safe": false
+
+
+  ### added on August 27, 2010 after Alice reported that we're scraping only ~50 items out of ~500 availble.
+  ### pagination is hard to do for this retailer, so we're listing all possible pages manually here
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: All Sale - pg1
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-341562201863410409&trail=10275%3Acat4809277&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: All Sale - pg2
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-341562201863410409&trail=10275%3Acat4809277&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: All Clearance - pg1
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/browse/sale_shelf_clearance.jsp_AF&_dynSessConf=-341562201863410409&_DARGS=/store/common/browse/sale_shelf_clearance.jsp_AF&_dynSessConf=-341562201863410409&trail=10275%3Acat4809277%3A13275%3A1&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&ajaxIgnore_stSo=&categoryId=&subCatId=&qfh_sr=true&_D%3AajaxIgnore_stSo=+&catId=cat4809277&_D%3Aqfh_sr=+&qfh_ft=10275%3Acat4809277%3A13275%3A1&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: All Clearance - pg2
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-341562201863410409&trail=10275%3Acat4809277%3A13275%3A1&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&_D%3Afh_rct=+&qfh_fsr=true&viewAll=&subCatId=&_D%3Afh_sr=+&catId=cat4809277&fh_gtp=2&fh_sr=true&qfh_ft=10275%3Acat4809277%3A13275%3A1&fh_rct=0451947936&_D%3Aqfh_s_s=+&qfh_s_s=submit&_D%3Afh_gtp=+
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type:
+  :ignored: false
+  :name: All Clearance - pg3
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-341562201863410409&trail=10275%3Acat4809277%3A13275%3A1&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&_D%3Afh_rct=+&qfh_fsr=true&viewAll=&subCatId=&_D%3Afh_sr=+&catId=cat4809277&fh_gtp=3&fh_sr=true&qfh_ft=10275%3Acat4809277%3A13275%3A1&fh_rct=0451947936&_D%3Aqfh_s_s=+&qfh_s_s=submit&_D%3Afh_gtp=+
+    "@_rails_html_safe": false
+
+  ### all categories are updated manually because viewAll functionality is not working
+- :dept: :womens
+  :clothing_type: :SHOES
+  :ignored: false
+  :name: Shoes
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-1281015941534105350&trail=10275%3Acat4809277%3A10275%3Acat210019&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=cat210019&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277%3A10275%3Acat210019&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: 
+  :ignored: false
+  :name: Tops
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-1281015941534105350&trail=10275%3Acat4809277%3A10275%3Acat210001&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=cat210001&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277%3A10275%3Acat210001&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: 
+  :ignored: false
+  :name: Dresses & Skirts
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-1281015941534105350&trail=10275%3Acat4809277%3A10275%3Acat210002&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=cat210002&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277%3A10275%3Acat210002&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: 
+  :ignored: false
+  :name: Pants
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-1281015941534105350&trail=10275%3Acat4809277%3A10275%3Acat210003&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=cat210003&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277%3A10275%3Acat210003&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: 
+  :ignored: false
+  :name: Denim
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-1281015941534105350&trail=10275%3Acat4809277%3A10275%3Acat210023&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=cat210023&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277%3A10275%3Acat210023&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :OUTERWEAR
+  :ignored: false
+  :name: Jackets and Coats
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/browse/sale_shelf_left_navigation.jsp_AF&_dynSessConf=-7866646501214540975&trail=10275%3Acat4809277%3A10275%3Acat210004&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&ajaxIgnore_stSort=&qfh_cl=true&subCatId=cat210004&_D%3AajaxIgnore_stSort=+&_D%3Aqfh_cl=+&catId=cat4809277&fsrp_sf=true&_D%3Afsrp_sf=+&_D%3AajaxIgnore_stViewAll=+&qfh_ft=10275%3Acat4809277%3A10275%3Acat210004&_D%3Aqfh_s_s=+&qfh_s_s=submit&ajaxIgnore_stViewAll=false
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :JEWELRY
+  :ignored: false
+  :name: Jewelry & Accessories
+  :url: !str 
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/search/search_paging.jsp_AF&_dynSessConf=-1281015941534105350&trail=10275%3Acat4809277%3A10275%3Acat210005&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&viewAll=true&subCatId=cat210005&_D%3Afh_sr=+&catId=cat4809277&qfh_srps=200&_D%3Ast_viewall=+&_D%3Aqfh_srps=+&st_viewall=true&fh_sr=true&qfh_ft=10275%3Acat4809277%3A10275%3Acat210005&_D%3Aqfh_s_s=+&qfh_s_s=submit
+    "@_rails_html_safe": false
+- :dept: :womens
+  :clothing_type: :SWIMWEAR
+  :ignored: false
+  :name: Swim
+  :url: !str
+    str: http://www.whitehouseblackmarket.com/store/search/search_results.jsp?_DARGS=/store/common/browse/sale_shelf_left_navigation.jsp_AF&_dynSessConf=-7866646501214540975&trail=10275%3Acat4809277%3A10275%3Acat6029283&qfh_fsr=true&_D%3Aqfh_ft=+&_D%3Aqfh_fsr=+&ajaxIgnore_stSort=&qfh_cl=true&subCatId=cat6029283&_D%3AajaxIgnore_stSort=+&_D%3Aqfh_cl=+&catId=cat4809277&fsrp_sf=true&_D%3Afsrp_sf=+&_D%3AajaxIgnore_stViewAll=+&qfh_ft=10275%3Acat4809277%3A10275%3Acat6029283&_D%3Aqfh_s_s=+&qfh_s_s=submit&ajaxIgnore_stViewAll=false
+    "@_rails_html_safe": false
+:vendor: white_house_black_market
+:ignored: []
+
+

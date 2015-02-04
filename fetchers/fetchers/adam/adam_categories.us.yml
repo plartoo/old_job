@@ -1,0 +1,87 @@
+#
+--- 
+:active:
+    ### Added extra sale cat 4/8/11 per Alice's req
+- :ignored: false
+  :url: !str
+    str: http://www.shopadam.com/view-all-sale/icat/womensalefashion/&itemsperpage=100
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: sale
+  :clothing_type:
+
+    
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/dresses/icat/womencategorydress/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Dresses
+  :clothing_type: :DRESS
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/tops/icat/womencategorytop/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Tops
+  :clothing_type: :CASUAL_SHIRT
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/sweaters/icat/womencategorysweater/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Sweaters
+  :clothing_type: :SWEATER
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/jackets+blazers/icat/womencategoryjackblazer/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Jackets & Blazers
+  :clothing_type: :OUTERWEAR
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/pants+shorts/icat/womencategorypantshort/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Pants & Shorts
+  :clothing_type: 
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/skirts/icat/womencategoryskirt/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Skirts
+  :clothing_type: :SKIRT
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/loungewear/icat/loungewear/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Loungewear
+  :clothing_type: 
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/accessories/icat/womencategoryaccessory/
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Accessories
+  :clothing_type: 
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/shirts/icat/mencategoryshirt/
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: Shirts
+  :clothing_type: :CASUAL_SHIRT
+- :ignored: false
+  :url: !str 
+    str: http://www.shopadam.com/pants+shorts/icat/mencategorypantshort/
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: Pants & Shorts
+  :clothing_type: :SHORTS
+:ignored: []
+
+:vendor: adam
+

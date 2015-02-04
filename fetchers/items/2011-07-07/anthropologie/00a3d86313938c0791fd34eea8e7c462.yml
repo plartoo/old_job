@@ -1,0 +1,46 @@
+--- 
+:dept: :womens
+:dynamic: 
+  :sale_price: 
+  :currency: USD
+  :original_price: "58.00"
+  :notice: 
+:vendor_key: "21109111"
+:description: Dorsal Tee
+:extended_description: {}
+
+:clothing_type: 
+  :group: :top
+  :bm: 19
+:additional_images: []
+
+:brand_bm: 965
+:vendor_name: anthropologie
+:product_image: 
+  :url: http://www.anthropologie.com/
+  :height: 210
+  :buffer_width: 125
+  :width: 140
+:department_bm: 0
+:related_vendor_keys: []
+
+:category_data: 
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=CLOTHES&navAction=middle&navCount=270&isSortBy=true&pushId=CLOTHES-KNITSTEES&id=CLOTHES-KNITSTEES-STRIPE
+    "@_rails_html_safe": false
+  :name: Striped
+  :path: 
+  - Clothes
+  - Knits & Tees
+  - Striped
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=CLOTHES&navAction=middle&navCount=270&isSortBy=true&pushId=CLOTHES-KNITSTEES&id=CLOTHES-KNITSTEES-PLEATS
+    "@_rails_html_safe": false
+  :name: Pleats & Twists
+  :path: 
+  - Clothes
+  - Knits & Tees
+  - Pleats & Twists
+:product_url: http://www.anthropologie.com/anthro/catalog/productdetail.jsp?id=21109111&catId=CLOTHES-KNITSTEES-PLEATS&pushId=CLOTHES-KNITSTEES-PLEATS&popId=CLOTHES-KNITSTEES&navAction=middle&navCount=90&color=049&isProduct=true&fromCategoryPage=true&templateType=D
+:clothing_type_bm: 19
+:scc: 

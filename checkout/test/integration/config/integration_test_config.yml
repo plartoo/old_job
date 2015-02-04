@@ -1,0 +1,28 @@
+:user:
+  :first_name: chesire
+  :last_name: cat
+  :address_1: 410 townsend
+  :address_2: 
+  :city: san francisco
+  :state: CA
+  :zip: 94107
+  :phone: 6501234567
+  :billing_first_name: alice
+  :billing_last_name: smith
+  :billing_address_1: 410 townsend
+  :billing_address_2: 
+  :billing_city: san francisco
+  :billing_state: CA
+  :billing_country: US
+  :billing_zip: 94107
+  :billing_phone: 6501234567
+  :separate_billing_address: false
+  :email_address: 'fake@fake.com'
+
+:credit_card:
+  :credit_card_type: visa
+  :credit_card_num: 4111111111111111
+  :credit_card_holder_name: foo bar
+  :credit_card_month: 1
+  :credit_card_year: 2013
+  :credit_card_ccv: 123

@@ -1,0 +1,35 @@
+--- 
+:dept: :womens
+:dynamic: 
+  :sale_price: 
+  :currency: USD
+  :original_price: "99.95"
+  :notice: 
+:vendor_key: "3093481"
+:description: "UGG\xC2\xAE Australia 'Rylan' Slipper (Women)"
+:extended_description: {}
+
+:clothing_type: 
+  :group: :shoe
+  :bm: 10
+:additional_images: []
+
+:brand_bm: 220
+:vendor_name: nordstrom
+:product_image: 
+  :url: http://g.nordstromimage.com/imagegallery/store/product/Medium/14/_6318714.jpg
+  :height: 254
+  :buffer_width: 125
+  :width: 165
+:department_bm: 0
+:related_vendor_keys: []
+
+:category_data: 
+- :url: !str 
+    str: http://shop.nordstrom.com/c/womens-shoes-view-all?origin=topnav
+    "@_rails_html_safe": false
+  :name: Shoes
+  :path: 
+:product_url: http://shop.nordstrom.com/s/ugg-australia-rylan-slipper-women/3093481?origin=category
+:clothing_type_bm: 10
+:scc: 

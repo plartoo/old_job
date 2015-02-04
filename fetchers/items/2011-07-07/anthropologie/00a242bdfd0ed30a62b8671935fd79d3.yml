@@ -1,0 +1,43 @@
+--- 
+:dept: :womens
+:dynamic: 
+  :sale_price: 
+  :currency: USD
+  :original_price: "38.00"
+  :notice: 
+:vendor_key: "20816856"
+:description: Briolette Set
+:extended_description: {}
+
+:clothing_type: 
+  :group: :intimate
+  :bm: 12
+:additional_images: []
+
+:brand_bm: 965
+:vendor_name: anthropologie
+:product_image: 
+  :url: http://www.anthropologie.com/
+  :height: 210
+  :buffer_width: 125
+  :width: 140
+:department_bm: 0
+:related_vendor_keys: []
+
+:category_data: 
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=CLOTHES&navAction=middle&navCount=1062&isSortBy=true&pushId=CLOTHES-INTIMATES&id=CLOTHES-INTIMATES-UNDERWEAR
+    "@_rails_html_safe": false
+  :name: Panties
+  :path: 
+  - Clothes
+  - Intimates
+  - Panties
+- :url: !str 
+    str: http://www.anthropologie.com/anthro/catalog/category.jsp?popId=CLOTHES&navAction=top&navCount=6&isSortBy=true&pushId=CLOTHES-INTIMATES&id=CLOTHES-INTIMATES
+    "@_rails_html_safe": false
+  :name: Intimates
+  :path: 
+:product_url: http://www.anthropologie.com/anthro/catalog/productdetail.jsp?id=20816856&catId=CLOTHES-INTIMATES&pushId=CLOTHES-INTIMATES&popId=CLOTHES&navAction=top&navCount=510&color=004&isProduct=true&fromCategoryPage=true&isSubcategory=true&subCategoryId=CLOTHES-INTIMATES&templateType=subCategory
+:clothing_type_bm: 12
+:scc: 

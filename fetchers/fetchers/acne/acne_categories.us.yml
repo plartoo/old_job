@@ -1,0 +1,288 @@
+#
+--- 
+:active: 
+- :clothing_type: :ACCESSORIES
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/accessories.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Accessories
+  :dept: :mens
+- :clothing_type: :CASUAL_PANTS
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/chinos.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Chinos
+  :dept: :mens
+- :clothing_type: :JEANS
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/jeans.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Jeans
+  :dept: :mens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/kidswear.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Kidswear
+  :dept: :boys
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/leather.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Leather
+  :dept: :mens
+- :clothing_type: :OUTERWEAR
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/outerwear.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Outerwear
+  :dept: :mens
+- :clothing_type: :CASUAL_SHIRT
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/shirts.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Shirts
+  :dept: :mens
+- :clothing_type: :SHOES
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/shoes.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Shoes
+  :dept: :mens
+- :clothing_type: :SUIT
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/suiting.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Suiting
+  :dept: :mens
+- :clothing_type: :SWEATER
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/sweaters.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Sweaters
+  :dept: :mens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/tees-fleece.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Tees and Fleece
+  :dept: :mens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/trousers.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Trousers
+  :dept: :mens
+- :clothing_type: :INTIMATES
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/underwear.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Underwear
+  :dept: :mens
+
+#####
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/accessories.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Accessories
+  :dept: :womens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/lanvin-acne-1.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Acne/Lanvin
+  :dept: :womens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/chinos.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Chinos
+  :dept: :womens
+- :clothing_type: :OUTERWEAR
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/coats-jacket.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Coats & Jackets
+  :dept: :womens
+- :clothing_type: :DRESS
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/dresses.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Dresses
+  :dept: :womens
+- :clothing_type: :JEANS
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/jeans.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Jeans
+  :dept: :womens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/kidswear.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Kidswear
+  :dept: :girls
+- :clothing_type: :SWEATER
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/knits.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Knits
+  :dept: :womens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/leather.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Leather
+  :dept: :womens
+- :clothing_type: :SHOES
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/shoes.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Shoes
+  :dept: :womens
+- :clothing_type: :SKIRT
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/skirts.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Skirts
+  :dept: :womens
+- :clothing_type: :OUTERWEAR
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/suit-jackets.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Suit Jackets
+  :dept: :womens
+- :clothing_type: :SWIMWEAR
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/swimwear-1.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Swimwear
+  :dept: :womens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/tops-blouses.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Tops & Blouses
+  :dept: :womens
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/trousers.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: false
+  :category_path: []
+
+  :name: Trousers
+  :dept: :womens
+
+:ignored: 
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-men/new-arrivals.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: 0
+  :category_path: []
+
+  :name: New Arrivals
+  :dept: :mens
+- :clothing_type: 
+  :url: !str 
+    str: http://www.acnestudios.com/category/shopping-help/
+    "@_rails_html_safe": false
+  :ignored: 0
+  :category_path: []
+
+  :name: SHOPPING HELP
+  :dept: 
+- :clothing_type: 
+  :url: !str 
+    str: http://shop.acnestudios.com/outlet/outlet-women/new-arrivals.html?limit=all
+    "@_rails_html_safe": false
+  :ignored: 0
+  :category_path: []
+
+  :name: New Arrivals
+  :dept: :womens
+:vendor: acne
+

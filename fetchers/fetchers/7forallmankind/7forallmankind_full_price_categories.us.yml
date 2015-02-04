@@ -1,0 +1,506 @@
+#
+--- 
+:vendor: 7forallmankind
+:active: 
+- :category_path: 
+  - woman
+  - White Hot Denim
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Features_White_Hot_Denim/pl/c/600.html
+    "@_rails_html_safe": false
+  :name: White Hot Denim
+- :category_path: 
+  - woman
+  - 70's Blues
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Features_70s_Blues/pl/c/2604.html
+    "@_rails_html_safe": false
+  :name: 70's Blues
+- :category_path: 
+  - woman
+  - DENIM
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Denim/pl/c/43.html
+    "@_rails_html_safe": false
+  :name: DENIM
+- :category_path: 
+  - woman
+  - CROPS & PANTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Crops_Pants/pl/c/1070.html
+    "@_rails_html_safe": false
+  :name: CROPS & PANTS
+- :category_path: 
+  - woman
+  - SHORTS & SKIRTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Shorts_Skirts/pl/c/1060.html
+    "@_rails_html_safe": false
+  :name: SHORTS & SKIRTS
+- :category_path: 
+  - woman
+  - SHIRTS & TOPS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :CASUAL_SHIRT
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Shirts_Tops/pl/c/2561.html
+    "@_rails_html_safe": false
+  :name: SHIRTS & TOPS
+- :category_path: 
+  - woman
+  - JACKETS & BLAZERS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Jackets_Blazers/pl/c/1012.html
+    "@_rails_html_safe": false
+  :name: JACKETS & BLAZERS
+- :category_path: 
+  - woman
+  - SWEATERS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SWEATER
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Tops_Sweaters/pl/c/30.html
+    "@_rails_html_safe": false
+  :name: SWEATERS
+- :category_path: 
+  - woman
+  - DRESSES
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :DRESS
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Dresses/pl/c/27.html
+    "@_rails_html_safe": false
+  :name: DRESSES
+- :category_path: 
+  - woman
+  - ACCESSORIES
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Accessories/pl/c/14.html
+    "@_rails_html_safe": false
+  :name: ACCESSORIES
+- :category_path: 
+  - man
+  - Must Haves
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Features_Must_Haves/pl/c/2570.html
+    "@_rails_html_safe": false
+  :name: Must Haves
+- :category_path: 
+  - man
+  - New Neutrals
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Features_New_Neutrals/pl/c/602.html
+    "@_rails_html_safe": false
+  :name: New Neutrals
+- :category_path: 
+  - man
+  - DENIM
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :JEANS
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Denim/pl/c/44.html
+    "@_rails_html_safe": false
+  :name: DENIM
+- :category_path: 
+  - man
+  - PANTS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :CASUAL_PANTS
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Pants/pl/c/1071.html
+    "@_rails_html_safe": false
+  :name: PANTS
+- :category_path: 
+  - man
+  - SHORTS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :SHORTS
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Shorts/pl/c/1072.html
+    "@_rails_html_safe": false
+  :name: SHORTS
+- :category_path: 
+  - man
+  - SHIRTS & TEES
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Shirts_Tees/pl/c/2540.html
+    "@_rails_html_safe": false
+  :name: SHIRTS & TEES
+- :category_path: 
+  - man
+  - JACKETS & BLAZERS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Jackets_Blazers/pl/c/3999.html
+    "@_rails_html_safe": false
+  :name: JACKETS & BLAZERS
+- :category_path: 
+  - man
+  - ACCESSORIES
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Accessories/pl/c/15601.html
+    "@_rails_html_safe": false
+  :name: ACCESSORIES
+- :category_path: 
+  - Footwear
+  - FLATS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Footwear_Flats/pl/c/513.html
+    "@_rails_html_safe": false
+  :name: FLATS
+- :category_path: 
+  - Footwear
+  - HEELS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Footwear_Heels/pl/c/514.html
+    "@_rails_html_safe": false
+  :name: HEELS
+- :category_path: 
+  - Footwear
+  - WEDGES
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Footwear_Wedges/pl/c/516.html
+    "@_rails_html_safe": false
+  :name: WEDGES
+- :category_path: 
+  - Footwear
+  - BOOTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Footwear_Boots/pl/c/515.html
+    "@_rails_html_safe": false
+  :name: BOOTS
+- :category_path: 
+  - woman
+  - DENIM
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Denim_Women/pl/c/426.html
+    "@_rails_html_safe": false
+  :name: DENIM
+- :category_path: 
+  - woman
+  - PANTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :CASUAL_PANTS
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Pants/pl/c/438.html
+    "@_rails_html_safe": false
+  :name: PANTS
+- :category_path: 
+  - woman
+  - SHIRTS & TOPS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :CASUAL_SHIRT
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Shirts_Tops/pl/c/25599.html
+    "@_rails_html_safe": false
+  :name: SHIRTS & TOPS
+- :category_path: 
+  - woman
+  - JACKETS & BLAZERS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Jackets_Blazers/pl/c/255600.html
+    "@_rails_html_safe": false
+  :name: JACKETS & BLAZERS
+- :category_path: 
+  - woman
+  - SWEATERS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SWEATER
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Sweaters/pl/c/5132.html
+    "@_rails_html_safe": false
+  :name: SWEATERS
+- :category_path: 
+  - woman
+  - VESTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :CASUAL_SHIRT
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Vests/pl/c/255601.html
+    "@_rails_html_safe": false
+  :name: VESTS
+- :category_path: 
+  - woman
+  - DRESSES
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :DRESS
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Dresses/pl/c/255602.html
+    "@_rails_html_safe": false
+  :name: DRESSES
+- :category_path: 
+  - woman
+  - SKIRTS & SHORTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SKIRT
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Skirts_Shorts/pl/c/255603.html
+    "@_rails_html_safe": false
+  :name: SKIRTS & SHORTS
+- :category_path: 
+  - woman
+  - ACCESSORIES
+  :dept: :womens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_Accessories/pl/c/2558.html
+    "@_rails_html_safe": false
+  :name: ACCESSORIES
+- :category_path: 
+  - man
+  - DENIM
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :JEANS
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Denim_Mens/pl/c/550.html
+    "@_rails_html_safe": false
+  :name: DENIM
+- :category_path: 
+  - man
+  - PANTS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :CASUAL_PANTS
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_Pants/pl/c/433.html
+    "@_rails_html_safe": false
+  :name: PANTS
+- :category_path: 
+  - man
+  - SHIRTS & TEES
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :CASUAL_SHIRT
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_Shirts_Tees/pl/c/255604.html
+    "@_rails_html_safe": false
+  :name: SHIRTS & TEES
+- :category_path: 
+  - man
+  - JACKETS & BLAZERS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_Jackets_Blazers/pl/c/255605.html
+    "@_rails_html_safe": false
+  :name: JACKETS & BLAZERS
+- :category_path: 
+  - man
+  - SWEATERS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :SWEATER
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_Sweaters/pl/c/5122.html
+    "@_rails_html_safe": false
+  :name: SWEATERS
+- :category_path: 
+  - man
+  - VESTS
+  :dept: :mens
+  :ignored: false
+  :clothing_type: :CASUAL_SHIRT
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_Vests/pl/c/255606.html
+    "@_rails_html_safe": false
+  :name: VESTS
+- :category_path: 
+  - man
+  - ACCESSORIES
+  :dept: :mens
+  :ignored: false
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_Accessories/pl/c/2560.html
+    "@_rails_html_safe": false
+  :name: ACCESSORIES
+- :category_path: 
+  - Footwear
+  - FLATS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Footwear_Flats/pl/c/255608.html
+    "@_rails_html_safe": false
+  :name: FLATS
+- :category_path: 
+  - Footwear
+  - HEELS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Footwear_Heels/pl/c/255609.html
+    "@_rails_html_safe": false
+  :name: HEELS
+- :category_path: 
+  - Footwear
+  - WEDGES
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Footwear_Wedges/pl/c/255607.html
+    "@_rails_html_safe": false
+  :name: WEDGES
+- :category_path: 
+  - Footwear
+  - BOOTS
+  :dept: :womens
+  :ignored: false
+  :clothing_type: :SHOES
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Footwear_Boots/pl/c/254600.html
+    "@_rails_html_safe": false
+  :name: BOOTS
+:ignored: 
+- :category_path: 
+  - woman
+  - New Arrivals
+  :dept: :womens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Womens_Features_New_Arrivals/pl/c/42.html
+    "@_rails_html_safe": false
+  :name: New Arrivals
+- :category_path: 
+  - woman
+  - Shop By Look
+  :dept: :womens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/women_shop_by_look.html?ICID=shopbylookwomenlanding
+    "@_rails_html_safe": false
+  :name: Shop By Look
+- :category_path: 
+  - man
+  - New Arrivals
+  :dept: :mens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Mens_Features_New_Arrivals/pl/c/41.html
+    "@_rails_html_safe": false
+  :name: New Arrivals
+- :category_path: 
+  - man
+  - Shop By Look
+  :dept: :mens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/men_shop_by_look.html?ICID=shopbylookmenlanding
+    "@_rails_html_safe": false
+  :name: Shop By Look
+- :category_path: 
+  - Footwear
+  - VIEW ALL
+  :dept: :womens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Footwear_View_All/pl/c/518.html
+    "@_rails_html_safe": false
+  :name: VIEW ALL
+- :category_path: 
+  - woman
+  - VIEW ALL
+  :dept: :womens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Women_View_All/pl/c/254601.html
+    "@_rails_html_safe": false
+  :name: VIEW ALL
+- :category_path: 
+  - man
+  - VIEW ALL
+  :dept: :mens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Mens_View_All/pl/c/254602.html
+    "@_rails_html_safe": false
+  :name: VIEW ALL
+- :category_path: 
+  - Footwear
+  - VIEW ALL
+  :dept: :womens
+  :ignored: 0
+  :clothing_type: 
+  :url: !str 
+    str: http://www.7forallmankind.com/Sale_Footwear_View_All/pl/c/254603.html
+    "@_rails_html_safe": false
+  :name: VIEW ALL
+

@@ -1,0 +1,6 @@
+to deploy to production, create a tunnel for git:
+  # ssh vostro
+  # ssh -R 9418:localhost:9418 deploy@72.249.186.249
+then, in another window
+  # cap checkout_production deploy
+  

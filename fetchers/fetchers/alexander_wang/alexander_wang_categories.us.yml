@@ -1,0 +1,353 @@
+#
+--- 
+:vendor: alexander_wang
+:ignored: []
+
+:active: 
+  ## sale categories
+- :dept: :womens
+  :name: Ready To Wear
+  :ignored: false
+  :category_path:
+  - Ready To Wear
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/sale/ready-to-wear/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: T By Alexander Wang - Women's
+  :ignored: false
+  :category_path:
+  - T By Alexander Wang - Women's
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/sale/t-by-alexander-wang-womens/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: T By Alexander Wang - Men's
+  :ignored: false
+  :category_path:
+  - T By Alexander Wang - Men's
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/sale/t-by-alexander-wang-mens/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Shoes
+  :ignored: false
+  :category_path:
+  - Shoes
+  :clothing_type: :SHOES
+  :url: !str
+    str: http://www.alexanderwang.com/shop/sale/shoes/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Bags
+  :ignored: false
+  :category_path:
+  - Bags
+  :clothing_type: :BAG
+  :url: !str
+    str: http://www.alexanderwang.com/shop/sale/bags/
+    "@_rails_html_safe": false
+
+
+    ## regular categories
+- :dept: :womens
+  :name: Shop
+  :ignored: false
+  :category_path:
+  - Shop
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Ready To Wear - Women's
+  :ignored: false
+  :category_path:
+  - Ready To Wear - Women's
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: New Arrivals
+  :ignored: false
+  :category_path:
+  - New Arrivals
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/new-arrivals/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Tops
+  :ignored: false
+  :category_path:
+  - Tops
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/tops/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Bottoms
+  :ignored: false
+  :category_path:
+  - Bottoms
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/bottoms/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Dresses
+  :ignored: false
+  :category_path:
+  - Dresses
+  :clothing_type: :DRESS
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/dresses/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Jackets & Outerwear
+  :ignored: false
+  :category_path:
+  - Jackets & Outerwear
+  :clothing_type: :OUTERWEAR
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/jackets-and-outerwear/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: All
+  :ignored: false
+  :category_path:
+  - All
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--womens/all/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Ready To Wear - Men's
+  :ignored: false
+  :category_path:
+  - Ready To Wear - Men's
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--mens/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: New Arrivals
+  :ignored: false
+  :category_path:
+  - New Arrivals
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--mens/new-arrivals/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Tops
+  :ignored: false
+  :category_path:
+  - Tops
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--mens/tops/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Bottoms
+  :ignored: false
+  :category_path:
+  - Bottoms
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--mens/bottoms/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Jackets & Outerwear
+  :ignored: false
+  :category_path:
+  - Jackets & Outerwear
+  :clothing_type: :OUTERWEAR
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--mens/jackets-and-outerwear/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: All
+  :ignored: false
+  :category_path:
+  - All
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/ready-to-wear--mens/all/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: T By Alexander Wang-Women's
+  :ignored: false
+  :category_path:
+  - T By Alexander Wang-Women's
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: New Arrivals
+  :ignored: false
+  :category_path:
+  - New Arrivals
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/new-arrivals/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Classics
+  :ignored: false
+  :category_path:
+  - Classics
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/classics/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Tops
+  :ignored: false
+  :category_path:
+  - Tops
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/tops/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Bottoms
+  :ignored: false
+  :category_path:
+  - Bottoms
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/bottoms/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Dresses
+  :ignored: false
+  :category_path:
+  - Dresses
+  :clothing_type: :DRESS
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/dresses/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: All
+  :ignored: false
+  :category_path:
+  - All
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-womens/all/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: T By Alexander Wang-Men's
+  :ignored: false
+  :category_path:
+  - T By Alexander Wang-Men's
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: New Arrivals
+  :ignored: false
+  :category_path:
+  - New Arrivals
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/new-arrivals/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Classics
+  :ignored: false
+  :category_path:
+  - Classics
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/classics/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Tops
+  :ignored: false
+  :category_path:
+  - Tops
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/tops/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Bottoms
+  :ignored: false
+  :category_path:
+  - Bottoms
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/bottoms/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: Jackets & Outerwear
+  :ignored: false
+  :category_path:
+  - Jackets & Outerwear
+  :clothing_type: :OUTERWEAR
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/jackets-and-outerwear/
+    "@_rails_html_safe": false
+- :dept: :mens
+  :name: All
+  :ignored: false
+  :category_path:
+  - All
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/t-by-alexander-wang-mens/all/
+    "@_rails_html_safe": false
+
+- :dept: :womens
+  :name: All
+  :ignored: false
+  :category_path:
+  - All
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/bags/all/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: All
+  :ignored: false
+  :category_path:
+  - All
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/shoes/all/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Sunglasses
+  :ignored: false
+  :category_path:
+  - Sunglasses
+  :clothing_type: :SUNGLASSES
+  :url: !str
+    str: http://www.alexanderwang.com/shop/accessories/sunglasses/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Small Leather Goods
+  :ignored: false
+  :category_path:
+  - Small Leather Goods
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/accessories/small-leather-goods/
+    "@_rails_html_safe": false
+- :dept: :womens
+  :name: Hats And Scarves
+  :ignored: false
+  :category_path:
+  - Hats And Scarves
+  :clothing_type:
+  :url: !str
+    str: http://www.alexanderwang.com/shop/accessories/hats-and-scarves/
+    "@_rails_html_safe": false

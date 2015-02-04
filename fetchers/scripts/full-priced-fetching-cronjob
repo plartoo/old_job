@@ -1,0 +1,11 @@
+#MAILTO=phyo@xxxx.com
+PATH=:/bin:.:/usr/bin:/usr/local/bin
+
+* * * * * cd /usr/local/fetchers/current && ./bin/full-price-fetch-details.sh 1500
+
+*/5 * * * * cd /usr/local/sitm/current; (pgrep -lf import_search_items.rb | grep -vq pgrep) || (export RAILS_ENV=fb; find /usr/local/fetchers/shared/items-with-details/ -mmin -10 -mmin +1 -type f | xargs -L 1000  -P 1 ./script/import_search_items.rb)
+
+10 10 * * * cd /usr/local/fetchers/current && ./bin/fetch-categories.sh
+
+#*/20 * * * *  cd /usr/local/sitm/current/ && rake salespot:index RAILS_ENV=waymeet DATE_SINCE=2011-02-15
+#35 12 * * * export DATE=`date '+\%y\%m\%d'`; cd /usr/local/fetchers/shared/ && (rsync -ravzI --include "*/" --include $DATE.yml  --exclude="*" deploy@www4.xxxx.com:/usr/local/salemail/yaml_feeds/ yaml_feeds/; find yaml_feeds -name $DATE.yml | xargs -L 10 -P 5 ../current/bin/add_vendor.rb; cd /usr/local/sitm/current; export RAILS_ENV=waymeet; find /usr/local/fetchers/shared/yaml_feeds -name $DATE.yml | xargs -L 10 -P 5 ./script/import_search_items.rb)

@@ -1,0 +1,161 @@
+#
+---
+:ignored: []
+:vendor: 7forallmankind
+
+:active:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Womens_Features_Summer_Sale/pl/c/135.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Summer feature sales
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Mens_Features_Summer_Sale/pl/c/136.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: Summer feature sales
+  :clothing_type:
+
+
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Denim_Women/pl/c/426.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: DENIM
+  :clothing_type: :JEANS
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Pants/pl/c/438.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: PANTS
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Shirts_Tops/pl/c/25599.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: SHIRTS & TOPS
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Jackets_Blazers/pl/c/255600.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: JACKETS & BLAZERS
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Sweaters/pl/c/5132.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: SWEATERS
+  :clothing_type: :SWEATER
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Vests/pl/c/255601.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: VESTS
+  :clothing_type: :OUTERWEAR
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Dresses/pl/c/255602.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: DRESSES
+  :clothing_type: :DRESS
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Skirts_Shorts/pl/c/255603.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: SKIRTS & SHORTS
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Women_Accessories/pl/c/2558.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: ACCESSORIES
+  :clothing_type:
+
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Denim_Mens/pl/c/550.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: DENIM
+  :clothing_type: :JEANS
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Mens_Pants/pl/c/433.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: PANTS
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Mens_Shirts_Tees/pl/c/255604.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: SHIRTS & TEES
+  :clothing_type:
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Mens_Jackets_Blazers/pl/c/255605.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: JACKETS & BLAZERS
+  :clothing_type: :SPORTCOAT
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Mens_Sweaters/pl/c/5122.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: SWEATERS
+  :clothing_type: :SWEATER
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Mens_Vests/pl/c/255606.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: VESTS
+  :clothing_type: :OUTERWEAR
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Mens_Accessories/pl/c/2560.html
+    "@_rails_html_safe": false
+  :dept: :mens
+  :name: ACCESSORIES
+  :clothing_type:
+
+
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Footwear/pl/c/328.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Footwear
+  :clothing_type: :SHOES
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Handbags/pl/c/329.html
+    "@_rails_html_safe": false
+  :dept: :womens
+  :name: Handbags
+  :clothing_type: :BAG
+- :ignored: false
+  :url: !str
+    str: http://www.7forallmankind.com/Sale_Kids/pl/c/2551.html
+    "@_rails_html_safe": false
+  :dept: :boys
+  :name: Kids
+  :clothing_type:
+
+
+

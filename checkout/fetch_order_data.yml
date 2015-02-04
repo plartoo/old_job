@@ -1,0 +1,96 @@
+--- 
+www.saksfifthavenue.com: 
+  /: 
+    Cart: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: Wed, 15 Aug 2012 19:12:19 GMT
+      max_age: 
+      name: Cart
+      path: /
+      port: 
+      secure: false
+      value: "2253998925457060"
+      version: 0
+    zipCode: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: Wed, 15 Aug 2012 19:12:24 GMT
+      max_age: 
+      name: zipCode
+      path: /
+      port: 
+      secure: false
+      value: ""
+      version: 0
+    JSESSIONID: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: JSESSIONID
+      path: /
+      port: 
+      secure: false
+      value: jY6QTKBYnPJMQw2CW0SNV33k8TM1L1ytQpyb22KF9ZnMtyN11W2f!-1303732507
+      version: 0
+    saksBagNumberOfItems: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: Wed, 15 Aug 2012 19:12:24 GMT
+      max_age: 
+      name: saksBagNumberOfItems
+      path: /
+      port: 
+      secure: false
+      value: "1"
+      version: 0
+    TS54c0f7: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: www.saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: TS54c0f7
+      path: /
+      port: 
+      secure: false
+      value: 6b5e83ed7dfee04102fb0926f4cdc279ae120644a88206734e4ac09255627810afe4ed74286023f27f68b25f60ac0ec5a792d269866d39d0a28dfd26de6b0004822b1418db553e5dffffffff
+      version: 0
+saksfifthavenue.com: 
+  /: 
+    TLTHID: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: TLTHID
+      path: /
+      port: 
+      secure: false
+      value: ACABFD28C83B10C800558E171CDC957F
+      version: 0
+    TLTSID: !ruby/object:Mechanize::Cookie 
+      comment: 
+      comment_url: 
+      discard: 
+      domain: saksfifthavenue.com
+      expires: 
+      max_age: 
+      name: TLTSID
+      path: /
+      port: 
+      secure: false
+      value: A9489FA6C83B10C80017E4A9510AE434
+      version: 0

@@ -1,0 +1,553 @@
+$:.unshift File.join(File.dirname(__FILE__), 'lib')
+
+require 'rubygems'
+require 'rake'
+require 'fileutils'
+require 'rake/rdoctask'
+require 'fetcher'
+
+Dir.glob('tasks/*.rake').each { |r| import r }
+
+Rake.application.options.trace = true
+
+
+desc 'Generate documentation'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'Fetcher Framework'
+  rdoc.options << '--line-numbers' << "--main" << "README.rdoc"
+  rdoc.rdoc_files.include('README.rdoc')
+  rdoc.rdoc_files.include('*.rb')
+  rdoc.rdoc_files.include('lib/*.rb')
+  rdoc.rdoc_files.include('lib/data/size_mapper.rb')
+end
+
+
+desc <<-EOD
+Run a fetcher.
+Parameters:
+  FEED_PATH           = the path to directory containing yaml feeds default => yaml_feeds/{us,uk}/{fetcher_name}
+  VENDOR_PATH         = path to directory containing class definition file (optional)
+  VENDOR_CLASS        = vendor\'s CamelCase class name
+  I18N_VERSION        = i18n_version of the fetcher to run (optional) default => us
+  TIME_LIMIT_IN_MINS  = time limit in minutes to run each fetcher and kill it if the limit is over (optional)
+  DATE                = date for logger and yaml file names and coupon date validation
+  PROFILE             = '1' if we want to run the ruby-prof
+  HTML_LOG_UNCAT      = '1' if you want html logging of items with uncategorized clothing types
+  THREADED            = 'true' to run multithreaded framework, default => false
+
+For a multi-threaded run (Ignored unless THREADED=1):
+  NUM_SCCS_THREADS         = number of threads to use for the SCCS portion, default => 1. 
+  NUM_ITEM_SCRAPER_THREADS = number of threads to use for the index scraper portion, default => 1.
+EOD
+task :fetch do
+  require 'lib/html_logger/item_html_logger'
+  require "lib/fetcher_framework"
+
+  use_threaded_framework = (ENV['THREADED'] == 'true' ? :multithread : :singlethread)
+  html_log_uncat = ENV['HTML_LOG_UNCAT']
+  time_limit_in_mins = ENV['TIME_LIMIT_IN_MINS']
+  fetcher_class_name, fetcher_name = FetcherHelperMethods.class_and_name(ENV['VENDOR_CLASS'], ENV['VENDOR_PATH'])
+  date = ENV['DATE'] ? Date.parse(ENV['DATE']) : Date.today
+  profile = ENV['PROFILE'].to_i || 0
+  i18n_version = ENV['I18N_VERSION'] || 'us'
+  feed_path = ENV['FEED_PATH']
+
+  ### Multithread parameters are ignored in standard framework
+  num_item_scraper_threads = ENV['NUM_ITEM_SCRAPER_THREADS'] ? ENV['NUM_ITEM_SCRAPER_THREADS'].to_i : 1
+  num_sccs_threads = ENV['NUM_SCCS_THREADS'] ? ENV['NUM_SCCS_THREADS'].to_i : 1
+
+  Kernel.srand(Date.today.jd)
+
+  if profile == 1
+    require 'ruby-prof'
+    RubyProf.start
+  end
+  
+  puts "Beginning #{use_threaded_framework.eql?(:multithread) ? "MULTITHREAD" : "SINGLE-THREAD"} run"
+  if use_threaded_framework
+    puts "With #{num_item_scraper_threads} ItemScraper threads and #{num_sccs_threads} SCCS threads"
+  end
+
+  start_time = Time.now.to_f
+
+  framework_setup_options = {
+                            :feed_path => feed_path,
+                            :fetcher_class_name => fetcher_class_name,
+                            :fetcher_name => fetcher_name,
+                            :date => date,
+                            :i18n_version => i18n_version,
+                            :html_log_uncat => html_log_uncat,
+                            :time_limit_in_mins => time_limit_in_mins,
+                            }
+  if use_threaded_framework
+    framework_setup_options.merge!({:num_item_scraper_threads => num_item_scraper_threads,
+                                   :num_sccs_threads => num_sccs_threads})
+  end
+
+  framework_obj = FetcherFramework.create_framework_obj(framework_setup_options,use_threaded_framework)
+
+  framework_obj.run
+  
+  end_time = Time.now.to_f
+
+  framework_obj.print_final_fetch_results(start_time,end_time)
+
+  framework_obj.cleanup
+
+  if profile == 1
+    result = RubyProf.stop
+    profile_result_filename = File.join(File.dirname(__FILE__), 'log', "#{fetcher_name}_#{Fetcher.i18n_version}_#{date.strftime("%y%m%d")}_profile.html")
+    File.open(profile_result_filename,"w") do |f|
+      printer = RubyProf::GraphHtmlPrinter.new(result)
+      printer.print(f, :min_percent=>10)
+    end
+  end
+  
+end
+
+desc "compares the master branch with the branch specified by BRANCH to determine if the fetched items are identical"
+task :compare_branch do
+  branch = ENV['BRANCH']
+  i18n_version = ENV['I18N_VERSION'] || 'us'
+  if branch.nil? || branch.empty?
+    puts "specify branch to compare with master with BRANCH=feature_branch"
+    exit(1)
+  end
+  %w(charlotte_russe dvf).each do |f|
+    rake_cmd = RUBY_PLATFORM =~ /mswin/ ? 'rake.bat' : 'rake'
+    class_name = File.open(File.join(File.dirname(__FILE__), "fetchers","#{f}","#{f}.rb")) do |x|
+      x.readlines.select{|z| z.match(/class\s+\S+\s+</)}.map{|z| z.match(/class\s+(\S+)/)[1]}.first
+    end
+    ['master', branch].each do |b|
+      `git checkout #{b}`
+      FileUtils.rm_rf "yaml_feeds_#{b}"
+      `mkdir yaml_feeds_#{b}`
+      puts "Fetching #{f} (#{b})"
+      cmd = "#{rake_cmd} fetch VENDOR_PATH=#{f} VENDOR_CLASS=#{class_name} FEED_PATH=yaml_feeds_#{b} I18N_VERSION=#{i18n_version}"
+      system(cmd)
+    end
+    new_path = File.join(File.dirname(__FILE__), "yaml_feeds_#{branch}","#{f}")
+    old_path = File.join(File.dirname(__FILE__), "yaml_feeds_master","#{f}")
+    cmd = "#{rake_cmd} compare NEW_PATH=#{new_path} OLD_PATH=#{old_path} VENDOR=#{f}"
+    system(cmd)
+    `git checkout master`
+    now = Date.today.strftime("%y%m%d")
+    log = File.join(File.dirname(__FILE__),"log","diff_#{now}")
+    if RUBY_PLATFORM =~ /mswin/
+      # this is JUST for Phyo's computer where "n" is linked to "notepad"
+      `n #{log}`
+    else
+      `less #{log}`
+    end
+  end
+end
+
+task :compare do
+  vendor = ENV['VENDOR']
+  date = ENV['DATE'] || Date.today.strftime("%y%m%d")
+  new_path = ENV['NEW_PATH'] || File.join(File.dirname(__FILE__), 'yaml_feeds', vendor)
+  old_path = ENV['OLD_PATH'] || File.join(File.dirname(__FILE__), '..', '..', 'sitm-java', 'yaml_feeds', vendor)
+
+  log_file = File.join(File.dirname(__FILE__), 'log')
+  unless File.exist?(log_file)
+    FileUtils.mkdir_p(log_file)
+  end
+  log_file = File.open(File.join(log_file, "diff_#{date}.log"), "a+")
+  log = Logger.new(log_file)
+
+  new_items = YAML.load_file(File.join(new_path, "#{date}.yml"))
+  old_items = YAML.load_file(File.join(old_path, "#{date}.yml"))
+
+  sorter = lambda do |a, b|
+    result = a[:description] <=> b[:description]
+    if result == 0
+      if a[:scc].nil?
+        pp a
+      elsif b[:scc].nil?
+        pp b
+      end
+      result = a[:scc].size <=> b[:scc].size
+    end
+    result
+  end
+
+  new_items = new_items.sort(&sorter).map do |item_hash|
+    Item.load_from_hash(item_hash)
+  end.inject({}){|h,x| h.merge(x.vendor_key => x)}
+
+  old_items = old_items.sort(&sorter).map do |item_hash|
+    Item.load_from_hash(item_hash)
+  end.inject({}){|h,x| h.merge(x.vendor_key => x)}
+
+  log.info("found #{new_items.size} ruby items and #{old_items.size} java items")
+
+  extra_new_items = []
+  pairs = []
+  new_items.values.each do |new_item|
+    old_item = old_items.delete(new_item.vendor_key)
+    if old_item.nil?
+      extra_new_items << new_item
+    else
+      pairs << [new_item, old_item]
+    end
+  end
+
+  log.info("checking #{vendor}")
+
+  item_logger = lambda do |item|
+    begin
+      log.error(item.to_yaml)
+    rescue
+      log.error(item.last.to_yaml)
+    end
+  end
+
+  log.add(extra_new_items.size > 0 ? Logger::ERROR : Logger::INFO) do
+    "found #{extra_new_items.size} item(s) in new/current version that were not in old/master version"
+  end
+
+  log.add(old_items.size > 0 ? Logger::ERROR : Logger::INFO) do
+    "found #{old_items.size} item(s) in old/master fetch that were not in new/current fetch"
+  end
+
+  if extra_new_items.size > 0
+    log.error("new/current items")
+    extra_new_items.each(&item_logger)
+  end
+
+  if old_items.size > 0
+    log.error("old/master items")
+    old_items.each(&item_logger)
+  end
+
+  log.close
+
+end
+
+desc "Generates config/active_fetchers.yml from fetchers directory"
+task :generate_active_fetchers do
+  fetcher_list = []
+  Dir.open("fetchers").each do |dir|
+    fetcher_file = File.join(File.dirname(__FILE__), "fetchers", dir, "#{dir}.rb")
+    if File.exists?(fetcher_file)
+      File.open(fetcher_file) do |f|
+        f.readlines.each do |line|
+          if line.match(/class (.*) < Fetcher/)
+            class_name = line.match(/class (.*) < Fetcher/)[1]
+            fetcher_list << [dir, class_name, 1]
+          end
+        end
+      end
+    end
+  end
+  File.open("config/active_fetchers.yml", "w") do |f|
+    f.puts fetcher_list.to_yaml
+  end
+end
+
+
+desc <<-EOD
+Grabs details needed for auto-checkout
+Parameters:
+  VENDOR_PATH      = path to directory containing class definition file (optional)
+  VENDOR_CLASS     = vendor\'s CamelCase class name
+  I18N_VERSION     = i18n_version of the fetcher to run (optional) default => us
+  URL              = The url to the product detail page.
+EOD
+task :grab_details do
+  require 'assisted_checkout_framework'
+
+  i18n_version = ENV['I18N_VERSION'] || 'us'
+  product_url = ENV['URL']
+
+  fetcher_class_name, fetcher_name = FetcherHelperMethods.class_and_name(ENV['VENDOR_CLASS'], ENV['VENDOR_PATH'])
+  unless fetcher_name and fetcher_class_name and product_url
+    raise "missing VENDOR_PATH and/or VENDOR_CLASS and/or URL"
+  end
+
+  fetcher = FetcherHelperMethods.spawn_new_fetcher_instance(fetcher_class_name,fetcher_name)
+  fetcher.class.log = Logger.new(STDOUT) #(File.join(File.dirname(__FILE__), 'log'), "#{fetcher_class_name || 'fetch'}_#{i18n_version}.log", "a+")
+
+  framework_setup_options = {
+                              :fetcher_class_name => fetcher_class_name,
+                              :fetcher_name => fetcher_name,
+                              :i18n_version => i18n_version,
+                              :product_url => product_url,
+                              :vendor_key => ENV['VENDOR_KEY'],
+                              }
+
+  fetched_data = AssistedCheckoutFramework.new(framework_setup_options).run
+  pp fetched_data
+end
+
+namespace :test do
+desc <<-EOD
+Scrape categories and output the list of categories to console.
+Parameters:
+  VENDOR_PATH      = path to directory containing class definition file (optional)
+  VENDOR_CLASS    = vendor\'s CamelCase class name
+  I18N_VERSION     = i18n_version of the fetcher to run (optional) default => us
+EOD
+  task :categories do
+    Fetcher.setup_i18n_version(ENV['I18N_VERSION'])
+    fetcher_class_name, fetcher_name = Fetcher.class_and_name(ENV['VENDOR_CLASS'], ENV['VENDOR_PATH'])
+
+    unless fetcher_name and fetcher_class_name
+      raise "missing VENDOR_PATH and/or VENDOR_CLASS"
+    end
+
+    fetcher = Fetcher.get_fetcher(fetcher_name, fetcher_class_name)
+
+    pp fetcher.scrape_categories
+  end
+
+desc <<-EOD
+Scrape sccs from an item.
+Parameters:
+  VENDOR_PATH      = path to directory containing class definition file (optional)
+  VENDOR_CLASS    = vendor\'s CamelCase class name
+  URL              = the url to the item detail page to scrape sccs from
+  CLOTHING_TYPE    = the clothing type of the item (uppercase string, e.g. "DRESS")
+  DEPT             = the department of the item (lowercase string, e.g. "womens")
+  VENDOR_KEY       = a unique vendor key for the item (optional)
+  I18N_VERSION     = i18n_version of the fetcher to run (optional) default => us
+  EXTENDED_DESC    = '1' to run the extended_description_data method for fetcher.
+EOD
+  task :sccs do
+    i18n_version = ENV['I18N_VERSION']
+    I18nVersion.set!(i18n_version)
+    fetcher_class_name, fetcher_name = FetcherHelperMethods.class_and_name(ENV['VENDOR_CLASS'], ENV['VENDOR_PATH'])
+    product_url = ENV['URL']
+    dept = ENV['DEPT'].to_sym
+    clothing_type = ClothingType[ENV['CLOTHING_TYPE'].to_sym, dept]
+    run_extended_desc = ENV['EXTENDED_DESC'] || false
+
+    unless fetcher_name and fetcher_class_name
+      raise "missing VENDOR_PATH and/or VENDOR_CLASS"
+    end
+
+    fetcher = FetcherHelperMethods.spawn_new_fetcher_instance(fetcher_class_name,fetcher_name)
+
+    unless product_url and clothing_type and dept
+      raise "Not enough information to scrape sccs"
+    end
+
+    item = Item.new
+    item.product_url = product_url
+    item.clothing_type = clothing_type
+    item.dept = dept
+    item.vendor_key = ENV['VENDOR_KEY']
+
+    if run_extended_desc
+      SCCScraper.grab_extended_description = true
+      SCCScraper.grab_additional_images = true
+      SCCScraper.grab_related_vendor_keys = true
+    end
+    fetcher.class.log = Logger.new(STDOUT)
+    fetcher.scrape_sccs({:item => item, :debug => true, :test => true})
+  end
+
+desc <<-EOD
+Verify that the 'launcher' yml file syntax is correct.
+Parameters:
+  I18N_VERSION     = i18n_version of the fetcher to run (optional) default => us
+
+Usage example:
+  $ rake test:verify_launcher I18N_VERSION=us
+EOD
+  task :verify_launcher do
+    require 'launcher'
+    i18n_version = ENV['I18N_VERSION'].to_s || 'us'
+    launcher = Launcher.new(i18n_version)
+    begin
+      config = launcher.load_configuration_from_file(File.join(File.dirname(__FILE__), "config", "launcher.#{i18n_version}.yml"))
+    rescue Exception => e # 'begin rescue' will check extra space and wrong tab etc.
+      puts "#{e.message}"
+    end
+
+    # this will check the completeness of a fetcher entry by checking keys
+    config[:fetchers].each do |fetcher|
+      keys = fetcher.keys.sort{|k1,k2| k1.to_s <=> k2.to_s}
+      if keys.eql?([:name])|| keys.eql?([:name,:priority]) || keys.eql?([:bitmask_id,:lang,:name]) || keys.eql?([:bitmask_id,:lang,:name,:priority])
+        puts "testing fetcher: #{fetcher.inspect}"
+      else
+        raise "Possible syntax error at fetcher: #{fetcher.inspect}\n"
+      end
+    end
+    puts "\n\nlauncher yml file syntax check completed\n\n"
+  end
+end
+
+namespace :generate do
+
+JAR_FILES = %w(BrowserLauncher2-10rc4.jar:JSON.jar
+lib/Tidy.jar
+lib/activation.jar
+lib/castor-0.9.5.3.jar
+lib/commons-codec-1.3.jar
+lib/commons-httpclient-3.0.jar
+lib/commons-logging-api.jar
+lib/commons-logging.jar
+lib/facebook.jar
+lib/httpunit.jar
+lib/js.jar
+lib/junit.jar
+lib/log4j-1.2.8.jar
+lib/mail.jar
+lib/mysqljdbc3.0.1.1.jar
+lib/nekohtml.jar
+lib/resolver.jar
+lib/servlet.jar
+lib/velocity-1.4.jar
+lib/velocity-dep-1.4.jar
+lib/xalan.jar
+lib/xercesImpl.jar
+lib/xml-apis.jar
+lib/xmlParserAPIs.jar
+lib/xstream-0.5.jar)
+
+desc <<-EOD
+Generate the categories yaml file for a vendor
+Parameters:
+  VENDOR_PATH      = path to directory containing class definition file (optional)
+  VENDOR_CLASS    = vendor\'s CamelCase class name
+  I18N_VERSION     = i18n_version of the fetcher to run (MUST provide one)
+  FULL_PRICE       = if set, the file generated will have an extension "full_price" as in "xxx_full_price_categories.us.yml" (optional)
+  DEPT             = department to apply to all categories (lowercase string, e.g. "womens") (optional)
+  IGNORE_TYPES     = do not try and guess clothing types (optional)
+EOD
+  task :categories do
+    i18n_version = ENV['I18N_VERSION']
+    full_priced_run = ENV['FULL_PRICE']
+    class_name = ENV['VENDOR_CLASS']
+    vendor_path = ENV['VENDOR_PATH']
+
+    if i18n_version.nil?
+      raise "You MUST provide I18N_VERSION"
+    end
+    
+    cats_from_fetch,fetcher = get_categories(class_name, vendor_path, i18n_version, full_priced_run)
+    generator = CategoryGenerator.new cats_from_fetch, fetcher
+    generator.generate_yaml(full_priced_run)
+  end
+
+  def get_categories(class_name, vendor_path, i18n_version, full_priced_run = false)
+    fetcher_class_name, fetcher_name = FetcherHelperMethods.class_and_name(class_name, vendor_path)
+
+
+    unless fetcher_name and fetcher_class_name
+      raise "missing VENDOR_PATH and/or VENDOR_CLASS"
+    end
+
+    fetcher = FetcherHelperMethods.spawn_new_fetcher_instance(fetcher_class_name,fetcher_name)
+    fetcher.class.i18n_version = i18n_version
+    
+    fetcher.class.create_logger("log","#{fetcher_class_name}_categories_#{i18n_version}.log")
+
+    puts "fetching categories for #{fetcher_name}"
+
+    options = {}
+    if full_priced_run
+      options.merge!({:write_full_paths => true })
+    end
+
+    ClothingTypeMatcher.i18n_version = fetcher.i18n_version
+
+    cats_from_fetch = fetcher.scrape_categories(options)
+    if ENV['DEPT']
+      dept = ENV['DEPT'].to_sym
+      cats_from_fetch.each {|cat| cat.dept = dept}
+      unless ENV['IGNORE_TYPES']
+        cats_from_fetch.each do |cat|
+          cat.clothing_type = ClothingTypeMatcher.determine_clothing_type_sym(cat.name, dept)
+        end
+      end
+    end
+    return [cats_from_fetch,fetcher]
+  end
+
+desc <<-EOD
+Generate an options file for a vendor
+Parameters:
+  VENDOR_PATH      = path to directory containing class definition file
+  ITEM_LIMIT       = a global item limit for a fetcher (optional)
+EOD
+  task :options do
+    fetcher_name = ENV['VENDOR_PATH']
+    unless fetcher_name
+      raise "Missing VENDOR_PATH"
+    end
+
+    options = Fetcher.get_options(fetcher_name) || {}
+    options[:item_limit] = ENV['ITEM_LIMIT'].to_i
+
+    options_path = Fetcher.dir_path(fetcher_name)
+    unless File.exist?(options_path)
+      raise "No fetcher directory found for #{fetcher_name}"
+    end
+
+    options_path = File.join(options_path, 'options.yml')
+    File.open(options_path, "w+") do |f|
+      f.puts(options.to_yaml)
+    end
+    puts "Wrote options to file."
+  end
+
+desc <<-EOD
+Generate a skeleton fetcher file
+Parameters:
+  VENDOR_PATH      = path to directory containing class definition file (optional)
+  VENDOR_CLASS    = vendor\'s CamelCase class name
+EOD
+  task :fetcher do
+    class_name = ENV['VENDOR_CLASS']
+    vendor_path = ENV['VENDOR_PATH']
+
+    fetcher_class_name, fetcher_name = FetcherHelperMethods.class_and_name(class_name, vendor_path)
+
+    unless fetcher_name and fetcher_class_name
+      raise "missing VENDOR_PATH and/or VENDOR_CLASS"
+    end
+
+    fetcher_file = "#{fetcher_name}.rb"
+    fetcher_dir_path = FetcherHelperMethods.dir_path(fetcher_name)
+    fetcher_path = File.join(fetcher_dir_path, fetcher_file)
+
+    unless File.exist?(fetcher_path)
+      FileUtils.mkdir_p(fetcher_dir_path)
+      File.open(fetcher_path, "w") do |f|
+        f.puts File.open(FetcherHelperMethods.template, 'r').read.gsub(/FETCHER_CLASS_NAME/, fetcher_class_name)
+      end
+    end
+  end
+
+
+desc <<-EOD
+Write out to \#{vendor_path}\\\#{fetcher_name}_categories.\#{i18n_version}.\#{date}.yml categories that aren't listed in the categories.yml file for a given fetcher
+Patameters:
+  VENDOR_PATH      = path to directory containing class definition file (optional)
+  VENDOR_CLASS    = vendor\'s CamelCase class name
+  I18N_VERSION     = i18n_version of the fetcher to run (optional) default => us
+EOD
+  task :new_categories do
+    require 'date'
+    cats_from_fetch,fetcher_name = get_categories
+
+    new_yaml_path = File.join(Fetcher.dir_path(fetcher_name), "#{fetcher_name}_categories.#{Fetcher.i18n_version}.#{Date.today}.yml")
+    current_yaml_path = File.join(Fetcher.dir_path(fetcher_name), "#{fetcher_name}_categories.#{Fetcher.i18n_version}.yml")
+
+    if cats_from_fetch.nil?
+      File.open(new_yaml_path,"w+"){|f| f.puts "# #{fetcher_name} has skip_categories => true. No category definition present."}
+      exit
+    end
+
+    current_cats = YAML::load_file(current_yaml_path)
+    cats_from_fetch = cats_from_fetch.select do |cat_obj|
+      current_cats[:active].select{|cat| cat[:url] =~ /#{cat_obj.url}/}.empty?
+    end
+    generator = CategoryGenerator.new(cats_from_fetch,fetcher_name)
+    generator.generate_yaml(fetcher_name,new_yaml_path,"These are categories that don't exist in the actual YAML file.")
+  end
+end
+

@@ -1,0 +1,35 @@
+--- 
+:dept: :womens
+:dynamic: 
+  :sale_price: 
+  :currency: USD
+  :original_price: "368.00"
+  :notice: 
+:vendor_key: "3187237"
+:description: David Meister One Shoulder Stretch Satin Dress
+:extended_description: {}
+
+:clothing_type: 
+  :group: :bottom
+  :bm: 1
+:additional_images: []
+
+:brand_bm: 276
+:vendor_name: nordstrom
+:product_image: 
+  :url: http://g.nordstromimage.com/imagegallery/store/product/Medium/3/_6462663.jpg
+  :height: 254
+  :buffer_width: 125
+  :width: 165
+:department_bm: 0
+:related_vendor_keys: []
+
+:category_data: 
+- :url: !str 
+    str: http://shop.nordstrom.com/c/womens-dresses?origin=accordion
+    "@_rails_html_safe": false
+  :name: Dresses (All)
+  :path: 
+:product_url: http://shop.nordstrom.com/s/david-meister-one-shoulder-stretch-satin-dress/3187237?origin=category
+:clothing_type_bm: 1
+:scc: 
